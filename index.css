@@ -221,27 +221,43 @@ h1, h2, h3, h4 {
 }
 
 .trustbar-grid {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .trustbar-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trustbar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .trust-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-.trust-number {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-blue);
+.trust-icon {
+    font-size: 2.2rem;
+    color: var(--accent-blue); /* Slightly lighter than premium blue for these icons */
+    margin-bottom: 0.5rem;
 }
 
 .trust-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--dark-grey);
 }
 
