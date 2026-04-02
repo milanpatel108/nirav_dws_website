@@ -122,7 +122,7 @@ h1, h2, h3, h4 {
 }
 
 .nav-logo img {
-    height: 65px; /* Increased for better clarity */
+    height: 80px; /* Maximize logo within the header area */
     width: auto;
     object-fit: contain;
 }
@@ -170,7 +170,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-    width: 45%;
+    width: 40%; /* Narrowed to shift text further left */
     z-index: 2;
     padding-right: 5%;
     position: relative;
@@ -180,12 +180,12 @@ h1, h2, h3, h4 {
     position: absolute;
     right: 0;
     top: 0;
-    width: 60%;
+    width: 65%; /* Extended to cover diagonal gap */
     height: 100%;
     background-size: cover;
     background-position: center;
     z-index: 1;
-    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%); /* Pushed further right */
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%); /* Pushed further right */
 }
 
 .hero-subtitle {
@@ -196,11 +196,11 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Slightly smaller to prevent clipping and fit layout */
     margin-bottom: 2rem;
     color: var(--black);
-    line-height: 1.25; /* Fix clipping at the top */
-    padding-top: 0.5rem; /* Additional clearance */
+    line-height: 1.1;
+    padding-top: 1rem;
 }
 
 .hero-description {
