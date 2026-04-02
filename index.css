@@ -512,6 +512,114 @@ h1, h2, h3, h4 {
     transition: var(--transition);
 }
 
+/* Mega Menu Dropdown */
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--white);
+    width: 600px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.dropdown-column h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 0.5rem;
+}
+
+.dropdown-links {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-links li {
+    margin-bottom: 1rem;
+}
+
+.dropdown-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-links a::before {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: var(--transition);
+}
+
+.dropdown-links a:hover {
+    color: var(--primary-blue);
+    padding-left: 5px;
+}
+
+.dropdown-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.dropdown-footer {
+    border-top: 1px solid var(--light-grey);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.dropdown-footer h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-footer p {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dark-grey);
+}
+
 .footer-links a:hover {
     color: var(--primary-blue);
     padding-left: 5px;
