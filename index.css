@@ -162,33 +162,33 @@ h1, h2, h3, h4 {
 
 /* Hero Section */
 .hero {
-    min-height: 850px; /* Force minimum height for overall visibility */
+    min-height: 850px;
     height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: var(--nav-height);
+    padding-top: var(--nav-height); /* Higher padding for header clearance */
     background-color: var(--light-grey);
     overflow: hidden;
 }
 
 .hero-content {
-    width: 35%; /* Shrunk more to push text even further away from diagonal overlap */
-    z-index: 2;
-    padding-right: 2%;
+    width: 35%; 
+    z-index: 5; /* Ensure it stays above everything */
     position: relative;
+    padding-left: 0;
 }
 
 .hero-image {
     position: absolute;
     right: 0;
     top: 0;
-    width: 65%;
+    width: 60%; /* Slightly narrower to give text more space */
     height: 100%;
     background-size: cover;
     background-position: center;
     z-index: 1;
-    clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%); /* Pushed harder to the right */
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 25% 100%); /* Adjusted diagonal for better left clearance */
 }
 
 .hero-subtitle {
@@ -199,18 +199,24 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Slightly smaller to prevent clipping and fit layout */
+    font-size: clamp(2.5rem, 5vw, 4rem); 
     margin-bottom: 2rem;
     color: var(--black);
-    line-height: 1.1;
-    padding-top: 1rem;
+    line-height: 1.3; /* Increased for better top visibility */
+    padding-top: 2rem; /* Substantial clearance for top of the text */
 }
 
 .hero-description {
     font-size: 1.1rem;
-    max-width: 500px;
+    max-width: 450px; /* Constrained further for maximum left clearance */
     margin-bottom: 3rem;
     color: var(--dark-grey);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 /* Stats/Features Row */
