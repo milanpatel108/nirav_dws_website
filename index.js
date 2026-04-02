@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 90, // Offset for fixed nav
+                    top: targetElement.offsetTop - 125, // Offset for new fixed nav height
                     behavior: 'smooth'
                 });
             }

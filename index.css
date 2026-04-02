@@ -112,7 +112,8 @@ h1, h2, h3, h4 {
 .navbar.scrolled {
     height: 95px;
     background-color: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04); /* Reduced shadow depth */
+    border: none; /* Safeguard against borders */
 }
 
 .nav-logo {
@@ -125,6 +126,7 @@ h1, h2, h3, h4 {
     height: 110px; /* Substantially larger logo for impact */
     width: auto;
     object-fit: contain;
+    mix-blend-mode: multiply; /* Helps blend if image has a baked-in background */
 }
 
 .nav-links {
@@ -160,6 +162,7 @@ h1, h2, h3, h4 {
 
 /* Hero Section */
 .hero {
+    min-height: 850px; /* Force minimum height for overall visibility */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -170,9 +173,9 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
-    width: 40%; /* Narrowed to shift text further left */
+    width: 35%; /* Shrunk more to push text even further away from diagonal overlap */
     z-index: 2;
-    padding-right: 5%;
+    padding-right: 2%;
     position: relative;
 }
 
@@ -180,12 +183,12 @@ h1, h2, h3, h4 {
     position: absolute;
     right: 0;
     top: 0;
-    width: 65%; /* Extended to cover diagonal gap */
+    width: 65%;
     height: 100%;
     background-size: cover;
     background-position: center;
     z-index: 1;
-    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%); /* Pushed further right */
+    clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%); /* Pushed harder to the right */
 }
 
 .hero-subtitle {
