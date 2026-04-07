@@ -518,7 +518,7 @@ h1, h2, h3, h4 {
     left: calc(-4rem); /* Counteract navbar padding to reach edge */
     width: 100vw;
     background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Nice light blue */
-    background-image: url('assets/private_suite_luxury_1775032362216.png');
+    background-image: url('assets/sandton_kelvin_new.jpg');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
