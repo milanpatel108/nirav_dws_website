@@ -525,18 +525,19 @@ h1, h2, h3, h4 {
     top: 100%;
     left: calc(-4rem); /* Counteract navbar padding to reach edge */
     width: 100vw;
-    background-color: #fdfdfd; 
+    background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Nice light blue */
     background-image: url('assets/private_suite_luxury_1775032362216.png');
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right bottom;
     background-size: contain;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
-    padding: 5rem 8rem 8rem;
+    mix-blend-mode: multiply; /* Blend the building image with the light blue */
+    box-shadow: 0 40px 100px rgba(0, 71, 171, 0.1);
+    padding: 6rem 8rem 8rem;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 71, 171, 0.08);
 }
 
 .nav-item:hover .dropdown-menu {
@@ -547,8 +548,8 @@ h1, h2, h3, h4 {
 
 .dropdown-grid {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 3fr; /* Columns for CT, JHB, Referral, and Image Space */
-    gap: 4rem;
+    grid-template-columns: 2fr 4fr; /* JHB links + space for building */
+    gap: 8rem;
     max-width: 1400px;
     margin-bottom: 6rem;
 }
@@ -556,10 +557,12 @@ h1, h2, h3, h4 {
 .dropdown-column h4 {
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     color: var(--black);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-weight: 700;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.75rem;
 }
 
 .dropdown-links {
@@ -568,14 +571,14 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-links li {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .dropdown-links a {
-    color: var(--dark-grey);
+    color: var(--black);
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
     transition: var(--transition);
     display: flex;
     align-items: center;
@@ -586,57 +589,31 @@ h1, h2, h3, h4 {
     content: '\f105';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    font-size: 0.8rem;
-    color: var(--black);
-    opacity: 0.4;
+    font-size: 0.9rem;
+    color: var(--primary-blue);
 }
 
 .dropdown-links a:hover {
     color: var(--primary-blue);
-    padding-left: 5px;
+    padding-left: 8px;
 }
 
-/* World Class Locations Banner */
+/* Updated Banner */
 .dropdown-banner {
-    margin-top: 4rem;
+    margin-top: 6rem;
     text-align: left;
-    max-width: 800px;
 }
 
 .dropdown-banner h2 {
     font-size: 4rem;
-    color: var(--dark-grey);
+    color: var(--black);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
-}
-
-.dropdown-banner p {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--dark-grey);
-    opacity: 0.6;
-}
-
-/* Referral Column */
-.referral-column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.referral-column .btn-primary {
-    background-color: var(--black);
-    color: var(--white);
-    border-radius: 4px;
-    width: 200px;
-    padding: 1rem;
+    letter-spacing: 0.2em;
+    font-weight: 900;
 }
 
 .dropdown-footer {
-    display: none; /* Removed for new layout */
+    display: none;
 }
 
 .dropdown-footer h3 {
