@@ -547,69 +547,78 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-grid {
-    display: grid;
-    grid-template-columns: 2fr 4fr; /* JHB links + space for building */
-    gap: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
     max-width: 1400px;
-    margin-bottom: 6rem;
+    margin: 0 auto;
+}
+
+.dropdown-column {
+    text-align: center;
 }
 
 .dropdown-column h4 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--black);
+    letter-spacing: 0.4em;
+    color: var(--primary-blue);
     margin-bottom: 2.5rem;
     font-weight: 700;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 0.75rem;
+    border: none;
+    padding-bottom: 0;
 }
 
 .dropdown-links {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .dropdown-links li {
-    margin-bottom: 1.75rem;
+    margin-bottom: 0;
 }
 
 .dropdown-links a {
     color: var(--black);
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-family: var(--font-title); /* Use Playfair Display */
+    font-size: 2.5rem; /* Large, bold font */
+    font-weight: 900;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
+    opacity: 0.8;
 }
 
 .dropdown-links a::before {
-    content: '\f105';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 0.9rem;
-    color: var(--primary-blue);
+    display: none; /* Remove arrow for cleaner centered look */
 }
 
 .dropdown-links a:hover {
     color: var(--primary-blue);
-    padding-left: 8px;
+    opacity: 1;
+    transform: scale(1.05);
 }
 
-/* Updated Banner */
+/* Updated Centered Banner */
 .dropdown-banner {
-    margin-top: 6rem;
-    text-align: left;
+    margin-top: 8rem;
+    text-align: center;
+    width: 100%;
 }
 
 .dropdown-banner h2 {
-    font-size: 4rem;
+    font-size: 5rem;
     color: var(--black);
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     font-weight: 900;
+    opacity: 1;
 }
 
 .dropdown-footer {
