@@ -517,16 +517,12 @@ h1, h2, h3, h4 {
     top: 100%;
     left: calc(-4rem); /* Counteract navbar padding to reach edge */
     width: 100vw;
-    background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Nice light blue */
-    background-image: url('assets/sandton_kelvin_new.jpg');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: contain;
-    mix-blend-mode: multiply; /* Blend the building image with the light blue */
+    background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Light Blue */
     box-shadow: 0 40px 100px rgba(0, 71, 171, 0.1);
-    padding: 6rem 8rem 8rem;
+    padding: 4rem 2rem; /* Reduced padding */
     opacity: 0;
     visibility: hidden;
+    transform: translateY(10px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
     border-top: 1px solid rgba(0, 71, 171, 0.08);
@@ -599,13 +595,13 @@ h1, h2, h3, h4 {
 
 /* Updated Centered Banner */
 .dropdown-banner {
-    margin-top: 8rem;
+    margin-top: 3rem; /* Reduced from 8rem */
     text-align: center;
     width: 100%;
 }
 
 .dropdown-banner h2 {
-    font-size: 5rem;
+    font-size: 3.5rem; /* Reduced from 5rem for better balance */
     color: var(--black);
     text-transform: uppercase;
     letter-spacing: 0.3em;
