@@ -517,9 +517,14 @@ h1, h2, h3, h4 {
     top: 100%;
     left: calc(-4rem); /* Counteract navbar padding to reach edge */
     width: 100vw;
-    background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Light Blue */
+    background: linear-gradient(135deg, rgba(244, 251, 255, 0.95) 0%, rgba(235, 245, 255, 0.95) 100%);
+    background-image: url('assets/sandton_kelvin_new.jpg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 40%; /* Sized like the mockup */
+    mix-blend-mode: multiply;
     box-shadow: 0 40px 100px rgba(0, 71, 171, 0.1);
-    padding: 4rem 2rem; /* Reduced padding */
+    padding: 6rem 12rem; /* Airy padding like mockup */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -535,9 +540,9 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -562,7 +567,7 @@ h1, h2, h3, h4 {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Left aligned in column */
     gap: 1rem;
 }
 
@@ -573,9 +578,9 @@ h1, h2, h3, h4 {
 .dropdown-links a {
     color: var(--black);
     text-decoration: none;
-    font-family: var(--font-title); /* Use Playfair Display */
-    font-size: 2.5rem; /* Large, bold font */
-    font-weight: 900;
+    font-family: var(--font-body); /* Standard link font */
+    font-size: 1.1rem;
+    font-weight: 500;
     transition: var(--transition);
     display: flex;
     align-items: center;
@@ -584,7 +589,11 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-links a::before {
-    display: none; /* Remove arrow for cleaner centered look */
+    content: '\f105'; /* FontAwesome angle-right */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: var(--primary-blue);
 }
 
 .dropdown-links a:hover {
@@ -595,13 +604,13 @@ h1, h2, h3, h4 {
 
 /* Updated Centered Banner */
 .dropdown-banner {
-    margin-top: 3rem; /* Reduced from 8rem */
+    margin-top: 6rem;
     text-align: center;
     width: 100%;
 }
 
 .dropdown-banner h2 {
-    font-size: 3.5rem; /* Reduced from 5rem for better balance */
+    font-size: 4rem;
     color: var(--black);
     text-transform: uppercase;
     letter-spacing: 0.3em;
