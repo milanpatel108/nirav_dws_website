@@ -5,47 +5,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandton-Kelvin | Dynamic Workspaces</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .location-hero {
+            padding-top: var(--nav-height);
+            background-color: var(--white);
+        }
+        .video-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        .location-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+        .location-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .location-header p {
+            font-size: 1.25rem;
+            color: var(--dark-grey);
+            opacity: 0.8;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 6rem;
+        }
+        .map-frame {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            border: none;
+            box-shadow: var(--shadow);
+        }
+        .package-card {
+            background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .package-title {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        .package-price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+        .package-desc {
+            font-size: 1rem;
+            color: var(--dark-grey);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .package-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        .package-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--black);
+        }
+        .package-feature i {
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+        .vat-note {
+            font-size: 0.85rem;
+            color: var(--dark-grey);
+            opacity: 0.7;
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+        .amenities-section {
+            background-color: #f0f7ff;
+            padding: 5rem 0;
+            border-radius: 12px;
+            margin-bottom: 6rem;
+        }
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+            color: var(--primary-blue);
+        }
+        .amenity-item i {
+            font-size: 1.2rem;
+            width: 24px;
+        }
+        @media (max-width: 1024px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar" id="navbar">
-        <a href="index.html" class="nav-logo">
+    <header class="navbar scrolled" id="navbar">
+        <a href="/" class="nav-logo">
             <img src="assets/logo.png" alt="Dynamic Workspaces Logo">
         </a>
         <nav class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="/" class="nav-link">Home</a>
             <div class="nav-item">
-                <a href="locations.html" class="nav-link">Locations <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                <a href="/locations.html" class="nav-link">Locations</a>
                 <div class="dropdown-menu">
                     <div class="dropdown-grid">
                         <div class="dropdown-column">
                             <h4>Johannesburg</h4>
                             <ul class="dropdown-links">
-                                <li><a href="sandton-kelvin.html">Sandton-Kelvin</a></li>
-                                <li><a href="chadwick-wynberg.html">Chadwick - Wynberg</a></li>
-                                <li><a href="village-jhb.html">Village - JHB</a></li>
+                                <li><a href="/sandton-kelvin.html">Sandton-Kelvin</a></li>
+                                <li><a href="/chadwick-wynberg.html">Chadwick - Wynberg</a></li>
+                                <li><a href="/village-jhb.html">Village - JHB</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="dropdown-banner">
-                        <h2>Dynamic Workspaces</h2>
+                        <h2>DYNAMIC WORKSPACES</h2>
                     </div>
                 </div>
             </div>
-            <a href="offerings.html" class="nav-link">Offerings</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="/offerings.html" class="nav-link">Offerings</a>
+            <a href="/about.html" class="nav-link">About</a>
+            <a href="/contact.html" class="btn btn-primary">Book a Tour</a>
         </nav>
     </header>
 
-    <main style="padding-top: var(--nav-height);">
-        <section class="section" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="container">
-                <h1 class="section-title">Sandton-Kelvin</h1>
-                <p style="font-size: 1.2rem; opacity: 0.6; margin-top: 2rem;">Information for this location will be added soon.</p>
+    <main class="location-hero">
+        <div class="container">
+            <div class="video-container">
+                <video controls autoplay muted loop>
+                    <source src="assets/sandton_kelvin_tour.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-        </section>
+
+            <div class="location-header">
+                <h1 class="section-title">Sandton-Kelvin</h1>
+                <p>Professional Serviced Offices in Kelvin, Sandton.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="map-container">
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m11!1m3!1d3584.225253816155!2d28.082269!3d-26.058869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95733d00000001%3A0x6b7b4a6b4a6b4a6b!2s140a%20Kelvin%20Dr%2C%20Morningside%20Manor%2C%20Sandton%2C%202196%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1700000000000" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="package-card">
+                    <h3 class="package-title">Co-working Package</h3>
+                    <div class="package-price">R1 200.00</div>
+                    <p class="package-desc">Hot desks in an open-plan setting during business hours with high-speed internet and access to kitchen facilities.</p>
+                    <ul class="package-features">
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> 2 hours of FREE access to meeting rooms</li>
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> Professional business address</li>
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> Access to kitchen facilities</li>
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> Dedicated phone number</li>
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> Mail & package handling</li>
+                        <li class="package-feature"><i class="fas fa-check-circle"></i> Free uncapped wifi</li>
+                    </ul>
+                    <p class="vat-note">*All prices exclude VAT.</p>
+                    <a href="/contact.html" class="btn btn-primary" style="width: 100%;">Interested</a>
+                </div>
+            </div>
+
+            <div class="amenities-section">
+                <div class="container">
+                    <div class="amenities-grid">
+                        <div class="amenity-item"><i class="fas fa-user-shield"></i> 24-hour security</div>
+                        <div class="amenity-item"><i class="fas fa-bolt"></i> Backup generator</div>
+                        <div class="amenity-item"><i class="fas fa-coffee"></i> Serviced communal kitchen</div>
+                        <div class="amenity-item"><i class="fas fa-parking"></i> Secure shaded parking</div>
+                        <div class="amenity-item"><i class="fas fa-wifi"></i> Free high-speed internet</div>
+                        <div class="amenity-item"><i class="fas fa-handshake"></i> Meeting boardrooms</div>
+                        <div class="amenity-item"><i class="fas fa-concierge-bell"></i> On-site reception</div>
+                        <div class="amenity-item"><i class="fas fa-trash-alt"></i> Daily bin removal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -57,51 +227,21 @@
                     </div>
                     <p class="footer-desc">Rent office space in your area designed for your expansion and growth requirements of individuals and businesses alike.</p>
                     <div class="footer-contact">
-                        <div class="footer-contact-item">
-                            <i class="fas fa-map-marker-alt"></i> 11 Commercial Street, Cape Town
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fas fa-phone"></i> 011 064 1628
-                        </div>
-                        <div class="footer-contact-item">
-                            <i class="fas fa-envelope"></i> info@dynamicworkspaces.co.za
-                        </div>
+                        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> 140a Kelvin Dr, Sandton</div>
+                        <div class="footer-contact-item"><i class="fas fa-phone"></i> 011 064 1628</div>
+                        <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@dynamicworkspaces.co.za</div>
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h4>Office Space</h4>
                     <ul class="footer-links">
-                        <li><a href="sandton-kelvin.html">Sandton-Kelvin</a></li>
-                        <li><a href="chadwick-wynberg.html">Chadwick - Wynberg</a></li>
-                        <li><a href="village-jhb.html">Village - JHB</a></li>
+                        <li><a href="/sandton-kelvin.html">Sandton-Kelvin</a></li>
+                        <li><a href="/chadwick-wynberg.html">Chadwick - Wynberg</a></li>
+                        <li><a href="/village-jhb.html">Village - JHB</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h4>Information</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                &copy; 2026 Dynamic Workspaces. All Rights Reserved.
             </div>
         </div>
     </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>
