@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandton-Kelvin | Dynamic Workspaces | Premium Johannesburg Offices</title>
-    <meta name="description" content="Discover premium private suites and flexible coworking at Sandton-Kelvin. The perfect business address in Johannesburg's most prestigious district.">
+    <title>Sandton-Kelvin | Dynamic Workspaces</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
+    <header class="navbar" id="navbar">
         <a href="index.html" class="nav-logo">
             <img src="assets/logo.png" alt="Dynamic Workspaces Logo">
         </a>
-        <div class="nav-links">
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
             <div class="nav-item">
-                <a href="locations.html" class="nav-link">Locations</a>
+                <a href="locations.html" class="nav-link">Locations <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                 <div class="dropdown-menu">
                     <div class="dropdown-grid">
                         <div class="dropdown-column">
@@ -31,101 +29,21 @@
                         </div>
                     </div>
                     <div class="dropdown-banner">
-                        <h2>DYNAMIC WORKSPACES</h2>
+                        <h2>Dynamic Workspaces</h2>
                     </div>
                 </div>
             </div>
             <a href="offerings.html" class="nav-link">Offerings</a>
             <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            <a href="contact.html" class="btn btn-primary">Book a Tour</a>
-        </div>
-    </nav>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </nav>
+    </header>
 
-    <main>
-        <section class="hero" style="height: 70vh; min-height: 500px;">
+    <main style="padding-top: var(--nav-height);">
+        <section class="section" style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
             <div class="container">
-                <div class="hero-content" style="width: 100%; text-align: center; padding-right: 0;">
-                    <span class="hero-subtitle text-uppercase">Sandton-Kelvin</span>
-                    <h1 class="hero-title">Elevate your <span class="gradient-text">Presence</span></h1>
-                    <p class="hero-description" style="margin: 0 auto 3rem;">Premium private suites and architectural coworking environments designed for high-performance teams in the heart of Sandton-Kelvin.</p>
-                    <div style="display: flex; gap: 2rem; justify-content: center;">
-                        <a href="contact.html" class="btn btn-primary">Claim Your Space</a>
-                        <a href="#amenities" class="btn btn-outline">Explore Amenities</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image" style="background-image: url('assets/private_suite_luxury_1775032362216.png'); opacity: 0.15; width: 100%; clip-path: none; z-index: 0;"></div>
-        </section>
-
-        <!-- Specifics -->
-        <section class="section" id="amenities">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center;">
-                    <div>
-                        <span class="section-tag text-uppercase">The Sandton-Kelvin Standard</span>
-                        <h2 class="section-title">A masterclass in professional luxury.</h2>
-                        <p style="margin: 2rem 0; color: var(--dark-grey);">Positioned at the intersection of commerce and convenience, our Sandton-Kelvin facility offers an unparalleled business ecosystem with rapid access to the Gautrain and major financial hubs.</p>
-                        
-                        <ul style="list-style: none; margin-bottom: 3rem;">
-                            <li style="margin-bottom: 2rem; display: flex; align-items: start; gap: 1.5rem;">
-                                <i class="fas fa-shield-alt" style="color: var(--primary-blue); font-size: 1.5rem;"></i>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;">Elite Security Hub</h4>
-                                    <p style="font-size: 0.9rem; opacity: 0.8;">24/7 biometric access control and secure basement parking with license plate recognition.</p>
-                                </div>
-                            </li>
-                            <li style="margin-bottom: 2rem; display: flex; align-items: start; gap: 1.5rem;">
-                                <i class="fas fa-microchip" style="color: var(--primary-blue); font-size: 1.5rem;"></i>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;">Hyper-Connected</h4>
-                                    <p style="font-size: 0.9rem; opacity: 0.8;">Dedicated 1Gbps fiber lines with triple redundancy to ensure you're always online.</p>
-                                </div>
-                            </li>
-                            <li style="margin-bottom: 2rem; display: flex; align-items: start; gap: 1.5rem;">
-                                <i class="fas fa-couch" style="color: var(--primary-blue); font-size: 1.5rem;"></i>
-                                <div>
-                                    <h4 style="margin-bottom: 0.5rem;">Architectural Lounges</h4>
-                                    <p style="font-size: 0.9rem; opacity: 0.8;">Ergonomic designer furniture and barista-grade coffee stations for informal networking.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div style="height: 600px; background-image: url('assets/boardroom_tech_1775032384032.png'); background-size: cover; background-position: center; border-radius: 12px; box-shadow: var(--shadow);"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="trustbar" style="background-color: var(--light-grey);">
-            <div class="container">
-                <div class="trustbar-grid">
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; font-weight: 900; color: var(--primary-blue);">45+</span>
-                        <span class="trust-label">Private Suites</span>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; font-weight: 900; color: var(--primary-blue);">3</span>
-                        <span class="trust-label">Boardrooms</span>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; font-weight: 900; color: var(--primary-blue);">24/7</span>
-                        <span class="trust-label">Secure Access</span>
-                    </div>
-                    <div class="trust-item">
-                        <span style="font-size: 2.5rem; font-weight: 900; color: var(--primary-blue);">100%</span>
-                        <span class="trust-label">Backup Power</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-banner">
-            <div class="container">
-                <h2 class="cta-title">Experience Sandton-Kelvin Today</h2>
-                <p class="cta-desc">Schedule a private tour of our newest suites and discover why the world's most ambitious professionals call Dynamic Workspaces home.</p>
-                <a href="contact.html" class="btn btn-primary" style="background-color: var(--white); color: var(--black);">Book Your Tour</a>
+                <h1 class="section-title">Sandton-Kelvin</h1>
+                <p style="font-size: 1.2rem; opacity: 0.6; margin-top: 2rem;">Information for this location will be added soon.</p>
             </div>
         </section>
     </main>
