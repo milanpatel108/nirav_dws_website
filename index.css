@@ -129,7 +129,7 @@ h1, h2, h3, h4 {
 }
 
 .navbar-blue .nav-logo img {
-    filter: invert(1); /* Invert colors: dark logo becomes white, white background becomes black */
+    filter: grayscale(1) invert(1); /* Grayscale to remove color, then invert for pure white logo */
     mix-blend-mode: screen; /* Black background becomes transparent, white logo remains white */
 }
 
