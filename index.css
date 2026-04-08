@@ -321,11 +321,9 @@ h1, h2, h3, h4 {
 
 .location-card {
     position: relative;
-    height: 600px;
+    height: 550px;
     overflow: hidden;
     cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
 .location-img {
@@ -333,11 +331,11 @@ h1, h2, h3, h4 {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: var(--transition);
 }
 
 .location-card:hover .location-img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .location-content {
@@ -345,32 +343,42 @@ h1, h2, h3, h4 {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 3rem 3rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    padding: 3rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
     color: var(--white);
     transition: var(--transition);
 }
 
 .location-type {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
     display: block;
-    color: rgba(255,255,255,0.7);
+    opacity: 0.8;
 }
 
 .location-name {
-    font-family: var(--font-title);
-    font-size: 3.2rem;
-    font-weight: 900;
-    line-height: 1;
-    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .location-link {
-    display: none; /* Removed for cleaner look matching the mockup */
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.location-card:hover .location-link {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Services Grid */
@@ -515,122 +523,101 @@ h1, h2, h3, h4 {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: calc(-4rem); /* Counteract navbar padding to reach edge */
-    width: 100vw;
-    background: linear-gradient(135deg, #f4fbff 0%, #ebf5ff 100%); /* Solid Light Blue */
-    box-shadow: 0 20px 60px rgba(0, 71, 171, 0.08); /* More subtle shadow */
-    padding: 3rem 6rem; /* DRASTICALLY REDUCED padding */
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: var(--white);
+    width: 600px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 3rem;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
-    border-top: 1px solid rgba(0, 71, 171, 0.08);
 }
 
 .nav-item:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .dropdown-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.dropdown-column {
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
 .dropdown-column h4 {
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.1em;
     color: var(--primary-blue);
-    margin-bottom: 2.5rem;
-    font-weight: 700;
-    border: none;
-    padding-bottom: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 0.5rem;
 }
 
 .dropdown-links {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left aligned in column */
-    gap: 1rem;
 }
 
 .dropdown-links li {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
 }
 
 .dropdown-links a {
     color: var(--black);
     text-decoration: none;
-    font-family: var(--font-body); /* Standard link font */
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    gap: 1rem;
-    opacity: 0.8;
+    gap: 0.5rem;
 }
 
 .dropdown-links a::before {
-    content: '\f105'; /* FontAwesome angle-right */
-    font-family: 'Font Awesome 6 Free';
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 0.8rem;
     color: var(--primary-blue);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: var(--transition);
 }
 
 .dropdown-links a:hover {
     color: var(--primary-blue);
-    opacity: 1;
-    transform: scale(1.05);
+    padding-left: 5px;
 }
 
-/* Reduced Compact Banner */
-.dropdown-banner {
-    margin-top: 2.5rem; /* Reduced from 6rem */
-    text-align: center;
-    width: 100%;
-}
-
-.dropdown-banner h2 {
-    font-size: 2.2rem; /* Reduced from 4rem */
-    color: var(--black);
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-weight: 900;
+.dropdown-links a:hover::before {
     opacity: 1;
+    transform: translateX(0);
 }
 
 .dropdown-footer {
-    display: none;
+    border-top: 1px solid var(--light-grey);
+    padding-top: 2rem;
+    text-align: center;
 }
 
 .dropdown-footer h3 {
-    font-size: 1.4rem;
-    letter-spacing: 0.25em;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
     color: var(--black);
     margin-bottom: 0.5rem;
-    font-weight: 900;
 }
 
 .dropdown-footer p {
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     color: var(--dark-grey);
-    opacity: 0.7;
 }
 
 .footer-links a:hover {
