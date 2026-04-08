@@ -130,6 +130,7 @@ h1, h2, h3, h4 {
 
 .navbar-blue .nav-logo img {
     filter: brightness(0) invert(1); /* Make logo white */
+    mix-blend-mode: normal; /* Fix for multiply making it invisible on blue */
 }
 
 .navbar.scrolled {
