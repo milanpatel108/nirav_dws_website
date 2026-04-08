@@ -165,15 +165,14 @@ h1, h2, h3, h4 {
 }
 
 /* Hero Section */
-.hero {
-    min-height: 100vh; /* Changed from fixed 100vh to allow growth */
+    min-height: 80vh; /* Increased from 70vh/100vh for more clearance */
     height: auto;
     display: flex;
     align-items: center;
     position: relative;
-    padding: 140px 0 60px; /* Reduced top padding slightly, added bottom padding */
+    padding: 160px 0 80px; /* Increased top padding to avoid navbar overlap */
     background-color: var(--light-grey);
-    overflow: visible; /* Ensure content can be seen if it grows */
+    overflow: visible; 
 }
 
 .hero-content {
@@ -662,4 +661,163 @@ h1, h2, h3, h4 {
     .footer-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(5deg);
+    background-color: #128c7e;
+}
+
+/* Pricing Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+.pricing-card {
+    background: var(--white);
+    padding: 4rem;
+    border: 1px solid var(--light-grey);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.pricing-card:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--primary-blue);
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    color: var(--primary-blue);
+    margin: 1.5rem 0;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    font-family: var(--font-body);
+}
+
+/* Amenities Grid */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--light-grey);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.amenity-item i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.amenity-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Automatic Slideshow (Gallery) */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 4rem auto;
+    overflow: hidden;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.slides {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slides-animate {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Next Location Shortcuts */
+.next-locations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.location-shortcut {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.location-shortcut::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    transition: var(--transition);
+}
+
+.location-shortcut:hover::before {
+    background: rgba(0,0,0,0.6);
+}
+
+.location-shortcut span {
+    position: relative;
+    z-index: 5;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    border-bottom: 2px solid var(--white);
+    padding-bottom: 0.5rem;
 }

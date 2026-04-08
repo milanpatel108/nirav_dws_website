@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-        <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
         <a href="index.html" class="nav-logo">
             <img src="assets/logo.png" alt="Dynamic Workspaces Logo">
         </a>
@@ -43,47 +43,132 @@
     </nav>
 
     <main>
-        <section class="hero" style="height: 70vh;">
+        <!-- Hero Section -->
+        <section class="hero">
             <div class="container">
                 <div class="hero-content">
                     <span class="hero-subtitle text-uppercase">Industrial Chic</span>
                     <h1 class="hero-title">Office spaces in <br><span class="gradient-text">Chadwick, Wynberg</span></h1>
                     <p class="hero-description">Inspiring coworking spaces and private offices in a beautifully repurposed industrial setting. Perfect for creatives and innovators.</p>
                     <div class="hero-actions">
-                        <a href="#amenities" class="btn btn-primary">Discover Space</a>
-                        <a href="contact.html" class="btn btn-outline">Enquire Now</a>
+                        <a href="contact.html" class="btn btn-primary">Book a Tour</a>
+                        <a href="#pricing" class="btn btn-outline">View Pricing</a>
                     </div>
                 </div>
             </div>
-            <div class="hero-image" style="background-image: url('assets/coworking_lifestyle_1775032404014.png')"></div>
+            <div class="hero-image" style="background-image: url('assets/wynberg_hero.jpg')"></div>
         </section>
 
-        <section class="section" id="amenities">
+        <!-- Pricing Section -->
+        <section class="section" id="pricing" style="background-color: var(--white);">
             <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 6rem;">
-                    <h2 class="section-title">Creative Excellence</h2>
-                    <p style="max-width: 600px; margin: 0 auto;">Our Chadwick branch blends industrial heritage with modern luxury, providing a unique backdrop for your business.</p>
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-tag text-uppercase">Memberships</span>
+                    <h2 class="section-title" style="margin: 0 auto;">Pricing Preview</h2>
                 </div>
-                <div class="card-grid">
-                    <div class="service-item">
-                        <i class="fas fa-paint-brush service-icon"></i>
-                        <h3 class="service-title">Inspiring Design</h3>
-                        <p class="service-desc">Exposed brickwork, high ceilings, and natural light to drive your creative process.</p>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="service-title">Co-Working</h3>
+                        <p>Flexible hot-desks in a vibrant community.</p>
+                        <div class="pricing-price">R1200<span> / month</span></div>
+                        <a href="contact.html" class="btn btn-outline">Join Now</a>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-coffee service-icon"></i>
-                        <h3 class="service-title">Artisan Café</h3>
-                        <p class="service-desc">On-site barista and gourmet catering options for you and your clients.</p>
+                    <div class="pricing-card">
+                        <h3 class="service-title">Virtual Office</h3>
+                        <p>Professional business address & mail handling.</p>
+                        <div class="pricing-price">R599,99<span> / month</span></div>
+                        <a href="contact.html" class="btn btn-outline">Get Address</a>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-rocket service-icon"></i>
-                        <h3 class="service-title">Growth Hubs</h3>
-                        <p class="service-desc">Scalable office solutions that grow with your business, from startups to corporates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included Section -->
+        <section class="section" id="included" style="background-color: var(--light-grey);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-tag text-uppercase">Amenities</span>
+                    <h2 class="section-title" style="margin: 0 auto;">What's Included</h2>
+                </div>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span class="amenity-label">24-hour security</span>
                     </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-wifi"></i>
+                        <span class="amenity-label">Free high-speed internet</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-bolt"></i>
+                        <span class="amenity-label">Backup generator</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-handshake"></i>
+                        <span class="amenity-label">Meeting boardrooms</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span class="amenity-label">Serviced communal kitchen</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-concierge-bell"></i>
+                        <span class="amenity-label">On-site reception</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-parking"></i>
+                        <span class="amenity-label">Secure shaded parking</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-trash-alt"></i>
+                        <span class="amenity-label">Daily bin removal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section" id="gallery">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-tag text-uppercase">Visuals</span>
+                    <h2 class="section-title" style="margin: 0 auto;">Wynberg Office Gallery</h2>
+                </div>
+                <div class="slideshow-container">
+                    <div class="slides slides-animate" style="background-image: url('assets/wynberg_hero.jpg')"></div>
+                    <div class="slides slides-animate" style="background-image: url('assets/coworking_lifestyle_1775032404014.png')"></div>
+                    <div class="slides slides-animate" style="background-image: url('assets/boardroom_tech_1775032384032.png')"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section" id="map" style="padding: 0;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.887208351474!2d28.07727441502758!3d-26.09633398348682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950cd1450a8b41%3A0xe5a1b3be282f9d6a!2s1%20Chadwick%20Ave%2C%20Wynberg%2C%20Sandton%2C%202090%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1712574400000!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+
+        <!-- Next Locations -->
+        <section class="section" id="next">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <h2 class="section-title" style="margin: 0 auto;">Explore Other Locations</h2>
+                </div>
+                <div class="next-locations">
+                    <a href="sandton-kelvin.html" class="location-shortcut" style="background-image: url('assets/private_suite_luxury_1775032362216.png')">
+                        <span>Kelvin, Sandton</span>
+                    </a>
+                    <a href="village-jhb.html" class="location-shortcut" style="background-image: url('assets/boardroom_tech_1775032384032.png')">
+                        <span>Village, JHB</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/27792105562" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer class="footer">
         <div class="container">
@@ -100,13 +185,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
