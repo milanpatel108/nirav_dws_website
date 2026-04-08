@@ -109,6 +109,29 @@ h1, h2, h3, h4 {
     transition: var(--transition);
 }
 
+.navbar-blue {
+    background-color: var(--primary-blue);
+    border-bottom: none;
+}
+
+.navbar-blue .nav-link {
+    color: var(--white);
+}
+
+.navbar-blue .btn-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.navbar-blue .btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+}
+
+.navbar-blue .nav-logo img {
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
 .navbar.scrolled {
     height: 95px;
     background-color: var(--white);
