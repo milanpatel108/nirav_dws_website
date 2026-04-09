@@ -68,56 +68,73 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Mobile Menu Toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.querySelector('.nav-links');
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.querySelector('.nav-links');
 
-    if (navToggle && navLinks) {
-        navToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('active');
-            const icon = navToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-                navLinks.classList.remove('active');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
                 const icon = navToggle.querySelector('i');
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    // Reset all panels when closing
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
+                }
+            });
 
-        // Close menu on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (!link.parentElement.classList.contains('nav-item')) {
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
                     navLinks.classList.remove('active');
                     const icon = navToggle.querySelector('i');
                     icon.classList.replace('fa-times', 'fa-bars');
-                    // Reset sub-menus
-                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
                 }
             });
-        });
 
-        // Handle Mobile Sub-menus
-        document.querySelectorAll('.nav-item > .nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992) {
-                    const parent = link.parentElement;
-                    const hasDropdown = parent.querySelector('.dropdown-menu');
-                    if (hasDropdown) {
-                        e.preventDefault();
-                        parent.classList.toggle('active');
+            // Handle sliding sub-menus
+            document.querySelectorAll('.nav-item').forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const dropdown = item.querySelector('.dropdown-menu');
+
+                if (link && dropdown) {
+                    // Create more clickable area/handle for mobile
+                    const toggle = document.createElement('div');
+                    toggle.className = 'nav-item-toggle';
+                    toggle.innerHTML = `<span>${link.textContent}</span><i class="fas fa-chevron-right"></i>`;
+                    
+                    // Only show toggle on mobile, hide original link if it has dropdown
+                    link.classList.add('hide-on-mobile');
+                    item.insertBefore(toggle, link);
+
+                    toggle.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 992) {
+                            item.classList.add('panel-active');
+                        }
+                    });
+
+                    // Add back button listener
+                    const backBtn = dropdown.querySelector('.mobile-back-btn');
+                    if (backBtn) {
+                        backBtn.addEventListener('click', () => {
+                            item.classList.remove('panel-active');
+                        });
                     }
                 }
             });
-        });
-    }
+
+            // Close menu on final link click
+            navLinks.querySelectorAll('.dropdown-links a, .nav-links > .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
+                });
+            });
+        }
 });

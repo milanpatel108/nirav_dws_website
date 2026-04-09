@@ -1199,6 +1199,10 @@ h1, h2, h3, h4 {
     align-items: center;
 }
 
+.nav-item-toggle {
+    display: none;
+}
+
 @media (max-width: 992px) {
     .section {
         padding: 4rem 1.5rem !important;
@@ -1299,160 +1303,180 @@ h1, h2, h3, h4 {
     color: var(--black);
 }
 
-@media (max-width: 992px) {
-    .nav-toggle {
-        display: block;
-    }
-
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         width: 100%;
-        max-width: none;
         height: 100vh;
         background-color: var(--white);
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        padding: 8rem 2rem 4rem;
-        gap: 1.5rem; /* Standardized vertical gap */
-        box-shadow: none;
+        padding: 8rem 0 4rem; /* Removed horizontal padding to allow full-width dividers */
+        gap: 0; /* Use border/padding instead of gap for better sliding panel look */
         z-index: 1050;
-        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
     .nav-links.active {
         right: 0;
+        transform: translateX(0);
     }
 
+    /* Ensure white background even for blue navbar on mobile */
     .navbar-blue .nav-links {
-        background-color: var(--primary-blue);
+        background-color: var(--white);
     }
 
-    .nav-links .nav-link {
-        font-size: 1.5rem;
-        width: auto;
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    .navbar-blue .nav-links .nav-link {
-        color: var(--white) !important;
-    }
-
-    .nav-links .btn-primary {
-        width: 80%;
-        max-width: 300px;
-        margin-top: 1rem;
-        padding: 1.2rem;
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    .nav-item {
+    /* Level 1 Main Links */
+    .nav-item, 
+    .nav-links > .nav-link {
         width: 100%;
-        text-align: left;
-        display: block; /* Change from flex to block for mobile */
+        border-bottom: 1px solid #f0f0f0;
     }
 
-    .nav-links .nav-link {
-        font-size: 1.35rem; /* Slightly smaller for mobile comfort */
-        width: 100%;
-        text-align: left;
-        text-transform: capitalize;
+    .nav-links .nav-link,
+    .nav-item-toggle {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--black) !important;
+        padding: 1.5rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.4rem 0;
-    }
-
-    /* Add dropdown arrow for mobile */
-    .nav-item > .nav-link::after {
-        content: '\f107';
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: 1.1rem;
-        transition: transform 0.3s ease;
-        margin-left: 10px;
-    }
-
-    .nav-item.active > .nav-link::after {
-        transform: rotate(180deg);
-    }
-
-    /* Submenu styling */
-    .nav-item .dropdown-menu {
-        display: block !important;
-        position: static;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
-        transform: none;
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
         width: 100%;
+        text-align: left;
+        cursor: pointer;
     }
 
-    .nav-item.active .dropdown-menu {
-        max-height: 600px;
-        opacity: 1;
+    .nav-item-toggle i {
+        font-size: 0.9rem;
+        opacity: 0.5;
+    }
+
+    /* Sliding Paneling Logic */
+    .dropdown-menu {
+        position: fixed !important;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 100%;
+        height: 100vh;
+        background: var(--white) !important;
+        display: flex !important;
+        flex-direction: column;
         visibility: visible;
-        padding: 0.2rem 0 1.2rem 1.5rem; /* Clean vertical rhythm */
-    }
-
-    .dropdown-grid {
-        display: block; /* Collapse grid on mobile */
-        margin-bottom: 0;
-        gap: 0;
-    }
-
-    .dropdown-column {
-        width: 100% !important;
-        text-align: left !important;
+        opacity: 1 !important;
+        z-index: 1070;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         padding: 0 !important;
+        box-shadow: none;
+        transform: none;
+        left: auto;
+    }
+
+    .nav-item.panel-active .dropdown-menu {
+        transform: translateX(-100%);
+    }
+
+    /* Submenu Header */
+    .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem;
+        background: #fdfdfd;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 1rem;
+    }
+
+    .mobile-back-btn {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary-blue);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    .mobile-panel-title {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        color: var(--black);
+        flex: 1;
+        text-align: center;
+        margin-right: 3rem; /* Offset for centering relative to back button */
+    }
+
+    /* Submenu List Items */
+    .dropdown-grid {
+        display: block;
+        padding: 0;
     }
 
     .dropdown-links {
         list-style: none;
         padding: 0;
-        text-align: left;
     }
 
     .dropdown-links li {
-        margin-bottom: 1.5rem; /* Equal spacing to match main nav gaps */
-        padding-left: 0;
+        border-bottom: 1px solid #f9f9f9;
     }
 
     .dropdown-links a {
-        font-size: 1.15rem; /* Slightly larger for better readability */
+        padding: 1.2rem 2rem !important;
+        font-size: 1.1rem;
         color: var(--black) !important;
-        text-transform: capitalize;
-        opacity: 1; /* Maximum contrast */
-        display: block;
-        padding: 5px 0 !important; 
-        transition: var(--transition);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+        opacity: 1 !important;
     }
 
-    .dropdown-links a::before {
-        display: none; /* Hide the desktop arrow icon on mobile */
+    .dropdown-links a i {
+        font-size: 0.8rem;
+        opacity: 0.3;
     }
 
-    .navbar-blue .dropdown-links a {
-        color: var(--white) !important;
+    .dropdown-links a:active {
+        background-color: #f5f5f5;
     }
 
+    /* Hide desktop elements on mobile sliding panel */
     .dropdown-column h4, 
-    .dropdown-footer {
-        display: none;
+    .dropdown-footer,
+    .dropdown-links a::before {
+        display: none !important;
+    }
+
+    .hide-on-mobile {
+        display: none !important;
+    }
+
+    /* Submenu List Items with Arrow */
+    .dropdown-links a span::after {
+        content: none !important;
+    }
+
+    .dropdown-links a::after {
+        content: '\f054'; /* fa-chevron-right */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.8rem;
+        opacity: 0.3;
+    }
+
+    /* Booking Button in Mobile Menu */
+    .nav-links .btn-primary,
+    .nav-links .btn-outline {
+        margin: 2rem;
+        width: calc(100% - 4rem);
+        display: block;
+        text-align: center;
+        padding: 1.2rem;
     }
 }
