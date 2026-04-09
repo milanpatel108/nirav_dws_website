@@ -1345,10 +1345,10 @@ h1, h2, h3, h4 {
     }
 
     .nav-links .nav-link {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 500;
         color: var(--black) !important;
-        padding: 1.5rem 2rem;
+        padding: 1.2rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1356,6 +1356,7 @@ h1, h2, h3, h4 {
         text-align: left;
         cursor: pointer;
         text-transform: uppercase;
+        position: relative;
     }
 
     /* Add chevron only to items with sub-panels */
@@ -1363,14 +1364,18 @@ h1, h2, h3, h4 {
         content: '\f054'; /* fa-chevron-right */
         font-family: 'Font Awesome 6 Free';
         font-weight: 900;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         opacity: 0.3;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .dropdown-menu {
         position: fixed !important;
         top: 0;
-        right: -100%;
+        left: 100%; /* Start exactly at the right edge of the viewport */
         width: 100%;
         height: 100vh;
         background: var(--white) !important;
@@ -1378,12 +1383,11 @@ h1, h2, h3, h4 {
         flex-direction: column;
         visibility: visible;
         opacity: 1 !important;
-        z-index: 1070;
+        z-index: 1200; /* Higher than nav-links */
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         padding: 0 !important;
         box-shadow: none;
-        transform: none;
-        left: auto;
+        box-sizing: border-box;
     }
 
     .nav-item.panel-active .dropdown-menu {
