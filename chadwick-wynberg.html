@@ -274,23 +274,28 @@
                     <span class="section-tag text-uppercase">Visuals</span>
                     <h2 class="section-title" style="margin: 0 auto;">Wynberg Office Gallery</h2>
                 </div>
-                <div class="slideshow-container">
-                    <img src="assets/chadwick_01.jpg" class="slides active" alt="Wynberg Office 1">
-                    <img src="assets/chadwick_02.jpg" class="slides" alt="Wynberg Office 2">
-                    <img src="assets/chadwick_03.jpg" class="slides" alt="Wynberg Office 3">
-                    <img src="assets/chadwick_04.jpg" class="slides" alt="Wynberg Office 4">
-                    <img src="assets/chadwick_05.jpg" class="slides" alt="Wynberg Office 5">
-                    <img src="assets/chadwick_06.jpg" class="slides" alt="Wynberg Office 6">
-                    <img src="assets/chadwick_12.jpg" class="slides" alt="Wynberg Office 7">
-                    <img src="assets/chadwick_14.jpg" class="slides" alt="Wynberg Office 8">
-                    <img src="assets/chadwick_15.jpg" class="slides" alt="Wynberg Office 9">
-                    <img src="assets/chadwick_16.jpg" class="slides" alt="Wynberg Office 10">
-                    <img src="assets/chadwick_17.jpg" class="slides" alt="Wynberg Office 11">
+                <div class="gallery-wrapper">
+                    <div class="gallery-container">
+                        <div class="gallery-track" id="galleryTrack">
+                            <div class="gallery-slide"><img src="assets/chadwick_01.jpg" alt="Wynberg Office 1"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_02.jpg" alt="Wynberg Office 2"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_03.jpg" alt="Wynberg Office 3"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_04.jpg" alt="Wynberg Office 4"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_05.jpg" alt="Wynberg Office 5"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_06.jpg" alt="Wynberg Office 6"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_12.jpg" alt="Wynberg Office 7"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_14.jpg" alt="Wynberg Office 8"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_15.jpg" alt="Wynberg Office 9"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_16.jpg" alt="Wynberg Office 10"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick_17.jpg" alt="Wynberg Office 11"></div>
+                        </div>
+                        <button class="gallery-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-counter" id="galleryCounter">1 / 11</div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Script removed from here -->
 
         <!-- Map Section -->
         <section class="section" id="map" style="padding: 0;">
@@ -388,8 +393,8 @@
                 <div class="footer-column">
                     <h4>Information</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="contact.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Terms and Conditions</a></li>
                     </ul>
                 </div>
 
@@ -411,34 +416,48 @@
 
     <script>
         (function() {
-            let slideIndex = 0;
-            const slides = document.getElementsByClassName("slides");
-            if (slides.length === 0) return;
+            const track = document.getElementById('galleryTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const counter = document.getElementById('galleryCounter');
+            const slides = Array.from(track.children);
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
 
-            function showSlides() {
-                // Remove active class from CURRENT slide
-                slides[slideIndex].classList.remove("active");
-                
-                // Increment index
-                slideIndex = (slideIndex + 1) % slides.length;
-                
-                // Add active class to NEXT slide
-                slides[slideIndex].classList.add("active");
-                
-                setTimeout(showSlides, 5000); // Change image every 5 seconds
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
             }
 
-            // Start the loop after a delay
-            setTimeout(showSlides, 4000);
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateGallery();
+            });
+
+            // Auto-advance every 6 seconds
+            let autoPlay = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            }, 6000);
+
+            // Pause auto-play on interaction
+            [prevBtn, nextBtn].forEach(btn => {
+                btn.addEventListener('mouseenter', () => clearInterval(autoPlay));
+                btn.addEventListener('mouseleave', () => {
+                    autoPlay = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        updateGallery();
+                    }, 6000);
+                });
+            });
         })();
     </script>
 </body>
-</html>
-
-
-
-
-
-
 
 
