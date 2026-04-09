@@ -68,47 +68,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-        // Mobile Menu Toggle
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.querySelector('.nav-links');
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
 
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                navLinks.classList.toggle('active');
-                const icon = navToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.replace('fa-bars', 'fa-times');
-                } else {
-                    icon.classList.replace('fa-times', 'fa-bars');
-                    // Reset all panels when closing
-                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
-                }
-            });
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            const icon = navToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
+            }
+        });
 
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    const icon = navToggle.querySelector('i');
-                    icon.classList.replace('fa-times', 'fa-bars');
-                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
-                }
-            });
-
-            // Handle sliding sub-menus
+        // Sliding Sub-menu Logic (Mobile Only)
+        const setupMobilePanels = () => {
             document.querySelectorAll('.nav-item').forEach(item => {
                 const link = item.querySelector('.nav-link');
                 const dropdown = item.querySelector('.dropdown-menu');
 
-                if (link && dropdown) {
-                    // Create more clickable area/handle for mobile
+                if (link && dropdown && !item.querySelector('.nav-item-toggle')) {
                     const toggle = document.createElement('div');
                     toggle.className = 'nav-item-toggle';
                     toggle.innerHTML = `<span>${link.textContent}</span><i class="fas fa-chevron-right"></i>`;
                     
-                    // Only show toggle on mobile, hide original link if it has dropdown
-                    link.classList.add('hide-on-mobile');
                     item.insertBefore(toggle, link);
 
                     toggle.addEventListener('click', (e) => {
@@ -117,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
 
-                    // Add back button listener
                     const backBtn = dropdown.querySelector('.mobile-back-btn');
                     if (backBtn) {
                         backBtn.addEventListener('click', () => {
@@ -126,15 +112,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             });
+        };
 
-            // Close menu on final link click
-            navLinks.querySelectorAll('.dropdown-links a, .nav-links > .nav-link').forEach(link => {
-                link.addEventListener('click', () => {
+        // Initialize mobile panels
+        setupMobilePanels();
+
+        // Close menu on click anywhere else
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.replace('fa-times', 'fa-bars');
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
+            }
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
                     navLinks.classList.remove('active');
                     const icon = navToggle.querySelector('i');
-                    icon.classList.replace('fa-times', 'fa-bars');
+                    if (icon) icon.classList.replace('fa-times', 'fa-bars');
                     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
-                });
+                }
             });
-        }
+        });
+    }
 });
