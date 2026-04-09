@@ -1316,7 +1316,7 @@ h1, h2, h3, h4 {
         align-items: center;
         justify-content: flex-start;
         padding: 8rem 2rem 4rem;
-        gap: 2rem;
+        gap: 1.5rem; /* Standardized vertical gap */
         box-shadow: none;
         z-index: 1050;
         transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1358,14 +1358,14 @@ h1, h2, h3, h4 {
     }
 
     .nav-links .nav-link {
-        font-size: 1.4rem;
+        font-size: 1.35rem; /* Slightly smaller for mobile comfort */
         width: 100%;
         text-align: left;
         text-transform: capitalize;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem 0;
+        padding: 0.4rem 0;
     }
 
     /* Add dropdown arrow for mobile */
@@ -1399,10 +1399,22 @@ h1, h2, h3, h4 {
     }
 
     .nav-item.active .dropdown-menu {
-        max-height: 400px; /* Sufficient for the minimal list */
+        max-height: 600px;
         opacity: 1;
         visibility: visible;
-        padding: 0.5rem 0 1.5rem 1.5rem; /* Left padding to indent */
+        padding: 0.2rem 0 1.2rem 1.5rem; /* Clean vertical rhythm */
+    }
+
+    .dropdown-grid {
+        display: block; /* Collapse grid on mobile */
+        margin-bottom: 0;
+        gap: 0;
+    }
+
+    .dropdown-column {
+        width: 100% !important;
+        text-align: left !important;
+        padding: 0 !important;
     }
 
     .dropdown-links {
@@ -1412,17 +1424,17 @@ h1, h2, h3, h4 {
     }
 
     .dropdown-links li {
-        margin-bottom: 12px;
+        margin-bottom: 1.5rem; /* Equal spacing to match main nav gaps */
         padding-left: 0;
     }
 
     .dropdown-links a {
-        font-size: 1.1rem;
+        font-size: 1.15rem; /* Slightly larger for better readability */
         color: var(--black) !important;
         text-transform: capitalize;
-        opacity: 0.8;
+        opacity: 1; /* Maximum contrast */
         display: block;
-        padding: 4px 0 !important; /* Vertical breathing room */
+        padding: 5px 0 !important; 
         transition: var(--transition);
         white-space: nowrap;
         overflow: hidden;
