@@ -1306,6 +1306,15 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 992px) {
+    .navbar {
+        height: 100px !important;
+        padding: 0 1.5rem !important;
+    }
+
+    .navbar .nav-logo img {
+        height: 80px !important;
+    }
+
     .nav-toggle {
         display: block;
     }
