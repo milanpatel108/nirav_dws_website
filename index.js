@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Sliding Sub-menu Logic (Mobile Only)
+        // Accordion Sub-menu Logic (Mobile Only)
         const setupMobilePanels = () => {
             document.querySelectorAll('.nav-item').forEach(item => {
                 const link = item.querySelector('.nav-link');
@@ -95,16 +95,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     link.addEventListener('click', (e) => {
                         if (window.innerWidth <= 992) {
                             e.preventDefault();
-                            item.classList.add('panel-active');
+                            
+                            // Close other open accordion panels
+                            document.querySelectorAll('.nav-item').forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('panel-active');
+                                }
+                            });
+                            
+                            item.classList.toggle('panel-active');
                         }
                     });
-
-                    const backBtn = dropdown.querySelector('.mobile-back-btn');
-                    if (backBtn) {
-                        backBtn.addEventListener('click', () => {
-                            item.classList.remove('panel-active');
-                        });
-                    }
                 }
             });
         };
@@ -131,6 +132,128 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (icon) icon.classList.replace('fa-times', 'fa-bars');
                     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
                 }
+            });
+        });
+    }
+});
+
+// --- Dynamic Pricing Engine ---
+const pricingData = {
+    coworking: {
+        title: "Coworking Pricing",
+        locations: {
+            "Kelvin, Sandton": [{ title: "Monthly Membership", price: "R1 200.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }],
+            "Chadwick, Wynberg": [{ title: "Monthly Membership", price: "R1 100.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }],
+            "Village, JHB": [{ title: "Monthly Membership", price: "R950.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }]
+        }
+    },
+    "virtual-office": {
+        title: "Virtual Office Pricing",
+        locations: {
+            "Kelvin, Sandton": [{ title: "Monthly Virtual Office", price: "R599.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }],
+            "Chadwick, Wynberg": [{ title: "Monthly Virtual Office", price: "R499.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }],
+            "Village, JHB": [{ title: "Monthly Virtual Office", price: "R450.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }]
+        }
+    },
+    "private-offices": {
+        title: "Private Office Pricing",
+        locations: {
+            "Kelvin, Sandton": [
+                { title: "Half Day", price: "R380.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
+                { title: "Full Day", price: "R520.00", vat: "Excluding VAT", desc: "Total access for a full day of productivity.", highlight: true },
+                { title: "5-Day Week", price: "R1 725.00", vat: "Excluding VAT", desc: "Reduced rate for weekly bookings.", highlight: false }
+            ],
+            "Chadwick, Wynberg": [
+                { title: "Half Day", price: "R330.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
+                { title: "Full Day", price: "R450.00", vat: "Excluding VAT", desc: "Total access for a full day of productivity.", highlight: true },
+                { title: "5-Day Week", price: "R1 500.00", vat: "Excluding VAT", desc: "Reduced rate for weekly bookings.", highlight: false }
+            ],
+            "Village, JHB": [
+                { title: "Half Day", price: "R299.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
+                { title: "Full Day", price: "R420.00", vat: "Excluding VAT", desc: "Total access for a full day of productivity.", highlight: true },
+                { title: "5-Day Week", price: "R1 380.00", vat: "Excluding VAT", desc: "Reduced rate for weekly bookings.", highlight: false }
+            ]
+        }
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const locationBtns = document.querySelectorAll('.location-btn');
+    if(locationBtns.length > 0) {
+        const container = document.getElementById('dynamic-pricing-container');
+        const grid = document.getElementById('dynamic-pricing-grid');
+        const defaultState = document.querySelector('.pricing-default-state');
+        const service = document.querySelector('.location-buttons').getAttribute('data-service');
+        const pricingTitle = document.getElementById('pricing-title');
+
+        locationBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const loc = e.target.getAttribute('data-location');
+                
+                // Active state
+                locationBtns.forEach(b => {
+                    b.classList.remove('btn-primary');
+                    b.classList.add('btn-outline');
+                });
+                e.target.classList.remove('btn-outline');
+                e.target.classList.add('btn-primary');
+                
+                // Animate Out
+                container.style.opacity = '0';
+                
+                setTimeout(() => {
+                    defaultState.style.display = 'none';
+                    grid.style.display = 'grid';
+                    
+                    // Update Title
+                    pricingTitle.innerHTML = `${pricingData[service].title} <span style="color: var(--primary-blue)">- ${loc}</span>`;
+                    
+                    // Rebuild Grid
+                    const plans = pricingData[service].locations[loc];
+                    
+                    if(service === 'private-offices') {
+                        grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                        grid.style.maxWidth = '1200px';
+                        grid.style.margin = '4rem auto 0';
+                    } else {
+                        grid.style.gridTemplateColumns = '1fr';
+                        grid.style.maxWidth = '600px';
+                        grid.style.margin = '4rem auto 0';
+                    }
+                    
+                    grid.innerHTML = plans.map(plan => `
+                        <div class="pricing-card" style="${plan.highlight ? 'border-color: var(--primary-blue); transform: scale(1.05); box-shadow: var(--shadow);' : ''}">
+                            <h3 class="service-title">${plan.title}</h3>
+                            <div class="pricing-label">starting from</div>
+                            <div class="pricing-price">${plan.price}${plan.sub ? `<span> ${plan.sub}</span>` : ''}</div>
+                            <div class="pricing-vat">${plan.vat}</div>
+                            ${plan.desc ? `<p class="service-desc">${plan.desc}</p>` : ''}
+                            ${plan.features ? `
+                                <div style="text-align: left; margin-bottom: 3rem;">
+                                    <ul style="list-style: none; padding: 0;">
+                                        ${plan.features.map(f => `
+                                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
+                                            <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i>
+                                            ${f}
+                                        </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            <div style="margin-top: auto;">
+                                <a href="javascript:void(0)" onclick="document.querySelector('#enquire, #viewing, #get-started').scrollIntoView({behavior: 'smooth'})" class="btn ${plan.highlight ? 'btn-primary' : 'btn-outline'}">${plan.features ? 'Get Started' : 'Book Now'}</a>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    if(window.innerWidth <= 768) {
+                        grid.style.gridTemplateColumns = '1fr';
+                        grid.querySelectorAll('.pricing-card').forEach(c => c.style.transform = 'none');
+                    }
+                    
+                    // Animate In
+                    container.style.opacity = '1';
+                }, 400);
             });
         });
     }

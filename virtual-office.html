@@ -28,9 +28,9 @@
                         <div class="dropdown-column" style="width: 100%; text-align: center;">
                             <h4>Locations</h4>
                             <ul class="dropdown-links">
-                                <li><a href="sandton-kelvin.html">Kelvin</a></li>
-                                <li><a href="chadwick-wynberg.html">Chadwick</a></li>
-                                <li><a href="village-jhb.html">Village</a></li>
+                                <li><a href="sandton-kelvin.html">Kelvin-sandton</a></li>
+                                <li><a href="chadwick-wynberg.html">Chadwick-wynberg</a></li>
+                                <li><a href="village-jhb.html">Village-jhb</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,9 +51,9 @@
                         <div class="dropdown-column" style="width: 100%; text-align: center;">
                             <h4>Offerings</h4>
                             <ul class="dropdown-links">
-                                <li><a href="private-offices.html">Private Office</a></li>
-                                <li><a href="coworking.html">Coworking</a></li>
-                                <li><a href="virtual-office.html">Virtual Office</a></li>
+                                <li><a href="private-offices.html">private offices</a></li>
+                                <li><a href="coworking.html">co-working</a></li>
+                                <li><a href="virtual-office.html">virtual office</a></li>
                             </ul>
                         </div>
                     </div>
@@ -85,43 +85,31 @@
             <div class="hero-image" style="background-image: url('assets/virtual-office.png')"></div>
         </section>
 
-        <section class="section">
+        <section class="section" id="pricing-section">
             <div class="container">
-                <div class="section-title-wrap">
+                <div class="section-title-wrap" style="margin-bottom: 2rem;">
                     <div>
-                        <span class="section-tag">Affordable Excellence</span>
-                        <h2 class="section-title">Virtual Presence</h2>
+                        <span class="section-tag" id="pricing-tag">Flexible Plans</span>
+                        <h2 class="section-title" id="pricing-title">Virtual Office Pricing</h2>
                     </div>
                 </div>
                 
-                <div class="pricing-grid" style="grid-template-columns: 1fr; max-width: 600px;">
-                    <div class="pricing-card">
-                        <h3 class="service-title">Monthly Virtual Office</h3>
-                        <div class="pricing-label">starting from</div>
-                        <div class="pricing-price">R599.00<span> / month</span></div>
-                        <div class="pricing-vat">Excluding VAT</div>
-                        <div style="text-align: left; margin-bottom: 3rem;" id="features">
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
-                                    <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i>
-                                    Access to meeting rooms at reduced cost
-                                </li>
-                                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
-                                    <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i>
-                                    Mail & package handling
-                                </li>
-                                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
-                                    <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i>
-                                    Professional business address
-                                </li>
-                                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
-                                    <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i>
-                                    Dedicated phone number
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="#get-started" class="btn btn-primary">Get Started</a>
+                <!-- Location Selection -->
+                <div class="location-selector" style="text-align: center; margin-bottom: 4rem;">
+                    <div class="location-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" data-service="virtual-office">
+                        <button class="btn btn-outline location-btn" data-location="Kelvin, Sandton">Kelvin</button>
+                        <button class="btn btn-outline location-btn" data-location="Chadwick, Wynberg">Chadwick</button>
+                        <button class="btn btn-outline location-btn" data-location="Village, JHB">Village</button>
                     </div>
+                </div>
+
+                <!-- Pricing Container -->
+                <div class="pricing-container" id="dynamic-pricing-container" style="transition: opacity 0.5s ease; opacity: 1;">
+                    <div class="pricing-default-state" style="text-align: center; padding: 4rem; background: var(--light-grey); border-radius: 8px; border: 1px dashed #ccc;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: var(--primary-blue); margin-bottom: 1.5rem;"></i>
+                        <h3 style="font-size: 1.5rem; color: var(--dark-grey);">Please select a location to view pricing</h3>
+                    </div>
+                    <div class="pricing-grid" id="dynamic-pricing-grid" style="display: none; margin-top: 0;"></div>
                 </div>
             </div>
         </section>
