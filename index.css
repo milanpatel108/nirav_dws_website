@@ -1445,7 +1445,6 @@ h1, h2, h3, h4 {
         display: none !important;
     }
 
-    .dropdown-column h4, 
     .dropdown-footer,
     .dropdown-links a::before {
         display: none !important;
