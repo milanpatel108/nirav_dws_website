@@ -727,6 +727,14 @@ h1, h2, h3, h4 {
     border: 1px solid var(--light-grey);
     text-align: center;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pricing-card .btn {
+    margin-top: auto;
+    align-self: center;
 }
 
 .pricing-card:hover {
