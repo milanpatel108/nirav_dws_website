@@ -797,7 +797,58 @@ h1, h2, h3, h4 {
 
 .slides-animate {
     animation: fadeEffect 1.5s;
+/* Modern Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin: 3rem 0;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
 }
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.modern-table th {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modern-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--light-grey);
+    color: var(--dark-grey);
+}
+
+.modern-table tr:last-child td {
+    border-bottom: none;
+}
+
+.modern-table tr:hover {
+    background-color: rgba(0, 71, 171, 0.02);
+}
+
+.modern-table .price-cell {
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.table-note {
+    font-size: 0.85rem;
+    color: var(--dark-grey);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
 
 @keyframes fadeEffect {
     from {opacity: .4} 
