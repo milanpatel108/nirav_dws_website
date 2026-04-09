@@ -1059,3 +1059,30 @@ h1, h2, h3, h4 {
     color: #4285F4;
     opacity: 0.7;
 }
+
+/* Automatic Slideshow (Gallery) */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 4rem auto;
+    overflow: hidden;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.slides {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.slides-animate {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
