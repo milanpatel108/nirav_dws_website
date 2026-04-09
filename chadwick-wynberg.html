@@ -257,33 +257,37 @@
                     <h2 class="section-title" style="margin: 0 auto;">Wynberg Office Gallery</h2>
                 </div>
                 <div class="slideshow-container">
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 02.jpg'); display: block;"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 03.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 04.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 05.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 06.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 15.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 16.jpg')"></div>
-                    <div class="slides slides-animate" style="background-image: url('assets/Chadwick 17.jpg')"></div>
+                    <div class="slides active" style="background-image: url('assets/Chadwick 02.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 03.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 04.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 05.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 06.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 15.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 16.jpg')"></div>
+                    <div class="slides" style="background-image: url('assets/Chadwick 17.jpg')"></div>
                 </div>
             </div>
         </section>
 
         <script>
             let slideIndex = 0;
-            showSlides();
-
+            const slides = document.getElementsByClassName("slides");
+            
             function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("slides");
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}    
-                slides[slideIndex-1].style.display = "block";  
-                setTimeout(showSlides, 4000); // Change image every 4 seconds
+                // Remove active class from CURRENT slide
+                slides[slideIndex].classList.remove("active");
+                
+                // Increment index
+                slideIndex = (slideIndex + 1) % slides.length;
+                
+                // Add active class to NEXT slide
+                slides[slideIndex].classList.add("active");
+                
+                setTimeout(showSlides, 5000); // Change image every 5 seconds
             }
+
+            // Start the loop after a delay to show the first image
+            setTimeout(showSlides, 4000);
         </script>
 
         <!-- Map Section -->

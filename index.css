@@ -1066,23 +1066,21 @@ h1, h2, h3, h4 {
     position: relative;
     margin: 4rem auto;
     overflow: hidden;
-    height: 500px;
+    height: 550px;
     border-radius: 12px;
+    box-shadow: var(--shadow);
 }
 
 .slides {
-    display: none;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-.slides-animate {
-    animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-    from {opacity: .4} 
-    to {opacity: 1}
+.slides.active {
+    opacity: 1;
 }
