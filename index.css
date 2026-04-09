@@ -811,7 +811,7 @@ h1, h2, h3, h4 {
 .modern-table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
+    text-align: center;
     font-size: 0.95rem;
 }
 
@@ -823,6 +823,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-align: center;
 }
 
 .modern-table td {
@@ -830,6 +831,10 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid var(--light-grey);
     color: var(--dark-grey);
     vertical-align: middle;
+}
+
+.spacer-cell {
+    padding-left: 4rem !important;
 }
 
 .modern-table tr:last-child td {
