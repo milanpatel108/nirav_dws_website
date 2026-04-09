@@ -1344,8 +1344,7 @@ h1, h2, h3, h4 {
         border-bottom: 1px solid #f0f0f0;
     }
 
-    .nav-links .nav-link,
-    .nav-item-toggle {
+    .nav-links .nav-link {
         font-size: 1.2rem;
         font-weight: 500;
         color: var(--black) !important;
@@ -1356,11 +1355,16 @@ h1, h2, h3, h4 {
         width: 100%;
         text-align: left;
         cursor: pointer;
+        text-transform: uppercase;
     }
 
-    .nav-item-toggle i {
+    /* Add chevron only to items with sub-panels */
+    .nav-item > .nav-link::after {
+        content: '\f054'; /* fa-chevron-right */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
         font-size: 0.9rem;
-        opacity: 0.5;
+        opacity: 0.3;
     }
 
     .dropdown-menu {
@@ -1408,10 +1412,12 @@ h1, h2, h3, h4 {
 
     .mobile-panel-title {
         font-family: var(--font-heading);
-        font-size: 1.2rem;
-        color: var(--black);
+        font-size: 1rem;
+        color: var(--primary-blue);
         flex: 1;
         text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
         margin-right: 3rem;
     }
 
@@ -1444,10 +1450,9 @@ h1, h2, h3, h4 {
         opacity: 0.3;
     }
 
-    .hide-on-mobile {
-        display: none !important;
-    }
+    /* Hide original link logic removed - using original links instead */
 
+    .dropdown-column h4,
     .dropdown-footer,
     .dropdown-links a::before {
         display: none !important;

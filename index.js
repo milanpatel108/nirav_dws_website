@@ -91,15 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const link = item.querySelector('.nav-link');
                 const dropdown = item.querySelector('.dropdown-menu');
 
-                if (link && dropdown && !item.querySelector('.nav-item-toggle')) {
-                    const toggle = document.createElement('div');
-                    toggle.className = 'nav-item-toggle';
-                    toggle.innerHTML = `<span>${link.textContent}</span><i class="fas fa-chevron-right"></i>`;
-                    
-                    item.insertBefore(toggle, link);
-
-                    toggle.addEventListener('click', (e) => {
+                if (link && dropdown) {
+                    link.addEventListener('click', (e) => {
                         if (window.innerWidth <= 992) {
+                            e.preventDefault();
                             item.classList.add('panel-active');
                         }
                     });
