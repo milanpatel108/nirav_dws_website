@@ -751,6 +751,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--primary-blue);
     margin: 1.5rem 0;
+    white-space: nowrap;
 }
 
 .pricing-price span {
@@ -1150,4 +1151,56 @@ h1, h2, h3, h4 {
     font-weight: 500;
     z-index: 10;
     backdrop-filter: blur(5px);
+}
+
+.split-layout {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .split-layout {
+        flex-direction: column !important;
+        gap: 3rem !important;
+        text-align: center;
+    }
+    
+    .split-layout > div {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    .split-layout-image {
+        height: 400px !important;
+        width: 100% !important;
+    }
+
+    .split-layout ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 1.5rem;
+    }
+
+    .pricing-card {
+        padding: 3rem 2rem !important;
+    }
+
+    .pricing-price {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .amenities-grid {
+        grid-template-columns: 1fr !important;
+    }
 }
