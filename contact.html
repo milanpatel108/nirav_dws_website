@@ -104,78 +104,189 @@
     </nav>
 
     <main>
-        <section class="hero" style="height: 60vh; min-height: 400px; background-color: var(--white);">
-            <div class="container">
-                <div class="hero-content" style="width: 100%; text-align: center; padding-right: 0;">
-                    <span class="hero-subtitle text-uppercase">Let's Connect</span>
-                    <h1 class="hero-title">Start your <span class="gradient-text">Journal</span> with us.</h1>
-                    <p class="hero-description" style="margin: 0 auto 3rem;">Ready to elevate your work experience? Reach out to our specialist team for a curated workspace solution.</p>
+    <main>
+        <section class="section" style="background-color: var(--white); min-height: 80vh; display: flex; flex-direction: column; align-items: center; padding-top: 150px;">
+            <div class="container" style="max-width: 800px; width: 100%;">
+                
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-tag">Get in Touch</span>
+                    <h1 class="section-title" style="font-size: 2.5rem;">Select Your Location</h1>
                 </div>
-            </div>
-        </section>
 
-        <section class="section">
-            <div class="container" style="display: flex; gap: 6rem;">
-                <div style="flex: 1.5;">
-                    <div class="contact-form">
-                        <form action="#">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                                <div class="form-group">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-input" placeholder="Enter your first name">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-input" placeholder="Enter your last name">
-                                </div>
+                <!-- Location Selectors -->
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+                    <button class="btn btn-outline contact-loc-btn" data-loc="Kelvin" style="font-size: 1.2rem; padding: 1.25rem 3rem;">Kelvin</button>
+                    <button class="btn btn-outline contact-loc-btn" data-loc="Chadwick" style="font-size: 1.2rem; padding: 1.25rem 3rem;">Chadwick</button>
+                    <button class="btn btn-outline contact-loc-btn" data-loc="Village" style="font-size: 1.2rem; padding: 1.25rem 3rem;">Village</button>
+                </div>
+
+                <!-- Dynamic Form Container -->
+                <div id="contact-form-container" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease; display: none; background: var(--white); padding: 4rem; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid var(--light-grey);">
+                    
+                    <h3 id="form-location-title" style="margin-bottom: 2rem; color: var(--primary-blue); font-size: 1.5rem; text-align: center;">Enquire for Location</h3>
+                    
+                    <form id="main-contact-form" onsubmit="handleFormSubmit(event)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Website Enquiry – Dynamic Workspaces">
+                        <input type="hidden" name="Location" id="hidden-location" value="">
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Full Name *</label>
+                            <input type="text" name="name" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Email Address *</label>
+                            <input type="email" name="email" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Phone Number *</label>
+                            <input type="tel" name="phone" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Select Service *</label>
+                            <select name="service" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); background: var(--white);" required>
+                                <option value="" disabled selected>Please select...</option>
+                                <option value="Co-working Space">Co-working Space</option>
+                                <option value="Private Office">Private Office</option>
+                                <option value="Virtual Office">Virtual Office</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Message *</label>
+                            <textarea name="message" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); height: 120px;" required></textarea>
+                        </div>
+
+                        <button id="submit-btn" type="submit" class="btn btn-primary" style="width: 100%; padding: 1.25rem; font-size: 1.1rem;">Send Enquiry</button>
+                    </form>
+
+                    <!-- Success Message Alert -->
+                    <div id="form-success-msg" style="display: none; padding: 2rem; background: #e6f8f0; color: #0d8246; border: 1px solid #b3ebce; border-radius: 4px; text-align: center; margin-top: 2rem;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h4>Enquiry Sent Successfully!</h4>
+                        <p>Thank you for reaching out. Our team will contact you shortly.</p>
+                    </div>
+
+                    <!-- Branch Details Section -->
+                    <div id="branch-details" style="margin-top: 3rem; border-top: 1px solid var(--light-grey); padding-top: 2rem; display: none;">
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--dark-grey); margin-bottom: 1.5rem; text-align: center;">Branch Contact Details</h4>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                            <div>
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                                <p id="branch-address" style="font-size: 0.85rem; color: var(--dark-grey);"></p>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" class="form-input" placeholder="Enter your email address">
+                            <div>
+                                <i class="fas fa-phone" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                                <p style="font-size: 0.85rem;"><a href="tel:0110641628" style="color: var(--dark-grey); text-decoration: none;">011 064 1628</a></p>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Phone Number</label>
-                                <input type="tel" class="form-input" placeholder="Enter your phone number">
+                            <div>
+                                <i class="fas fa-envelope" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                                <p style="font-size: 0.85rem;"><a href="mailto:info@dynamicworkspaces.co.za" style="color: var(--dark-grey); text-decoration: none;">info@dynamicworkspaces.co.za</a></p>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Workspace Interest</label>
-                                <select class="form-input">
-                                    <option>Private Office</option>
-                                    <option>Coworking Membership</option>
-                                    <option>Virtual Office</option>
-                                    <option>Meeting Room</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-input" style="height: 150px;" placeholder="How can we help you?"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <div style="flex: 1;">
-                    <h3 style="margin-bottom: 2rem;">General Inquiries</h3>
-                    <p style="margin-bottom: 3rem; color: var(--dark-grey);">For partnership requests, corporate solutions, or general support, please use the details below.</p>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--primary-blue);">Headquarters</h4>
-                        <p>11 Commercial Street, Cape Town</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--primary-blue);">Phone</h4>
-                        <p><a href="tel:0110641628" style="color: inherit; text-decoration: none;">011 064 1628</a></p>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--primary-blue);">Email</h4>
-                        <p><a href="mailto:info@dynamicworkspaces.co.za" style="color: inherit; text-decoration: none;">info@dynamicworkspaces.co.za</a></p>
-                    </div>
-                </div>
+
             </div>
         </section>
     </main>
+
+    <script>
+        const branchLocations = {
+            "Kelvin": "Kelvin View, Sandton, 2054",
+            "Chadwick": "Chadwick Ave, Wynberg, 2090",
+            "Village": "The Village, Johannesburg South"
+        };
+
+        const locBtns = document.querySelectorAll('.contact-loc-btn');
+        const formContainer = document.getElementById('contact-form-container');
+        const formLocationTitle = document.getElementById('form-location-title');
+        const hiddenLocationInput = document.getElementById('hidden-location');
+        const branchDetails = document.getElementById('branch-details');
+        const branchAddress = document.getElementById('branch-address');
+        const contactForm = document.getElementById('main-contact-form');
+        const successMsg = document.getElementById('form-success-msg');
+        const submitBtn = document.getElementById('submit-btn');
+
+        // Pre-select based on URL parameter (e.g. ?location=Kelvin)
+        const urlParams = new URLSearchParams(window.location.search);
+        const presetLoc = urlParams.get('location');
+
+        function selectLocation(loc) {
+            locBtns.forEach(b => {
+                b.classList.remove('btn-primary');
+                b.classList.add('btn-outline');
+                b.style.borderColor = 'var(--black)';
+            });
+
+            const activeBtn = Array.from(locBtns).find(b => b.getAttribute('data-loc') === loc);
+            if(activeBtn) {
+                activeBtn.classList.remove('btn-outline');
+                activeBtn.classList.add('btn-primary');
+                activeBtn.style.borderColor = 'var(--primary-blue)';
+            }
+
+            // Update details
+            formLocationTitle.textContent = `Enquire for ${loc} Branch`;
+            hiddenLocationInput.value = loc;
+            branchAddress.textContent = branchLocations[loc] || "Loading...";
+
+            // Show form
+            formContainer.style.display = 'block';
+            branchDetails.style.display = 'block';
+            
+            // Re-flow triggering for animation
+            setTimeout(() => {
+                formContainer.style.opacity = '1';
+                formContainer.style.transform = 'translateY(0)';
+            }, 50);
+        }
+
+        locBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                selectLocation(e.target.getAttribute('data-loc'));
+            });
+        });
+
+        if (presetLoc && branchLocations[presetLoc]) {
+            selectLocation(presetLoc);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+
+            const formData = new FormData(contactForm);
+            
+            fetch("https://formsubmit.co/ajax/marketing@dynamicworkspaces.co.za", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success) {
+                    contactForm.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    branchDetails.style.marginTop = '2rem';
+                } else {
+                    alert('There was an error sending your enquiry. Please try again.');
+                    submitBtn.textContent = 'Send Enquiry';
+                    submitBtn.style.opacity = '1';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('We encountered an connection error. Please email us directly.');
+                submitBtn.textContent = 'Send Enquiry';
+                submitBtn.style.opacity = '1';
+            });
+        }
+    </script>
 
     <footer class="footer">
         <div class="container">
