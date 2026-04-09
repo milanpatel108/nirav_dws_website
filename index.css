@@ -1243,9 +1243,31 @@ h1, h2, h3, h4 {
         white-space: normal !important;
     }
 
+    .hero {
+        flex-direction: column-reverse !important;
+        padding: 0;
+        min-height: auto;
+    }
+
     .hero-content {
+        width: 100% !important;
         text-align: center;
-        padding-top: 5rem;
+        padding: 4rem 1.5rem !important;
+        z-index: 5;
+    }
+
+    .hero-image {
+        position: relative !important;
+        width: 100% !important;
+        height: 60vh !important;
+        clip-path: none !important;
+        z-index: 1 !important;
+        background-attachment: scroll !important; /* Disable parallax on mobile for better visibility */
+    }
+
+    .hero-description {
+        max-width: 100% !important;
+        margin: 0 auto 3rem !important;
     }
 
     .hero-actions {
@@ -1286,16 +1308,16 @@ h1, h2, h3, h4 {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 400px;
+        width: 100%;
+        max-width: none;
         height: 100vh;
         background-color: var(--white);
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 10rem 3rem;
-        gap: 2.5rem;
-        box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        gap: 2rem;
+        box-shadow: none;
         z-index: 1050;
         transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1309,43 +1331,26 @@ h1, h2, h3, h4 {
     }
 
     .nav-links .nav-link {
-        font-size: 1.25rem;
-        width: 100%;
+        font-size: 1.5rem;
+        width: auto;
+        text-align: center;
+        text-transform: capitalize;
     }
 
     .navbar-blue .nav-links .nav-link {
         color: var(--white) !important;
     }
 
-    .nav-item .dropdown-menu {
-        position: static;
-        transform: none;
-        width: 100%;
-        box-shadow: none;
-        padding: 0;
-        opacity: 1;
-        visibility: visible;
-        display: block;
-        height: auto;
-        background: transparent;
+    .nav-links .btn-primary {
+        width: 80%;
+        max-width: 300px;
         margin-top: 1rem;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        text-align: center;
     }
 
-    .nav-item .dropdown-column h4,
-    .nav-item .dropdown-footer {
-        display: none;
-    }
-
-    .dropdown-links li {
-        margin-bottom: 0.8rem;
-    }
-
-    .dropdown-links a {
-        font-size: 1rem;
-        opacity: 0.8;
-    }
-
-    .navbar-blue .dropdown-links a {
-        color: var(--white) !important;
+    .nav-item .dropdown-menu {
+        display: none !important; /* Remove complex dropdowns from mobile menu as requested */
     }
 }
