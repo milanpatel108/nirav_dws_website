@@ -257,38 +257,19 @@
                     <h2 class="section-title" style="margin: 0 auto;">Wynberg Office Gallery</h2>
                 </div>
                 <div class="slideshow-container">
-                    <img src="assets/Chadwick%2002.jpg" class="slides active" alt="Wynberg Office 1">
-                    <img src="assets/Chadwick%2003.jpg" class="slides" alt="Wynberg Office 2">
-                    <img src="assets/Chadwick%2004.jpg" class="slides" alt="Wynberg Office 3">
-                    <img src="assets/Chadwick%2005.jpg" class="slides" alt="Wynberg Office 4">
-                    <img src="assets/Chadwick%2006.jpg" class="slides" alt="Wynberg Office 5">
-                    <img src="assets/Chadwick%2015.jpg" class="slides" alt="Wynberg Office 6">
-                    <img src="assets/Chadwick%2016.jpg" class="slides" alt="Wynberg Office 7">
-                    <img src="assets/Chadwick%2017.jpg" class="slides" alt="Wynberg Office 8">
+                    <img src="assets/chadwick_02.jpg" class="slides active" alt="Wynberg Office 1">
+                    <img src="assets/chadwick_03.jpg" class="slides" alt="Wynberg Office 2">
+                    <img src="assets/chadwick_04.jpg" class="slides" alt="Wynberg Office 3">
+                    <img src="assets/chadwick_05.jpg" class="slides" alt="Wynberg Office 4">
+                    <img src="assets/chadwick_06.jpg" class="slides" alt="Wynberg Office 5">
+                    <img src="assets/chadwick_15.jpg" class="slides" alt="Wynberg Office 6">
+                    <img src="assets/chadwick_16.jpg" class="slides" alt="Wynberg Office 7">
+                    <img src="assets/chadwick_17.jpg" class="slides" alt="Wynberg Office 8">
                 </div>
             </div>
         </section>
 
-        <script>
-            let slideIndex = 0;
-            const slides = document.getElementsByClassName("slides");
-            
-            function showSlides() {
-                // Remove active class from CURRENT slide
-                slides[slideIndex].classList.remove("active");
-                
-                // Increment index
-                slideIndex = (slideIndex + 1) % slides.length;
-                
-                // Add active class to NEXT slide
-                slides[slideIndex].classList.add("active");
-                
-                setTimeout(showSlides, 5000); // Change image every 5 seconds
-            }
-
-            // Start the loop after a delay to show the first image
-            setTimeout(showSlides, 4000);
-        </script>
+        <!-- Script removed from here -->
 
         <!-- Map Section -->
         <section class="section" id="map" style="padding: 0;">
@@ -408,20 +389,27 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
+        (function() {
+            let slideIndex = 0;
+            const slides = document.getElementsByClassName("slides");
+            if (slides.length === 0) return;
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slides");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+            function showSlides() {
+                // Remove active class from CURRENT slide
+                slides[slideIndex].classList.remove("active");
+                
+                // Increment index
+                slideIndex = (slideIndex + 1) % slides.length;
+                
+                // Add active class to NEXT slide
+                slides[slideIndex].classList.add("active");
+                
+                setTimeout(showSlides, 5000); // Change image every 5 seconds
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
+
+            // Start the loop after a delay
+            setTimeout(showSlides, 4000);
+        })();
     </script>
 </body>
 </html>
