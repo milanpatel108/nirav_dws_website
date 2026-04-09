@@ -797,6 +797,8 @@ h1, h2, h3, h4 {
 
 .slides-animate {
     animation: fadeEffect 1.5s;
+}
+
 /* Modern Table Styles */
 .table-container {
     overflow-x: auto;
@@ -824,17 +826,22 @@ h1, h2, h3, h4 {
 }
 
 .modern-table td {
-    padding: 1.5rem;
+    padding: 1.2rem 1.5rem;
     border-bottom: 1px solid var(--light-grey);
     color: var(--dark-grey);
+    vertical-align: middle;
 }
 
 .modern-table tr:last-child td {
     border-bottom: none;
 }
 
+.modern-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
 .modern-table tr:hover {
-    background-color: rgba(0, 71, 171, 0.02);
+    background-color: rgba(0, 71, 171, 0.04);
 }
 
 .modern-table .price-cell {
