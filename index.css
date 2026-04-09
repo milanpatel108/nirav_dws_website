@@ -778,6 +778,18 @@ h1, h2, h3, h4 {
     font-family: var(--font-body);
 }
 
+.pricing-vat {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
 /* Amenities Grid */
 .amenities-grid {
     display: grid;
