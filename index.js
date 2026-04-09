@@ -96,9 +96,27 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = navToggle.querySelector('i');
-                icon.classList.replace('fa-times', 'fa-bars');
+                if (!link.parentElement.classList.contains('nav-item')) {
+                    navLinks.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    // Reset sub-menus
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                }
+            });
+        });
+
+        // Handle Mobile Sub-menus
+        document.querySelectorAll('.nav-item > .nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    const parent = link.parentElement;
+                    const hasDropdown = parent.querySelector('.dropdown-menu');
+                    if (hasDropdown) {
+                        e.preventDefault();
+                        parent.classList.toggle('active');
+                    }
+                }
             });
         });
     }

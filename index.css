@@ -1350,7 +1350,54 @@ h1, h2, h3, h4 {
         text-align: center;
     }
 
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
     .nav-item .dropdown-menu {
-        display: none !important; /* Remove complex dropdowns from mobile menu as requested */
+        display: block !important;
+        position: static;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        transform: none;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    .nav-item.active .dropdown-menu {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: 1rem 0;
+    }
+
+    .dropdown-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dropdown-links li {
+        margin-bottom: 0.8rem;
+    }
+
+    .dropdown-links a {
+        font-size: 1.1rem;
+        color: var(--black) !important;
+        text-transform: none;
+        opacity: 0.7;
+    }
+
+    .navbar-blue .dropdown-links a {
+        color: var(--white) !important;
+    }
+
+    .dropdown-column h4, 
+    .dropdown-footer {
+        display: none;
     }
 }
