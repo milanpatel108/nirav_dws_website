@@ -557,6 +557,35 @@ h1, h2, h3, h4 {
     transition: var(--transition);
 }
 
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-grey);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.15);
+    opacity: 0.85;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
 /* Mega Menu Dropdown */
 .nav-item {
     position: relative;
