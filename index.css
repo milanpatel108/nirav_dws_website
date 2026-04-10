@@ -1330,20 +1330,24 @@ h1, h2, h3, h4 {
 @media (max-width: 992px) {
     .nav-toggle {
         display: block;
+        margin-right: -10px; /* Push slightly right to align with container edge */
+        padding: 10px; /* Better tap target */
+        position: relative;
+        z-index: 1200; /* Ensure X is above everything */
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 100vw; /* Use viewport width */
+        width: 100%; /* Full screen width without sides */
         max-width: 100%;
         height: 100vh;
         background-color: var(--white);
         flex-direction: column;
-        align-items: flex-start; /* Align left for cleaner list */
+        align-items: stretch;
         justify-content: flex-start;
-        padding: 100px 0 40px; /* Adjusted padding to clear top better */
+        padding: 120px 0 40px; /* Ensure space for X button at top */
         gap: 0;
         z-index: 1050;
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1362,17 +1366,27 @@ h1, h2, h3, h4 {
         background-color: var(--white);
     }
 
-    .nav-item, 
-    .nav-links > .nav-link {
+    .nav-item {
         width: 100%;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid #e0e0e0;
+        display: block; /* Important for accordion height */
+        height: auto;
+    }
+
+    .nav-links > a.nav-link {
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-links > a.nav-link:last-of-type {
+        border-bottom: none;
     }
 
     .nav-links .nav-link {
-        font-size: 1.1rem; /* Slightly smaller for better fit */
+        font-size: 1.15rem;
         font-weight: 500;
         color: var(--black) !important;
-        padding: 1.25rem 2rem;
+        padding: 30px 20px; /* 30px padding, 20px left margin align */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1380,31 +1394,35 @@ h1, h2, h3, h4 {
         text-align: left;
         cursor: pointer;
         text-transform: uppercase;
-        border-bottom: 1px solid #f5f5f5;
         box-sizing: border-box;
-        flex-wrap: nowrap; /* Prevent arrows from wrapping below */
+    }
+
+    .nav-links .nav-link::after {
+        display: none; /* remove desktop underline effect completely on mobile */
     }
 
     .nav-item > .nav-link::after {
-        content: '\f054'; /* fa-chevron-right */
+        content: '\f078'; /* fa-chevron-down */
         font-family: 'Font Awesome 6 Free';
         font-weight: 900;
-        font-size: 0.9rem;
-        opacity: 0.3;
+        font-size: 1rem;
+        opacity: 0.5;
         transition: transform 0.3s ease;
+        display: block; /* re-add for dropdowns */
     }
 
     .nav-item.panel-active > .nav-link::after {
-        transform: rotate(90deg);
+        transform: rotate(-180deg);
     }
 
+    /* True Accordion logic */
     .dropdown-menu {
         position: static !important;
         width: 100%;
         height: auto;
         max-height: 0;
         overflow: hidden;
-        background: #fafafa !important;
+        background: #f8f9fa !important;
         transition: max-height 0.4s ease-in-out;
         padding: 0 !important;
         visibility: visible;
@@ -1414,16 +1432,16 @@ h1, h2, h3, h4 {
         left: auto;
         top: auto;
         flex-direction: column;
-        display: flex !important;
+        display: block !important;
         box-sizing: border-box;
     }
 
     .nav-item.panel-active .dropdown-menu {
-        max-height: 400px;
+        max-height: 500px;
     }
 
     .mobile-menu-header {
-        display: none !important;
+        display: none !important; /* Hide back buttons completely for accordion */
     }
 
     .dropdown-grid {
@@ -1439,7 +1457,8 @@ h1, h2, h3, h4 {
     }
 
     .dropdown-links li {
-        border-bottom: 1px solid #f0f0f0;
+        width: 100%;
+        border-bottom: 1px solid #eee;
     }
 
     .dropdown-links li:last-child {
@@ -1447,41 +1466,33 @@ h1, h2, h3, h4 {
     }
 
     .dropdown-links a {
-        padding: 1.25rem 3rem !important; /* Extra left padding for sub-items */
+        padding: 20px 20px 20px 40px !important; /* Indent submenus by extra 20px */
         font-size: 1.05rem;
         color: var(--dark-grey) !important;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        display: block;
         opacity: 1 !important;
         text-decoration: none;
         box-sizing: border-box;
         width: 100%;
         background-color: transparent !important;
-        border-bottom: none !important;
         font-weight: 500 !important;
         text-transform: capitalize !important;
     }
 
-    .dropdown-links a i {
-        font-size: 0.8rem;
-        opacity: 0.3;
-        display: none;
-    }
-
     .dropdown-column h4,
     .dropdown-footer,
-    .dropdown-links a::before {
+    .dropdown-links a::before,
+    .dropdown-links a i {
         display: none !important;
     }
 
-    .nav-links .btn-primary,
     .nav-links .btn-outline {
-        margin: 2rem;
-        width: calc(100% - 4rem);
+        margin: 40px 20px 20px; /* 20px margin left/right */
+        width: calc(100% - 40px);
         display: block;
         text-align: center;
-        padding: 1.2rem;
+        padding: 15px;
+        box-sizing: border-box;
     }
 }
 
