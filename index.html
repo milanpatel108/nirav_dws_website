@@ -10,6 +10,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Video Modal */
+        #video-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        #video-modal.active {
+            display: flex;
+        }
+        .modal-inner {
+            position: relative;
+            width: 100%;
+            max-width: 960px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        }
+        .modal-inner video {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        @media (max-width: 480px) {
+            .modal-inner video { max-height: 60vh; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -80,7 +136,7 @@
                     <p class="hero-description">Dynamic Workspaces provides premium, flexible office environments tailored for high-growth businesses and established professionals. Experience the perfect blend of luxury and functionality.</p>
                     <div class="hero-actions">
                         <a href="contact.html" class="btn btn-primary">book a tour</a>
-                        <a href="#contact" class="btn btn-outline">Virtual Tour</a>
+                        <button id="virtualTourBtn" class="btn btn-outline" onclick="openVideoModal()"><i class="fas fa-play" style="margin-right:0.5rem;"></i>Virtual Tour</button>
                     </div>
                 </div>
             </div>
@@ -289,5 +345,46 @@
     </footer>
 
     <script src="index.js"></script>
+
+    <!-- Video Modal -->
+    <div id="video-modal" role="dialog" aria-modal="true" aria-label="Virtual Tour Video">
+        <div class="modal-inner">
+            <button class="modal-close" onclick="closeVideoModal()" aria-label="Close video">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="tour-video" controls muted playsinline preload="none">
+                <source src="assets/virtual-tour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        const videoModal = document.getElementById('video-modal');
+        const tourVideo = document.getElementById('tour-video');
+
+        function openVideoModal() {
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            tourVideo.play();
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            document.body.style.overflow = '';
+            tourVideo.pause();
+            tourVideo.currentTime = 0;
+        }
+
+        // Close when clicking the dark overlay background
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) closeVideoModal();
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+    </script>
 </body>
 </html>
