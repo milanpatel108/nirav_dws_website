@@ -194,11 +194,11 @@
                             </div>
                             <div>
                                 <i class="fas fa-phone" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                <p style="font-size: 0.85rem;"><a href="tel:0110641628" style="color: var(--dark-grey); text-decoration: none;">011 064 1628</a></p>
+                                <p style="font-size: 0.85rem;"><a id="branch-phone-link" href="tel:" style="color: var(--dark-grey); text-decoration: none;" id="branch-phone"></a></p>
                             </div>
                             <div>
                                 <i class="fas fa-envelope" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                <p style="font-size: 0.85rem;"><a href="mailto:info@dynamicworkspaces.co.za" style="color: var(--dark-grey); text-decoration: none;">info@dynamicworkspaces.co.za</a></p>
+                                <p style="font-size: 0.85rem;"><a id="branch-email-link" href="mailto:" style="color: var(--dark-grey); text-decoration: none;"></a></p>
                             </div>
                         </div>
                     </div>
@@ -209,10 +209,28 @@
     </main>
 
     <script>
-        const branchLocations = {
-            "Kelvin": "Kelvin View, Sandton, 2054",
-            "Chadwick": "Chadwick Ave, Wynberg, 2090",
-            "Village": "The Village, Johannesburg South"
+        const branchData = {
+            "Kelvin": {
+                address: "Kelvin View, Sandton, 2054",
+                phone: "011 064 1600",
+                phoneHref: "tel:0110641600",
+                email: "kelvindrive@dynamicworkspaces.co.za",
+                formEmail: "kelvindrive@dynamicworkspaces.co.za"
+            },
+            "Chadwick": {
+                address: "Chadwick Ave, Wynberg, 2090",
+                phone: "079 210 5562",
+                phoneHref: "tel:0792105562",
+                email: "chadwickavenue@dynamicworkspaces.co.za",
+                formEmail: "chadwickavenue@dynamicworkspaces.co.za"
+            },
+            "Village": {
+                address: "The Village, Johannesburg South",
+                phone: "011 044 9400",
+                phoneHref: "tel:0110449400",
+                email: "villageroad@dynamicworkspaces.co.za",
+                formEmail: "villageroad@dynamicworkspaces.co.za"
+            }
         };
 
         const locBtns = document.querySelectorAll('.contact-loc-btn');
@@ -221,9 +239,13 @@
         const hiddenLocationInput = document.getElementById('hidden-location');
         const branchDetails = document.getElementById('branch-details');
         const branchAddress = document.getElementById('branch-address');
+        const branchPhoneLink = document.getElementById('branch-phone-link');
+        const branchEmailLink = document.getElementById('branch-email-link');
         const contactForm = document.getElementById('main-contact-form');
         const successMsg = document.getElementById('form-success-msg');
         const submitBtn = document.getElementById('submit-btn');
+
+        let currentFormEmail = '';
 
         // Pre-select based on URL parameter (e.g. ?location=Kelvin)
         const urlParams = new URLSearchParams(window.location.search);
@@ -243,15 +265,25 @@
                 activeBtn.style.borderColor = 'var(--primary-blue)';
             }
 
-            // Update details
+            const branch = branchData[loc];
+            if (!branch) return;
+
+            // Update branch details displayed
             formLocationTitle.textContent = `Enquire for ${loc} Branch`;
             hiddenLocationInput.value = loc;
-            branchAddress.textContent = branchLocations[loc] || "Loading...";
+            branchAddress.textContent = branch.address;
+            branchPhoneLink.textContent = branch.phone;
+            branchPhoneLink.href = branch.phoneHref;
+            branchEmailLink.textContent = branch.email;
+            branchEmailLink.href = `mailto:${branch.email}`;
+
+            // Store the email target for form submission
+            currentFormEmail = branch.formEmail;
 
             // Show form
             formContainer.style.display = 'block';
             branchDetails.style.display = 'block';
-            
+
             // Re-flow triggering for animation
             setTimeout(() => {
                 formContainer.style.opacity = '1';
@@ -265,19 +297,24 @@
             });
         });
 
-        if (presetLoc && branchLocations[presetLoc]) {
+        if (presetLoc && branchData[presetLoc]) {
             selectLocation(presetLoc);
         }
 
         function handleFormSubmit(e) {
             e.preventDefault();
-            
+
+            if (!currentFormEmail) {
+                alert('Please select a branch before submitting.');
+                return;
+            }
+
             submitBtn.textContent = 'Sending...';
             submitBtn.style.opacity = '0.7';
 
             const formData = new FormData(contactForm);
-            
-            fetch("https://formsubmit.co/ajax/marketing@dynamicworkspaces.co.za", {
+
+            fetch(`https://formsubmit.co/ajax/${currentFormEmail}`, {
                 method: "POST",
                 body: formData
             })
@@ -295,7 +332,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('We encountered an connection error. Please email us directly.');
+                alert('We encountered a connection error. Please email us directly.');
                 submitBtn.textContent = 'Send Enquiry';
                 submitBtn.style.opacity = '1';
             });
