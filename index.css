@@ -1283,8 +1283,8 @@ h1, h2, h3, h4 {
     }
 
     .pricing-price {
-        font-size: 2.5rem !important;
-        white-space: normal !important;
+        font-size: 2rem !important;
+        white-space: nowrap !important;
     }
 
     .hero {
