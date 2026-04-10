@@ -1478,6 +1478,8 @@ h1, h2, h3, h4 {
         background-color: transparent !important;
         font-weight: 500 !important;
         text-transform: capitalize !important;
+        text-align: left !important;
+        white-space: nowrap;
     }
 
     .dropdown-column h4,
