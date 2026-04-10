@@ -134,8 +134,7 @@ button, input, select, textarea {
 }
 
 .navbar-blue .nav-logo img {
-    filter: grayscale(1) invert(1); /* Grayscale to remove color, then invert for pure white logo */
-    mix-blend-mode: screen; /* Black background becomes transparent, white logo remains white */
+    /* Filters removed to allow .other-page filter to apply specific #005494 color */
 }
 
 .navbar.scrolled {
@@ -161,7 +160,6 @@ button, input, select, textarea {
     height: 95px; 
     width: auto;
     object-fit: contain;
-    mix-blend-mode: multiply; 
     display: block;
     background: transparent !important;
 }
@@ -1625,5 +1623,5 @@ button, input, select, textarea {
 }
 /* Logo color for other pages */
 .other-page .nav-logo img {
-    filter: brightness(0) saturate(100%) invert(26%) sepia(87%) saturate(1636%) hue-rotate(185deg) brightness(91%) contrast(101%); /* Approx #005494 */
+    filter: invert(21%) sepia(100%) saturate(1914%) hue-rotate(190deg) brightness(94%) contrast(101%); /* Precise #005494 */
 }
