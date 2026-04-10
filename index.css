@@ -1346,7 +1346,7 @@ button, input, select, textarea {
     }
 
     .hero-description {
-        max-width: 100% !important;
+        max-width: 700px !important;
         margin: 0 auto 3rem !important;
     }
 
@@ -1628,5 +1628,5 @@ button, input, select, textarea {
 }
 /* Logo color for other pages */
 .other-page .nav-logo img {
-    filter: invert(21%) sepia(100%) saturate(1914%) hue-rotate(190deg) brightness(94%) contrast(101%); /* Precise #005494 */
+    filter: none; /* Removed filter to prevent 'pink' artifacts; using original logo color */
 }
