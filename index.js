@@ -125,7 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // Skip if this link is meant to toggle an accordion sub-menu
+                if (link.nextElementSibling && link.nextElementSibling.classList.contains('dropdown-menu')) {
+                    return; 
+                }
+
                 if (window.innerWidth <= 992) {
                     navLinks.classList.remove('active');
                     const icon = navToggle.querySelector('i');
