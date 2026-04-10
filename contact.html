@@ -40,6 +40,22 @@
         .form-input:focus {
             border-color: var(--primary-blue);
         }
+
+        /* Mobile specific fixes */
+        @media (max-width: 768px) {
+            #contact-form-container {
+                padding: 1.5rem !important;
+            }
+            .contact-loc-btn {
+                padding: 1rem 1.5rem !important;
+                font-size: 1rem !important;
+                flex: 1 1 100%;
+            }
+            .branch-details-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -56,8 +72,7 @@
                 <div class="dropdown-menu">
                     <div class="mobile-menu-header">
                         <div class="mobile-back-btn"><i class="fas fa-chevron-left"></i> All</div>
-                        <div class="mobile-panel-title">Locations</div>
-                    </div>
+                        </div>
                     <div class="dropdown-grid">
                         <div class="dropdown-column" style="width: 100%; text-align: center;">
                             <h4>Locations</h4>
@@ -79,8 +94,7 @@
                 <div class="dropdown-menu">
                     <div class="mobile-menu-header">
                         <div class="mobile-back-btn"><i class="fas fa-chevron-left"></i> All</div>
-                        <div class="mobile-panel-title">Offerings</div>
-                    </div>
+                        </div>
                     <div class="dropdown-grid">
                         <div class="dropdown-column" style="width: 100%; text-align: center;">
                             <h4>Offerings</h4>
@@ -173,7 +187,7 @@
                     <!-- Branch Details Section -->
                     <div id="branch-details" style="margin-top: 3rem; border-top: 1px solid var(--light-grey); padding-top: 2rem; display: none;">
                         <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--dark-grey); margin-bottom: 1.5rem; text-align: center;">Branch Contact Details</h4>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                        <div class="branch-details-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
                             <div>
                                 <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
                                 <p id="branch-address" style="font-size: 0.85rem; color: var(--dark-grey);"></p>
