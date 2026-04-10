@@ -147,7 +147,7 @@ const pricingData = {
     coworking: {
         title: "Coworking Pricing",
         locations: {
-            "Kelvin, Sandton": [{ title: "Monthly Membership", price: "R1 200.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }],
+            "Morningside, Sandton": [{ title: "Monthly Membership", price: "R1 200.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }],
             "Chadwick, Wynberg": [{ title: "Monthly Membership", price: "R1 100.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }],
             "Village, JHB": [{ title: "Monthly Membership", price: "R950.00", vat: "Excluding VAT", sub: "/ month", features: ["2 hours FREE meeting room access","Access to kitchen facilities","Mail & package handling","Professional business address","Dedicated phone number","Free uncapped wifi"] }]
         }
@@ -155,7 +155,7 @@ const pricingData = {
     "virtual-office": {
         title: "Virtual Office Pricing",
         locations: {
-            "Kelvin, Sandton": [{ title: "Monthly Virtual Office", price: "R599.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }],
+            "Morningside, Sandton": [{ title: "Monthly Virtual Office", price: "R599.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }],
             "Chadwick, Wynberg": [{ title: "Monthly Virtual Office", price: "R499.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }],
             "Village, JHB": [{ title: "Monthly Virtual Office", price: "R450.00", vat: "Excluding VAT", sub: "/ month", features: ["Access to meeting rooms at reduced cost","Mail & package handling","Professional business address","Dedicated phone number"] }]
         }
@@ -163,7 +163,7 @@ const pricingData = {
     "private-offices": {
         title: "Private Office Pricing",
         locations: {
-            "Kelvin, Sandton": [
+            "Morningside, Sandton": [
                 { title: "Half Day", price: "R380.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
                 { title: "Full Day", price: "R520.00", vat: "Excluding VAT", desc: "Total access for a full day of productivity.", highlight: true },
                 { title: "5-Day Week", price: "R1 725.00", vat: "Excluding VAT", desc: "Reduced rate for weekly bookings.", highlight: false }
