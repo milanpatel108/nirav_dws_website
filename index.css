@@ -115,22 +115,26 @@ button, input, select, textarea {
 }
 
 .navbar-blue {
-    background-color: var(--primary-blue);
-    border-bottom: none;
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .navbar-blue .nav-link {
-    color: var(--white);
+    color: var(--black) !important;
 }
 
 .navbar-blue .btn-outline {
-    border-color: var(--white);
-    color: var(--white);
+    border-color: var(--black);
+    color: var(--black);
 }
 
 .navbar-blue .btn-outline:hover {
-    background-color: var(--white);
-    color: var(--primary-blue);
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.navbar-blue .nav-toggle {
+    color: var(--black) !important;
 }
 
 .navbar-blue .nav-logo img {
@@ -160,6 +164,7 @@ button, input, select, textarea {
     height: 95px; 
     width: auto;
     object-fit: contain;
+    mix-blend-mode: multiply; /* Helps remove light backgrounds around logo */
     display: block;
     background: transparent !important;
 }

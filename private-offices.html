@@ -82,7 +82,7 @@
                 <div class="hero-content">
                     <span class="hero-subtitle text-uppercase">Exclusive & Productive</span>
                     <h1 class="hero-title">Private <br><span class="gradient-text">Office Suites</span></h1>
-                    <p class="hero-description" style="max-width: 320px; line-height: 1.8;">
+                    <p class="hero-description" style="max-width: 450px; line-height: 2.2; font-weight: 500; font-size: 1.25rem;">
                         A range of benefits <br>
                         to businesses including the <br> 
                         ability to start working <br>
@@ -138,15 +138,29 @@
                 
                 <div class="split-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem;">
                     <div>
-                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-blue);">Unmatched Flexibility & Scale</h3>
-                        <p style="margin-bottom: 2rem; color: var(--dark-grey);">Avoid the constraints of traditional commercial leases. Our private suites offer short-term and long-term agreements, allowing you to scale your office space as your team grows. All operations—from security to cleaning—are managed by us, so you can focus 100% on your business.</p>
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-blue);">Unmatched Flexibility & Professionalism</h3>
+                        <p style="margin-bottom: 2rem; color: var(--dark-grey); line-height: 1.8;">Our private office suites are meticulously designed to project a professional image while providing the privacy your team needs. Unlike traditional leases, we offer turnkey solutions with everything from business-grade fiber to elite boardroom access included in your monthly fee.</p>
                         <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue);"></i> Dedicated reception and mail handling</li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue);"></i> Fully furnished with premium executive desks</li>
-                            <li style="margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue);"></i> Business-grade backup generators for 0% downtime</li>
+                            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i> <div><strong>Turnkey Efficiency:</strong> Move in today and start working immediately with high-end furniture and active infrastructure.</div></li>
+                            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i> <div><strong>Operational Excellence:</strong> We handle cleaning, security, and facility management so your staff can focus on core performance.</div></li>
+                            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i> <div><strong>Zero Capital Outlay:</strong> Free up your cash flow by avoiding the significant upfront costs of setting up a traditional office.</div></li>
+                            <li style="margin-bottom: 1.2rem; display: flex; align-items: flex-start; gap: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-top: 0.3rem;"></i> <div><strong>Elite Infrastructure:</strong> All offices feature backup generators and enterprise-grade Wi-Fi to ensure zero downtime.</div></li>
                         </ul>
                     </div>
-                    <div style="height: 400px; border-radius: 8px; overflow: hidden; background-image: url('assets/premium_office_hero_1775032342276.png'); background-size: cover; background-position: center;"></div>
+                    <div class="gallery-wrapper" style="width: 100%;">
+                        <div class="gallery-container" style="height: 450px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow);">
+                            <div class="gallery-track" id="officeSlideshow">
+                                <div class="gallery-slide"><img src="assets/privateoffices/Selby 16.jpg" alt="Office 1"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1562.jpg" alt="Office 2"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1578.jpg" alt="Office 3"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1581.jpg" alt="Office 4"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1690.jpg" alt="Office 5"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1694.jpg" alt="Office 6"></div>
+                                <div class="gallery-slide"><img src="assets/privateoffices/_D3J1710.jpg" alt="Office 7"></div>
+                            </div>
+                            <div class="gallery-counter" id="officeCounter" style="bottom: 15px; right: 20px;">1 / 7</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="amenities-grid">
@@ -201,7 +215,25 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script>
+        (function() {
+            const track = document.getElementById('officeSlideshow');
+            const counter = document.getElementById('officeCounter');
+            const slides = Array.from(track.children);
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            function updateSlideshow() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+            }
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlideshow();
+            }, 5000);
+        })();
+    </script>
 </body>
 </html>
 
