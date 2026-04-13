@@ -219,17 +219,17 @@ button, input, select, textarea {
 }
 
 .hero-title {
-    font-size: 5.8rem;
-    line-height: 1;
-    margin-bottom: 4rem;
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 3.5rem;
     color: var(--black);
     font-weight: 950;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 .hero-description {
-    font-size: 1.4rem;
-    margin-bottom: 5rem;
+    font-size: 1.2rem;
+    margin-bottom: 4.5rem;
     max-width: 650px;
     color: var(--dark-grey);
     line-height: 1.6;
