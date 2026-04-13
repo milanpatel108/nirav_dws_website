@@ -188,8 +188,8 @@ button, input, select, textarea {
     height: auto;
     display: flex;
     background-color: #ffffff;
-    padding-top: var(--nav-height);
-    padding-bottom: 4rem;
+    padding-top: 140px; /* Safer padding for navbar */
+    padding-bottom: 6rem;
 }
 
 /* Compatibility for Other Pages (Centered Style) */
@@ -222,10 +222,17 @@ button, input, select, textarea {
 }
 
 .other-page .hero-content {
-    max-width: 900px !important;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
     padding: 0;
+}
+
+/* Ensure split hero on other pages remains left-aligned and unclipped */
+.other-page .split-hero .hero-content {
+    text-align: left !important;
+    margin: 0 !important;
+    max-width: 100% !important;
 }
 
 .other-page .hero-title {
@@ -250,7 +257,8 @@ button, input, select, textarea {
 .hero-left {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Top align to prevent cutout on short screens */
+    padding-top: 2rem;
     justify-content: flex-start;
     padding-left: 5%; /* Moved slightly to the left as requested */
     background-color: #ffffff;
@@ -274,18 +282,18 @@ button, input, select, textarea {
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: 4rem; /* Scaled down from 5rem */
     line-height: 1.05;
-    margin-bottom: 1.5rem; /* Reduced for better fit */
+    margin-bottom: 1rem; /* Reduced for better fit */
     color: var(--black);
     font-weight: 950;
     letter-spacing: -0.01em;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem; /* Reduced for better fit */
-    max-width: 650px;
+    font-size: 1.15rem; /* Slightly smaller */
+    margin-bottom: 1.5rem; /* Reduced for better fit */
+    max-width: 600px;
     color: var(--dark-grey);
     line-height: 1.6;
 }
