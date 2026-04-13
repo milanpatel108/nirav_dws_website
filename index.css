@@ -187,6 +187,56 @@ button, input, select, textarea {
     position: relative;
 }
 
+/* Compatibility for Other Pages (Sub-pages) */
+.other-page .hero {
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 110px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.other-page .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.other-page .hero .container {
+    position: relative;
+    z-index: 10;
+}
+
+.other-page .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+
+.other-page .hero-title {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.other-page .hero-description {
+    font-size: 1.25rem;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+}
+
 @keyframes fadeEffect {
     from { opacity: 0; }
     to { opacity: 1; }
