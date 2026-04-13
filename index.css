@@ -184,11 +184,12 @@ button, input, select, textarea {
 
 /* Homepage Hero (Split Screen) */
 .split-hero {
-    height: 90vh; /* Reduced from 100vh to ensure visibility */
-    min-height: 700px;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     background-color: #ffffff;
-    padding-top: 80px;
+    padding-top: var(--nav-height);
+    padding-bottom: 4rem;
 }
 
 /* Compatibility for Other Pages (Centered Style) */
