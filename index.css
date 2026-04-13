@@ -178,12 +178,13 @@ button, input, select, textarea {
 /* Hero Section */
 .hero {
     height: 100vh;
-    min-height: 700px;
     width: 100%;
     display: flex;
-    background-color: #f4f4f4; /* Left side background */
+    background-color: #f4f4f4;
     padding-top: 100px;
     overflow: hidden;
+    position: relative;
+    padding-bottom: 0;
 }
 
 @keyframes fadeEffect {
@@ -244,10 +245,29 @@ button, input, select, textarea {
     animation: fadeEffect 1s forwards;
 }
 
+.hero-arrows {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.hero-right:hover .hero-arrows {
+    opacity: 1;
+}
+
 @media (max-width: 992px) {
     .hero {
         flex-direction: column;
         height: auto;
+    }
+    .hero-arrows {
+        opacity: 1;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-top: 1rem;
+        padding: 0 20px;
     }
     .hero-left, .hero-right {
         flex: none;
