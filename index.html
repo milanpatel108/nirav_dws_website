@@ -136,25 +136,27 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="container">
+            <div class="hero-left">
                 <div class="hero-content">
                     <span class="hero-subtitle text-uppercase">The Future of Productivity</span>
-                    <h1 class="hero-title">Work in <br>spaces where <br><span class="gradient-text">ambition</span> lives.</h1>
+                    <h1 class="hero-title">Work in spaces where <span class="gradient-text">ambition</span> lives.</h1>
                     <p class="hero-description">Dynamic Workspaces provides premium, flexible office environments tailored for every type of business and established professionals. Experience the perfect blend of luxury and functionality in the heart of the business world.</p>
                     <div class="hero-actions">
                         <a href="contact.html" class="btn btn-primary">Book a Tour</a>
                         <a href="contact.html" class="btn btn-primary">Contact Us</a>
                     </div>
                 </div>
+            </div>
+            <div class="hero-right">
                 <div class="hero-carousel" id="heroCarousel">
                     <div class="hero-slide active" style="background-image: url('assets/kelvincover.jpg')"></div>
                     <div class="hero-slide" style="background-image: url('assets/Chadwick 31.jpg')"></div>
                     <div class="hero-slide" style="background-image: url('assets/Selby 02.jpg')"></div>
                 </div>
-            </div>
-            <div class="hero-arrows">
-                <button class="hero-arrow prev" onclick="moveHero(-1)"><i class="fas fa-chevron-left"></i></button>
-                <button class="hero-arrow next" onclick="moveHero(1)"><i class="fas fa-chevron-right"></i></button>
+                <div class="hero-arrows" style="position: absolute; top: 50%; left: 20px; right: 20px; transform: translateY(-50%); display: flex; justify-content: space-between; z-index: 100; pointer-events: none;">
+                    <button class="hero-arrow prev" onclick="moveHero(-1)" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); pointer-events: auto;"><i class="fas fa-chevron-left"></i></button>
+                    <button class="hero-arrow next" onclick="moveHero(1)" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); cursor: pointer; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); pointer-events: auto;"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </section>
 
@@ -316,12 +318,12 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem;">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="assets/logo.png" alt="Dynamic Workspaces Logo">
+                        <img src="assets/logo.png" alt="Dynamic Workspaces Logo" style="height: 100px; filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;">
                     </div>
                     <p class="footer-desc">Rent office space in your area designed for your expansion and growth requirements of individuals and businesses alike.</p>
                     <div class="footer-contact">
@@ -338,14 +340,13 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Office Space</h4>
+                    <h4>Workspace</h4>
                     <ul class="footer-links">
-                        <li><a href="sandton-morningside.html">Morningside, Sandton</a></li>
-                        <li><a href="chadwick-wynberg.html">Chadwick, Wynberg</a></li>
-                        <li><a href="village-jhb.html">Village, JHB</a></li>
+                        <li><a href="sandton-morningside.html">MORNINGSIDE, SANDTON</a></li>
+                        <li><a href="chadwick-wynberg.html">CHADWICK, WYNBERG</a></li>
+                        <li><a href="village-jhb.html">VILLAGE, JHB</a></li>
                     </ul>
-                    
-                    <h4 style="margin-top: 3rem;">Storage Lockers</h4>
+                    <h4 style="margin-top: 2rem;">Storage</h4>
                     <ul class="footer-links">
                         <li><a href="#">Sandton</a></li>
                         <li><a href="#">Johannesburg CBD</a></li>
@@ -355,24 +356,25 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Information</h4>
+                    <h4>Company</h4>
                     <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
+                    <h4>Social</h4>
+                    <div class="social-links" style="display: flex; gap: 1rem;">
                         <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; font-size: 0.9rem; color: #666;">
                 &copy; 2026 Dynamic Workspaces. All Rights Reserved.
             </div>
         </div>
@@ -458,4 +460,5 @@
     </script>
 </body>
 </html>
+
 
