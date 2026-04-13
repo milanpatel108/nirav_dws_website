@@ -197,7 +197,7 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 8%;
+    padding-left: 5%; /* Moved slightly to the left as requested */
     background-color: #ffffff;
 }
 
@@ -276,6 +276,13 @@ button, input, select, textarea {
 }
 
 @media (max-width: 992px) {
+    .navbar {
+        background-color: #ffffff !important;
+    }
+    .nav-logo img {
+        mix-blend-mode: multiply;
+        filter: contrast(1.2) brightness(1.1);
+    }
     .hero {
         flex-direction: column;
         height: auto;
