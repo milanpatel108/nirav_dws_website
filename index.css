@@ -190,8 +190,8 @@ button, input, select, textarea {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 5%;
+    justify-content: center; /* Center the content block within the left half */
+    padding: 0 5%;
     background-color: #f4f4f4;
 }
 
@@ -203,10 +203,17 @@ button, input, select, textarea {
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 650px;
     width: 100%;
     z-index: 10;
-    text-align: left;
+    text-align: center; /* Center text as shown in user attachment */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center; /* Center buttons */
+    margin-top: 2rem;
 }
 
 .hero-carousel {
