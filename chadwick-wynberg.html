@@ -80,19 +80,24 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
+        <section class="hero split-hero">
+            <div class="hero-left">
                 <div class="hero-content">
                     <span class="hero-subtitle text-uppercase">Industrial Chic</span>
                     <h1 class="hero-title">Office <span style="white-space: nowrap;">spaces in</span> <br><span class="gradient-text">CHADWICK, WYNBERG</span></h1>
                     <p class="hero-description">Inspiring coworking spaces and private offices in a beautifully repurposed industrial setting. Perfect for creatives and innovators.</p>
                     <div class="hero-actions">
-                        <a href="contact.html" class="btn btn-outline" style="white-space: nowrap;">Book a Tour</a>
+                        <a href="contact.html" class="btn btn-primary">Book a Tour</a>
+                        <a href="tel:0792105562" class="btn btn-outline" style="border-color: var(--primary-blue); color: var(--primary-blue);">Call Us</a>
                         
                     </div>
                 </div>
             </div>
-            <div class="hero-image" style="background-image: url('assets/Chadwick%2031.jpg')"></div>
+            <div class="hero-right">
+                <div class="hero-carousel" style="border-radius: 40px; overflow: hidden; height: 100%;">
+                    <div class="hero-slide active" style="background-image: url('assets/Chadwick%2031.jpg')"></div>
+                </div>
+            </div>
         </section>
 
         <!-- Pricing Section -->
@@ -102,30 +107,30 @@
                     <span class="section-tag text-uppercase">Memberships</span>
                     <h2 class="section-title" style="margin: 0 auto;">Pricing Preview</h2>
                 </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card">
+                <div class="pricing-grid" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: stretch;">
+                    <div class="pricing-card" style="flex: 1; min-width: 300px; max-width: 400px; display: flex; flex-direction: column; text-align: center;">
                         <h3 class="service-title">Co-Working</h3>
                         <p>Flexible hot-desks in a vibrant community.</p>
-                        <div class="pricing-label">starting from</div>
+                        <div class="pricing-label" style="margin-top: auto;">starting from</div>
                         <div class="pricing-price">R1200<span> / month</span></div>
                         <div class="pricing-vat">Excluding VAT</div>
-                        <a href="coworking.html" class="btn btn-outline">VIEW</a>
+                        <a href="coworking.html" class="btn btn-outline" style="margin-top: 1.5rem;">VIEW</a>
                     </div>
-                    <div class="pricing-card">
+                    <div class="pricing-card" style="flex: 1; min-width: 300px; max-width: 400px; display: flex; flex-direction: column; text-align: center;">
                         <h3 class="service-title">Virtual Office</h3>
                         <p>Professional business address & mail handling.</p>
-                        <div class="pricing-label">starting from</div>
+                        <div class="pricing-label" style="margin-top: auto;">starting from</div>
                         <div class="pricing-price">R599,99<span> / month</span></div>
                         <div class="pricing-vat">Excluding VAT</div>
-                        <a href="virtual-office.html" class="btn btn-outline">VIEW</a>
+                        <a href="virtual-office.html" class="btn btn-outline" style="margin-top: 1.5rem;">VIEW</a>
                     </div>
-                    <div class="pricing-card">
+                    <div class="pricing-card" style="flex: 1; min-width: 300px; max-width: 400px; display: flex; flex-direction: column; text-align: center;">
                         <h3 class="service-title">Private Office Suites</h3>
                         <p>Fully furnished secure office suites for teams.</p>
-                        <div class="pricing-label">starting from</div>
+                        <div class="pricing-label" style="margin-top: auto;">starting from</div>
                         <div class="pricing-price">R2040.00<span> / month</span></div>
                         <div class="pricing-vat">Excluding VAT</div>
-                        <a href="private-offices.html" class="btn btn-outline">VIEW</a>
+                        <a href="private-offices.html" class="btn btn-outline" style="margin-top: 1.5rem;">VIEW</a>
                     </div>
                 </div>
             </div>
