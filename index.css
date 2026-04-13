@@ -286,52 +286,7 @@ button, input, select, textarea {
     }
 }
 
-.hero-content {
-    width: 35%; 
-    z-index: 5; /* Ensure it stays above everything */
-    position: relative;
-    padding-left: 0;
-}
 
-.hero-image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 60%; /* Slightly narrower to give text more space */
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    clip-path: polygon(40% 0, 100% 0, 100% 100%, 25% 100%); /* Adjusted diagonal for better left clearance */
-}
-
-.hero-subtitle {
-    color: var(--primary-blue);
-    font-weight: 700;
-    font-size: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem); 
-    margin-bottom: 2rem;
-    color: var(--black);
-    line-height: 1.2;
-    padding-top: 1rem;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    max-width: 450px; /* Constrained further for maximum left clearance */
-    margin-bottom: 3rem;
-    color: var(--dark-grey);
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
 
 /* Stats/Features Row */
 .trustbar {
@@ -638,16 +593,14 @@ button, input, select, textarea {
     border-top: 1px solid var(--light-grey);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 4rem;
-}
-
 .footer-logo img {
-    height: 50px;
-    margin-bottom: 1.5rem;
-    filter: invert(24%) sepia(85%) saturate(1637%) hue-rotate(188deg) brightness(91%) contrast(101%);
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    /* Match header logo exactly */
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) brightness(1.1);
 }
 
 .footer-desc {
@@ -2038,3 +1991,12 @@ button, input, select, textarea {
 }
 
 
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) brightness(1.1);
+}
