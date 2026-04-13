@@ -158,24 +158,28 @@ button, input, select, textarea {
     text-decoration: none;
     background: transparent !important;
     border: none !important;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin: 0;
     z-index: 100;
 }
 
 .nav-logo img {
-    height: 120px; /* Way bigger as requested */
+    height: 100px; /* Adjusted size */
     width: auto;
     object-fit: contain;
     display: block;
     background: transparent !important;
-    mix-blend-mode: multiply; /* Removes white box around logo */
+    /* Remove ANY box artifact by forcing logo colors */
+    mix-blend-mode: multiply;
+    filter: contrast(1.2) brightness(1.1);
 }
 
 /* Ensure navbar can accommodate larger logo */
 .navbar {
     height: auto;
-    padding: 0.5rem 5%;
+    padding: 0.25rem 5%;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Thinner border */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.02); /* Thinner shadow */
 }
 
 .nav-toggle {
@@ -238,7 +242,7 @@ button, input, select, textarea {
 }
 
 .hero-carousel { 
-    flex: 1.2; /* Give carousel more space on the right */
+    width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -264,7 +268,6 @@ button, input, select, textarea {
 }
 
 .hero-content {
-    flex: 1;
     padding-right: 2rem;
     z-index: 2;
     display: flex;
@@ -273,7 +276,7 @@ button, input, select, textarea {
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: 4.5rem; /* Adjusted for better fit in split */
     line-height: 1.1;
     margin-bottom: 2rem;
     color: var(--black);
@@ -281,17 +284,18 @@ button, input, select, textarea {
 }
 
 .hero .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Strict 2-column split */
     align-items: center;
     gap: 4rem;
-    height: 90vh;
+    height: 85vh;
     min-height: 700px;
     max-width: 1400px;
 }
 
 @media (max-width: 992px) {
     .hero .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         height: auto;
         padding-top: 150px;
         gap: 3rem;
@@ -299,10 +303,8 @@ button, input, select, textarea {
     .hero-content {
         padding-right: 0;
         text-align: center;
-        width: 100%;
     }
     .hero-carousel {
-        width: 100%;
         height: 450px;
     }
 }
@@ -340,7 +342,9 @@ button, input, select, textarea {
     width: auto;
     object-fit: contain;
     margin-bottom: 2rem;
-    mix-blend-mode: multiply; /* Removes box artifact in footer */
+    /* Force logo to be blue and remove background */
+    mix-blend-mode: multiply; 
+    filter: brightness(1.2) contrast(1.2);
 }
 
 .hero-arrow:hover {
