@@ -161,8 +161,9 @@ button, input, select, textarea {
 }
 
 .nav-logo img {
-    height: 95px; 
+    height: 60px;
     width: auto;
+    filter: invert(24%) sepia(85%) saturate(1637%) hue-rotate(188deg) brightness(91%) contrast(101%);
     object-fit: contain;
     mix-blend-mode: multiply; /* Helps remove light backgrounds around logo */
     display: block;
@@ -227,6 +228,9 @@ button, input, select, textarea {
     background-color: var(--light-grey);
     overflow: visible; /* Ensure content can be seen if it grows */
 }
+
+.hero-carousel { position: relative; width: 100%; overflow: hidden; }
+.hero-slide { display: none; width: 100%; height: 100vh; }
 
 .hero-content {
     width: 35%; 
@@ -325,7 +329,8 @@ button, input, select, textarea {
 
 /* Locations Section */
 .section {
-    padding: 120px 0;
+    padding: 6rem 0; /* Reduced from 8rem or 10rem */
+    position: relative;
 }
 
 .section-tag {
@@ -468,6 +473,8 @@ button, input, select, textarea {
     margin-bottom: 2rem;
 }
 
+.feature-carousel { display: flex; gap: 2rem; overflow-x: auto; }
+
 /* CTA Section */
 .cta-banner {
     background-color: var(--black);
@@ -513,9 +520,9 @@ button, input, select, textarea {
 }
 
 .footer-logo img {
-    height: 110px; /* Increased to match user's 'nice large size' request */
-    margin-bottom: 2rem;
-    object-fit: contain;
+    height: 50px;
+    margin-bottom: 1.5rem;
+    filter: invert(24%) sepia(85%) saturate(1637%) hue-rotate(188deg) brightness(91%) contrast(101%);
 }
 
 .footer-desc {
@@ -1812,8 +1819,95 @@ button, input, select, textarea {
     border-radius: 5px;
 }
 
-@media (max-width: 1100px) {
-    .review-nav.prev { left: 10px; }
-    .review-nav.next { right: 10px; }
-    .review-slideshow { max-width: 100%; }
+
+/* Hero Carousel */
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-carousel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+}
+
+.hero-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-carousel:hover .hero-arrows {
+    opacity: 1;
+}
+
+.hero-arrow {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.hero-arrow:hover {
+    background: var(--white);
+    color: var(--primary-blue);
+}
+
+/* Feature Carousel for Zero Compromise Section */
+.feature-carousel-container {
+    position: relative;
+    height: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.feature-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.feature-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
