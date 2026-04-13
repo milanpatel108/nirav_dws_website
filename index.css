@@ -1152,11 +1152,17 @@ button, input, select, textarea {
 .gallery-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10; /* Slightly taller default */
     background-color: var(--light-grey);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        aspect-ratio: 4 / 3; /* Taller on mobile for better visibility */
+    }
 }
 
 .gallery-track {
@@ -1271,8 +1277,19 @@ button, input, select, textarea {
 
 .split-layout {
     display: flex;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
+    margin-bottom: 6rem;
+}
+
+.split-layout-image {
+    height: 600px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.split-layout > div {
+    flex: 1;
 }
 
 .nav-item-toggle {
