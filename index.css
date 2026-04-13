@@ -175,30 +175,32 @@ button, input, select, textarea {
     filter: contrast(1.2) brightness(1.1);
 }
 
-/* Hero Section */
+/* Hero Section (Universal Base) */
 .hero {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Homepage Hero (Split Screen) */
+.split-hero {
     height: 100vh;
     min-height: 850px;
-    width: 100%;
     display: flex;
     background-color: #ffffff;
     padding-top: 100px;
-    overflow: hidden;
-    position: relative;
 }
 
-/* Compatibility for Other Pages (Sub-pages) */
+/* Compatibility for Other Pages (Centered Style) */
 .other-page .hero {
-    height: 70vh;
-    min-height: 500px;
+    height: 60vh;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
     padding-top: 110px;
-    background: var(--white);
-    overflow: hidden;
+    background: #ffffff;
 }
 
 .other-page .hero-image {
@@ -219,7 +221,7 @@ button, input, select, textarea {
 }
 
 .other-page .hero-content {
-    max-width: 900px;
+    max-width: 900px !important;
     margin: 0 auto;
     text-align: center;
     padding: 0;
@@ -229,12 +231,14 @@ button, input, select, textarea {
     font-size: 4.5rem;
     margin-bottom: 2rem;
     line-height: 1.1;
+    text-align: center;
 }
 
 .other-page .hero-description {
     font-size: 1.25rem;
     margin: 0 auto 3rem;
     opacity: 0.9;
+    text-align: center;
 }
 
 @keyframes fadeEffect {
