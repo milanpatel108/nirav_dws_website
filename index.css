@@ -156,16 +156,16 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     text-decoration: none;
-    background: transparent !important; /* Force no background block */
+    background: transparent !important;
     border: none !important;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-logo img {
-    height: 60px;
+    height: 70px;
     width: auto;
-    filter: invert(24%) sepia(85%) saturate(1637%) hue-rotate(188deg) brightness(91%) contrast(101%);
     object-fit: contain;
-    mix-blend-mode: multiply; /* Helps remove light backgrounds around logo */
     display: block;
     background: transparent !important;
 }
@@ -229,8 +229,63 @@ button, input, select, textarea {
     overflow: visible; /* Ensure content can be seen if it grows */
 }
 
-.hero-carousel { position: relative; width: 100%; overflow: hidden; }
-.hero-slide { display: none; width: 100%; height: 100vh; }
+.hero-carousel { 
+    position: absolute; 
+    top: 0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: hidden; 
+    z-index: 1;
+}
+
+.hero-slide { 
+    position: absolute;
+    inset: 0;
+    width: 60%; 
+    height: 100%; 
+    left: auto;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    display: none;
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 25% 100%);
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active { 
+    display: block;
+    animation: fadeEffect 1s forwards;
+}
+
+.hero-arrows {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.hero-arrow {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.hero-arrow:hover {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
 
 .hero-content {
     width: 35%; 
@@ -440,12 +495,14 @@ button, input, select, textarea {
 
 /* Services Grid */
 .service-item {
-    padding: 4rem;
+    padding: 3.5rem;
     border: 1px solid var(--light-grey);
     transition: var(--transition);
-    display: flex; /* Fix button alignment */
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    background: var(--white);
 }
 
 .service-item .btn {
@@ -473,7 +530,76 @@ button, input, select, textarea {
     margin-bottom: 2rem;
 }
 
-.feature-carousel { display: flex; gap: 2rem; overflow-x: auto; }
+/* Zero Compromise Section Features alignment */
+#features ul li {
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+#features ul li i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Feature Carousel */
+.feature-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.feature-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.feature-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-blue);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+    opacity: 0;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-carousel-container:hover .feature-nav-btn {
+    opacity: 1;
+}
+
+.feature-nav-btn.prev { left: 20px; }
+.feature-nav-btn.next { right: 20px; }
+
+.feature-nav-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
 
 /* CTA Section */
 .cta-banner {
@@ -638,13 +764,14 @@ button, input, select, textarea {
 }
 
 .dropdown-column h4 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--primary-blue);
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--light-grey);
-    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--light-grey);
+    padding-bottom: 0.75rem;
+    font-weight: 700;
 }
 
 .dropdown-links {
