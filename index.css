@@ -178,13 +178,13 @@ button, input, select, textarea {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 850px;
     width: 100%;
     display: flex;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     padding-top: 100px;
     overflow: hidden;
     position: relative;
-    padding-bottom: 0;
 }
 
 @keyframes fadeEffect {
@@ -196,37 +196,58 @@ button, input, select, textarea {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Move to far left */
-    padding-left: 10%;
-    background-color: #f4f4f4;
+    justify-content: flex-start;
+    padding-left: 8%;
+    background-color: #ffffff;
 }
 
 .hero-right {
     flex: 1;
     height: 100%;
     position: relative;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 800px;
     width: 100%;
     z-index: 10;
-    text-align: left; /* Aligned left as requested */
+    text-align: left;
+}
+
+.hero-title {
+    font-size: 5.8rem;
+    line-height: 1;
+    margin-bottom: 4rem;
+    color: var(--black);
+    font-weight: 950;
+    letter-spacing: -0.02em;
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    margin-bottom: 5rem;
+    max-width: 650px;
+    color: var(--dark-grey);
+    line-height: 1.6;
 }
 
 .hero-actions {
     display: flex;
-    gap: 1.5rem;
-    justify-content: flex-start; /* Align buttons left */
-    margin-top: 2rem;
+    gap: 2rem;
+    justify-content: flex-start;
 }
 
 .hero-carousel {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #ddd; /* Visibility helper */
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.15);
 }
 
 .hero-slide {
@@ -258,62 +279,51 @@ button, input, select, textarea {
     .hero {
         flex-direction: column;
         height: auto;
+        min-height: auto;
+        padding: 120px 0 60px;
+        background-color: #ffffff;
     }
-    .hero-arrows {
-        opacity: 1;
-        position: relative;
-        left: 0;
-        right: 0;
-        top: 0;
-        transform: none;
-        margin-top: 1rem;
-        padding: 0 20px;
+    .hero-left {
+        padding: 4rem 10% 3rem;
+        justify-content: center;
     }
-    .hero-left, .hero-right {
+    .hero-right {
+        padding: 1.5rem;
+        height: 450px;
         flex: none;
         width: 100%;
     }
-    .hero-left {
-        padding: 6rem 5%;
-        justify-content: center;
+    .hero-carousel {
+        border-radius: 20px;
     }
     .hero-content {
         text-align: center;
+    }
+    .hero-title {
+        font-size: 3.2rem;
+        margin-bottom: 2rem;
+    }
+    .hero-description {
+        font-size: 1.2rem;
+        margin-bottom: 3.5rem;
     }
     .hero-actions {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
-    .hero-carousel {
-        height: 450px;
-    }
-}
-    .hero-carousel {
-        height: 400px;
-    }
-    .hero-title {
-        font-size: 2.8rem;
-    }
-}
-    .hero-left, .hero-right {
-        flex: none;
-        width: 100%;
-    }
-    .hero-left {
-        padding: 4rem 5%;
-        justify-content: center;
-    }
-    .hero-content {
-        text-align: center;
-    }
-    .hero-carousel {
-        height: 400px;
-    }
-    .hero-title {
-        font-size: 3rem;
+    .hero-arrows {
+        opacity: 1;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        top: auto;
+        transform: none;
+        padding: 0 20px;
     }
 }
-
-
 
 /* Stats/Features Row */
 .trustbar {
