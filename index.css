@@ -184,11 +184,13 @@ button, input, select, textarea {
 
 /* Homepage Hero (Split Screen) */
 .split-hero {
-    min-height: 100vh;
-    height: auto;
+    min-height: 85vh; /* Reduced from 100vh for better fit with nav */
     display: flex;
     background-color: #ffffff;
-    padding: 0; /* Remove padding to allow full-bleed images */
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+    width: 100% !important;
 }
 
 /* Compatibility for Other Pages (Centered Style) */
@@ -254,43 +256,51 @@ button, input, select, textarea {
 }
 
 .hero-left {
-    flex: 1;
+    flex: 0 0 50%;
+    width: 50%;
     display: flex;
     align-items: center; 
-    padding: 160px 5% 80px; 
+    padding: 120px 40px 60px 5%; /* 40px padding requested */
     justify-content: flex-start;
     background-color: #ffffff;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-right {
-    flex: 1;
+    flex: 0 0 50%;
+    width: 50%;
     position: relative;
     background-color: #ffffff;
-    padding: 0; /* Remove padding for full-bleed images */
+    padding: 0 !important;
     display: flex;
     align-items: stretch;
+    height: auto;
 }
 
 .hero-content {
-    max-width: 800px;
-    width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
     z-index: 10;
-    text-align: left !important; /* Force left align for split hero */
+    text-align: left !important;
+    margin: 0 !important;
 }
 
 .hero-title {
-    font-size: 4rem; /* Scaled down from 5rem */
-    line-height: 1.05;
-    margin-bottom: 1rem; /* Reduced for better fit */
+    font-size: 5rem; /* Large and prominent */
+    line-height: 1; /* Tight line height requested */
+    margin-bottom: 2rem;
     color: var(--black);
-    font-weight: 950;
-    letter-spacing: -0.01em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    width: 100%;
 }
 
 .hero-description {
-    font-size: 1.15rem; /* Slightly smaller */
-    margin-bottom: 1.5rem; /* Reduced for better fit */
-    max-width: 600px;
+    font-size: 1.25rem;
+    margin-top: 1.5rem; /* Spacing from heading */
+    margin-bottom: 3rem;
+    width: 100%; /* Spans nicely across */
     color: var(--dark-grey);
     line-height: 1.6;
 }
@@ -305,7 +315,7 @@ button, input, select, textarea {
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 0; /* Full bleed focus */
+    border-radius: 0 !important; /* Ensure no rounded corners */
     overflow: hidden;
 }
 
@@ -320,9 +330,12 @@ button, input, select, textarea {
     z-index: 1;
 }
 
-.hero-slide.active {
+/* Ensure images take full height */
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    animation: fadeEffect 1s forwards;
 }
 
 .hero-arrows {
@@ -334,37 +347,39 @@ button, input, select, textarea {
     opacity: 1;
 }
 
-/* NEW: Angled Split Hero for Locations */
+/* Updated Split Hero for Locations (Removing angled divider as requested) */
 .angled-split-hero {
     display: flex;
-    min-height: 90vh;
+    min-height: 85vh;
     background-color: var(--white);
     position: relative;
     overflow: hidden;
     width: 100%;
+    align-items: stretch;
 }
 
 .angled-hero-left {
-    flex: 0 0 55%;
+    flex: 0 0 50%;
+    width: 50%;
     background: var(--white);
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 140px 80px 100px 8%;
+    padding: 120px 60px 80px 5%;
     z-index: 10;
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
     position: relative;
 }
 
 .angled-hero-content {
-    max-width: 600px;
+    max-width: 100% !important;
     width: 100%;
+    margin: 0 !important;
+    text-align: left;
 }
 
 .angled-hero-right {
-    flex: 0 0 52%;
-    margin-left: -7%;
-    height: 100%;
+    flex: 0 0 50%;
+    width: 50%;
+    height: auto;
     position: relative;
     z-index: 1;
 }
@@ -372,54 +387,54 @@ button, input, select, textarea {
 .angled-hero-right img {
     width: 100%;
     height: 100%;
-    min-height: 90vh;
     object-fit: cover;
     display: block;
+    min-height: 100%;
 }
 
 .angled-hero-heading {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-family: var(--font-heading);
 }
 
 .angled-hero-subtext {
     font-size: 1.25rem;
     color: var(--dark-grey);
-    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
     line-height: 1.6;
 }
 
 @media (max-width: 992px) {
-    .angled-split-hero {
+    .angled-split-hero, .split-hero {
         flex-direction: column;
         min-height: auto;
     }
-    .angled-hero-left {
+    .angled-hero-left, .hero-left {
         flex: none;
         width: 100%;
-        clip-path: none;
         padding: 120px 2rem 4rem;
         background: var(--white);
         justify-content: center;
     }
-    .angled-hero-content {
-        text-align: center;
+    .angled-hero-content, .hero-content {
+        text-align: center !important;
     }
-    .angled-hero-right {
+    .angled-hero-right, .hero-right {
         flex: none;
         width: 100%;
         height: 450px;
         margin-left: 0;
     }
-    .angled-hero-right img {
+    .angled-hero-right img, .hero-right img {
         height: 100%;
         min-height: auto;
     }
-    .angled-hero-heading {
-        font-size: 3.2rem;
+    .angled-hero-heading, .hero-title {
+        font-size: 3rem;
     }
 }
 
