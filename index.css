@@ -2241,6 +2241,38 @@ button, input, select, textarea {
     box-shadow: var(--shadow);
 }
 
+.feature-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: var(--white);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.feature-nav-btn:hover {
+    background: var(--primary-blue);
+}
+
+.feature-nav-btn.prev {
+    left: 15px; /* Moved to the left */
+}
+
+.feature-nav-btn.next {
+    right: 15px;
+}
+
+
 .feature-track {
     display: flex;
     height: 100%;
