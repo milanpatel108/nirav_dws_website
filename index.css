@@ -366,10 +366,20 @@ button, input, select, textarea {
 }
 
 /* Ensure split hero on other pages remains left-aligned and unclipped */
-.other-page .split-hero .hero-content {
+.other-page .split-hero .hero-content,
+.other-page .angled-split-hero .hero-content {
     text-align: left !important;
     margin: 0 !important;
     max-width: 100% !important;
+}
+
+.other-page .split-hero .hero-actions,
+.other-page .angled-split-hero .hero-actions {
+    justify-content: flex-start !important;
+}
+
+.other-page .hero-actions {
+    justify-content: center;
 }
 
 .other-page .hero-title {
