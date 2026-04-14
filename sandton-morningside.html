@@ -322,8 +322,8 @@
                     <div class="review-container">
                         <div class="review-track" id="reviewTrack">
                             <!-- New Review: Ohbrey MacMatlox -->
-                            <div class="review-slide">
-                                <div class="review-card">
+                            <div class="review-slide" style="flex: 0 0 100%;">
+                                <div class="review-card" style="margin: 0 auto; transform: none; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
                                     <div class="google-logo"><i class="fab fa-google"></i></div>
                                     <div class="review-header">
                                         <div class="review-avatar">OM</div>
@@ -337,45 +337,8 @@
                                     <p class="review-text">"Clean place. Very professional environment and well maintained facilities. Highly recommended for any professional team."</p>
                                 </div>
                             </div>
-
-                            <!-- General Review 1 -->
-                            <div class="review-slide">
-                                <div class="review-card">
-                                    <div class="google-logo"><i class="fab fa-google"></i></div>
-                                    <div class="review-header">
-                                        <div class="review-avatar">CC</div>
-                                        <div class="review-info">
-                                            <h4>Cary C</h4>
-                                            <div class="review-stars">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="review-text">"If you are looking for clean well maintained office space then look no further. Dynamic Workspaces and their staff have always gone above and beyond to meet our every need and expectation. Happy client!"</p>
-                                </div>
-                            </div>
-
-                            <!-- General Review 2 -->
-                            <div class="review-slide">
-                                <div class="review-card">
-                                    <div class="google-logo"><i class="fab fa-google"></i></div>
-                                    <div class="review-header">
-                                        <div class="review-avatar">AP</div>
-                                        <div class="review-info">
-                                            <h4>Ana Maria Panait</h4>
-                                            <div class="review-stars">
-                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="review-text">"I have an office here. The team is always very helpful and the facilities are working well. A great space for growing your business."</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <button class="review-nav prev" id="reviewPrev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="review-nav next" id="reviewNext"><i class="fas fa-chevron-right"></i></button>
-                    <div class="review-dots" id="reviewDots"></div>
                 </div>
             </div>
         </section>
@@ -509,54 +472,6 @@
                 });
             });
 
-            // Review Slideshow Logic
-            const reviewTrack = document.getElementById('reviewTrack');
-            const reviewPrev = document.getElementById('reviewPrev');
-            const reviewNext = document.getElementById('reviewNext');
-            const reviewDotsContainer = document.getElementById('reviewDots');
-            
-            if (reviewTrack && reviewPrev && reviewNext && reviewDotsContainer) {
-                const reviewSlides = Array.from(reviewTrack.children);
-                const totalReviewSlides = reviewSlides.length;
-                let reviewIndex = 0;
-
-                // Create dots
-                reviewSlides.forEach((_, i) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('review-dot');
-                    if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        reviewIndex = i;
-                        updateReviewSlideshow();
-                    });
-                    reviewDotsContainer.appendChild(dot);
-                });
-
-                const dots = Array.from(reviewDotsContainer.children);
-
-                function updateReviewSlideshow() {
-                    reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('active', i === reviewIndex);
-                    });
-                }
-
-                reviewNext.addEventListener('click', () => {
-                    reviewIndex = (reviewIndex + 1) % totalReviewSlides;
-                    updateReviewSlideshow();
-                });
-
-                reviewPrev.addEventListener('click', () => {
-                    reviewIndex = (reviewIndex - 1 + totalReviewSlides) % totalReviewSlides;
-                    updateReviewSlideshow();
-                });
-
-                // Auto-advance reviews
-                setInterval(() => {
-                    reviewIndex = (reviewIndex + 1) % totalReviewSlides;
-                    updateReviewSlideshow();
-                }, 8000);
-            }
         })();
 
         // Meeting Room Gallery
