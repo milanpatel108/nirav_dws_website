@@ -412,7 +412,36 @@ button, input, select, textarea {
         min-height: auto;
     }
     .hero-title, .angled-hero-heading {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title, .angled-hero-heading {
+        font-size: 2.2rem;
+    }
+    .hero-description, .angled-hero-subtext {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    .section-title {
+        font-size: 2.4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title, .angled-hero-heading {
+        font-size: 1.8rem;
+    }
+    .section-title {
+        font-size: 2rem !important;
+    }
+    .hero-right, .angled-hero-right {
+        padding: 1rem !important;
+        height: 350px;
+    }
+    .hero-right img, .angled-hero-right img, .hero-carousel {
+        border-radius: 20px !important;
     }
 }
 
@@ -1405,8 +1434,11 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
     .gallery-container {
-        aspect-ratio: 4 / 3; /* Taller on mobile for better visibility */
+        aspect-ratio: 1 / 1; /* Square on mobile for better visibility of detail */
+        height: auto !important;
+        max-height: 450px;
     }
+}
 }
 
 .gallery-track {
@@ -1885,7 +1917,26 @@ button, input, select, textarea {
     }
 
     .split-layout-image {
-        height: 300px !important;
+        height: 350px !important;
+    }
+
+    /* Fix hero overlap with navbar on mobile */
+    .hero-left, .angled-hero-left {
+        padding-top: 100px !important;
+    }
+
+    /* Neat headings */
+    h1, h2 {
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Ensure carousel arrows are visible on mobile */
+    .hero-arrows {
+        opacity: 0.8 !important;
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
     }
 }
 /* Logo color for other pages */
