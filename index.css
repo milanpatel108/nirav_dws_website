@@ -102,6 +102,20 @@ button, input, select, textarea {
     color: var(--white);
 }
 
+/* Pricing Section Refinement */
+.location-selector {
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 20;
+}
+
+.location-btn {
+    min-width: 160px;
+    transition: var(--transition);
+}
+
+
 /* Navbar */
 .navbar {
     background-color: #ffffff !important;
@@ -331,14 +345,16 @@ button, input, select, textarea {
 
 /* Compatibility for Other Pages (Centered Style) */
 .other-page .hero {
-    height: 60vh;
-    min-height: 450px;
+    min-height: 550px;
+    height: auto !important;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 110px;
+    padding: 180px 0 120px; /* Increased top padding for nav, bottom for buttons */
     background: #ffffff;
+    position: relative;
+    overflow: visible !important;
 }
 
 .other-page .hero-image {
