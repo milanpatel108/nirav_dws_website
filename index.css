@@ -209,12 +209,17 @@ button, input, select, textarea {
 .hero-right, .angled-hero-right {
     position: relative;
     background-color: #ffffff;
-    padding: 0 !important;
+    padding: 2.5rem !important; /* Aesthetic padding for floating card look */
     display: flex;
     align-items: stretch;
     height: 100%;
     width: 100%;
     overflow: hidden;
+}
+
+.hero-right img, .angled-hero-right img, .hero-carousel {
+    border-radius: 40px !important; /* Curved corners as requested */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .hero-content, .angled-hero-content {
@@ -226,13 +231,14 @@ button, input, select, textarea {
 }
 
 .hero-title, .angled-hero-heading {
-    font-size: 5rem;
+    font-size: 4rem; /* Reduced from 5rem to prevent overflow on long words like Morningside */
     line-height: 1;
     margin-bottom: 2rem;
     color: var(--black);
     font-weight: 800;
     letter-spacing: -0.02em;
     width: 100%;
+    word-break: break-word; /* Safety for long words */
 }
 
 .hero-description, .angled-hero-subtext {
