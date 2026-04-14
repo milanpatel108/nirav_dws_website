@@ -445,6 +445,7 @@ button, input, select, textarea {
     }
 }
 
+@media (max-width: 992px) {
     .nav-logo img {
         mix-blend-mode: multiply;
         filter: contrast(1.2) brightness(1.1);
@@ -1460,15 +1461,14 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
     .gallery-container {
-        aspect-ratio: 1 / 1; /* Square on mobile for better visibility of detail */
-        height: 400px !important; /* Fallback height for older mobile browsers */
+        aspect-ratio: 1 / 1;
+        height: 400px !important;
         max-height: 450px;
     }
 }
-}
 
 .gallery-track {
-    display: flex;
+    display: flex !important;
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
