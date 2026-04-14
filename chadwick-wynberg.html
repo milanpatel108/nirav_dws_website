@@ -193,8 +193,26 @@
                     <p style="font-size: 0.85rem; color: var(--dark-grey); margin-top: 0.5rem;">*Excluding VAT</p>
                 </div>
                 
-                <div style="height: 500px; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 4rem; box-shadow: var(--shadow);">
-                     <img src="assets/chadwick_12.jpg" alt="Wynberg Meeting Room" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-wrapper" style="margin-bottom: 4rem;">
+                    <div class="gallery-container" style="height: 600px;">
+                        <div class="gallery-track" id="meetingTrack">
+                            <div class="gallery-slide">
+                                <img src="assets/chawick meeting rooms/Bagatelle.jpg" alt="Bagatelle Meeting Room">
+                                <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Bagatelle</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="assets/chawick meeting rooms/Shezi.jpg" alt="Shezi Meeting Room">
+                                <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Shezi</div>
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="assets/chawick meeting rooms/Thora.jpg" alt="Thora Meeting Room">
+                                <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Thora</div>
+                            </div>
+                        </div>
+                        <button class="gallery-btn prev" id="meetingPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-btn next" id="meetingNext"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-counter" id="meetingCounter">1 / 3</div>
+                    </div>
                 </div>
 
                 <div style="text-align: center;">
@@ -211,19 +229,15 @@
                     <h2 class="section-title">The Atrium</h2>
                     <p style="margin: 2rem 0; color: var(--dark-grey); line-height: 1.8;">Our stunning Atrium space is perfect for large presentations, networking events, or corporate launches. A versatile, light-filled environment designed to impress.</p>
                     
-                    <ul style="list-style: none; margin-bottom: 3rem;">
-                        <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                            <i class="fas fa-users" style="color: var(--primary-blue);"></i> <strong>Capacity:</strong> 48+ Seats
-                        </li>
-                        <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                            <i class="fas fa-clock" style="color: var(--primary-blue);"></i> <strong>Price:</strong> R100 per person per hour (min R500/hr)
-                        </li>
-                        <li style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                            <i class="fas fa-calendar-day" style="color: var(--primary-blue);"></i> <strong>Full Day Rate:</strong> R4 000
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline">Enquire for Atrium</a>
-                    <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--dark-grey);">*Excluding VAT</p>
+                    <div class="pricing-card" style="margin-top: 2rem; text-align: center; max-width: 400px; box-shadow: var(--shadow); background: var(--white); padding: 2.5rem; border-radius: 16px;">
+                        <h3 class="service-title">Atrium Membership</h3>
+                        <p>light-filled environment designed to impress.</p>
+                        <div class="pricing-label">starting from</div>
+                        <div class="pricing-price">R100<span> / hr / person</span></div>
+                        <p style="font-size: 0.9rem; color: var(--dark-grey); margin: 0.5rem 0 1.5rem;">(min R500/hr) or R4000 Full Day</p>
+                        <div class="pricing-vat">Excluding VAT</div>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Enquire for Atrium</a>
+                    </div>
                 </div>
                 <div class="split-layout-image" style="flex: 1; height: 600px; background-image: url('assets/chadwick_17.jpg'); background-size: cover; background-position: center; border-radius: 16px; box-shadow: var(--shadow);"></div>
             </div>
@@ -251,7 +265,16 @@
                     <a href="contact.html" class="btn btn-primary">Book Storage</a>
                     <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--dark-grey);">*Excluding VAT</p>
                 </div>
-                <div class="split-layout-image" style="flex: 1; height: 600px; background-image: url('assets/storage.jpeg'); background-size: cover; background-position: center; border-radius: 16px; box-shadow: var(--shadow);"></div>
+                <div class="gallery-wrapper" style="flex: 1; height: 600px;">
+                    <div class="gallery-container" style="height: 100%; border-radius: 16px;">
+                        <div class="gallery-track" id="storageTrack">
+                            <div class="gallery-slide"><img src="assets/chadwick storage/366f2353-4848-4932-a8ac-050d62b6eb5a_primary.jpg" alt="Chadwick Storage 1"></div>
+                            <div class="gallery-slide"><img src="assets/chadwick storage/7fcd7911-2ae9-458c-aaf3-fc54888e2783_primary.jpg" alt="Chadwick Storage 2"></div>
+                        </div>
+                        <button class="gallery-btn prev" id="storagePrev" style="width: 40px; height: 40px;"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-btn next" id="storageNext" style="width: 40px; height: 40px;"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -323,7 +346,7 @@
                                     <div class="review-header">
                                         <div class="review-avatar">CC</div>
                                         <div class="review-info">
-                                            <h4>Cary Cousins</h4>
+                                            <h4>Cary C</h4>
                                             <div class="review-stars">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
@@ -502,6 +525,7 @@
                     }, 6000);
                 });
             });
+        })();
         (function() {
             const track = document.getElementById('reviewTrack');
             const prevBtn = document.getElementById('reviewPrev');
@@ -560,6 +584,78 @@
                     updateSlideshow();
                 }, 8000);
             }
+        })();
+
+        // Meeting Room Gallery
+        (function() {
+            const track = document.getElementById('meetingTrack');
+            const prevBtn = document.getElementById('meetingPrev');
+            const nextBtn = document.getElementById('meetingNext');
+            const counter = document.getElementById('meetingCounter');
+            const slides = Array.from(track.children);
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateGallery();
+            });
+
+            let autoPlay = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            }, 5500);
+
+            [prevBtn, nextBtn].forEach(btn => {
+                btn.addEventListener('mouseenter', () => clearInterval(autoPlay));
+                btn.addEventListener('mouseleave', () => {
+                    autoPlay = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        updateGallery();
+                    }, 5500);
+                });
+            });
+        })();
+
+        // Storage Gallery
+        (function() {
+            const track = document.getElementById('storageTrack');
+            const prevBtn = document.getElementById('storagePrev');
+            const nextBtn = document.getElementById('storageNext');
+            const slides = Array.from(track.children);
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateGallery();
+            });
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            }, 6500);
         })();
     </script>
 </body>
