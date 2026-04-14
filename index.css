@@ -445,13 +445,33 @@ button, input, select, textarea {
     }
 }
 
-@media (max-width: 992px) {
-    .navbar {
-        background-color: #ffffff !important;
-    }
     .nav-logo img {
         mix-blend-mode: multiply;
         filter: contrast(1.2) brightness(1.1);
+    }
+
+    /* Mobile-only Homepage Hero Reorder and background fix */
+    .hero.split-hero {
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: var(--white) !important;
+    }
+    
+    .hero.split-hero .hero-right {
+        order: 1;
+        width: 100%;
+        padding: 1.5rem !important;
+    }
+    
+    .hero.split-hero .hero-left {
+        order: 2;
+        width: 100%;
+        background-color: var(--white) !important;
+    }
+
+    /* Fix grey background issue on homepage mobile only */
+    #solutions {
+        background-color: var(--white) !important;
     }
 }
 
@@ -1760,7 +1780,7 @@ button, input, select, textarea {
         height: auto;
         max-height: 0;
         overflow: hidden;
-        background: #f8f9fa !important;
+        background: var(--white) !important;
         transition: max-height 0.5s ease-in-out;
         padding: 0 !important;
         visibility: visible;
