@@ -193,8 +193,15 @@
                     <p style="font-size: 0.85rem; color: var(--dark-grey); margin-top: 0.5rem;">*Excluding VAT</p>
                 </div>
                 
-                <div style="height: 500px; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 4rem; box-shadow: var(--shadow);">
-                     <img src="assets/chadwick_14.jpg" alt="Village Meeting Room" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-wrapper" style="margin-bottom: 4rem;">
+                    <div class="gallery-container" style="height: 500px;">
+                        <div class="gallery-track" id="meetingTrack">
+                            <div class="gallery-slide"><img src="assets/Village Meetingroom/0506e6ec-7baf-42e0-aa85-ccf6d84e1c3c_primary.jpg" alt="Village Meeting Room 1"></div>
+                            <div class="gallery-slide"><img src="assets/Village Meetingroom/d523bcc4-8d47-48ec-a4d7-445f2fd9ee9c_primary.jpg" alt="Village Meeting Room 2"></div>
+                        </div>
+                        <button class="gallery-btn prev" id="meetingPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-btn next" id="meetingNext"><i class="fas fa-chevron-right"></i></button>
+                    </div>
                 </div>
 
                 <div style="text-align: center;">
@@ -213,21 +220,24 @@
                 <div class="gallery-wrapper">
                     <div class="gallery-container">
                         <div class="gallery-track" id="galleryTrack">
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 04.jpg" alt="Village Office 1"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 06.jpg" alt="Village Office 2"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 09.jpg" alt="Village Office 3"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 10.jpg" alt="Village Office 4"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 11.jpg" alt="Village Office 5"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 12.jpg" alt="Village Office 6"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 13.jpg" alt="Village Office 7"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 14.jpg" alt="Village Office 8"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 15.jpg" alt="Village Office 9"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 16.jpg" alt="Village Office 10"></div>
-                            <div class="gallery-slide"><img src="assets/villagegallery/Selby 17.jpg" alt="Village Office 11"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/011d523a-3c22-430d-914a-c6bf175d6983_primary.jpg" alt="Village Office 1"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/0bf2b1f7-408c-409a-af17-7f8e1e5f9b68_primary.jpg" alt="Village Office 2"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/269ed448-2666-4f0d-9c16-5399ffa5fc42_primary.jpg" alt="Village Office 3"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/3113bd7a-9429-4396-925b-eff0a8555d7d_primary.jpg" alt="Village Office 4"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/3666beee-264a-49d5-9008-999c4fbe391d_primary.jpg" alt="Village Office 5"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/38166daa-4636-4fef-aa8c-af02d4ed9340_primary.jpg" alt="Village Office 6"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4b529897-8876-449b-afbc-e738dcc4da1e_primary.jpg" alt="Village Office 7"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4bf8794b-efd4-4366-8695-bb4bf56ade99_primary.jpg" alt="Village Office 8"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4ff359c2-afe5-4253-901e-9fb79c7dc7ab_primary.jpg" alt="Village Office 9"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/603a39b6-3de4-4ee5-b059-6e8f3a0c63c2_primary.jpg" alt="Village Office 10"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/697137b8-1638-4dcd-aad3-bf3a09cd596c_primary.jpg" alt="Village Office 11"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/73d9792e-44d3-4bfe-89e6-217dc718a7d7_primary.jpg" alt="Village Office 12"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/8be7e69e-5842-4002-9903-654b33ba1eba_primary.jpg" alt="Village Office 13"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/9e38977b-95f4-4e76-8e66-0becc19ad991_primary.jpg" alt="Village Office 14"></div>
                         </div>
                         <button class="gallery-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                         <button class="gallery-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-                        <div class="gallery-counter" id="galleryCounter">1 / 11</div>
+                        <div class="gallery-counter" id="galleryCounter">1 / 14</div>
                     </div>
                 </div>
             </div>
@@ -323,44 +333,63 @@
     <script src="index.js"></script>
     <script>
         (function() {
-            const track = document.getElementById('galleryTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const counter = document.getElementById('galleryCounter');
-            const slides = Array.from(track.children);
+            // Main Gallery
+            const galleryTrack = document.getElementById('galleryTrack');
+            const galleryPrev = document.getElementById('prevBtn');
+            const galleryNext = document.getElementById('nextBtn');
+            const galleryCounter = document.getElementById('galleryCounter');
             
-            let currentIndex = 0;
-            const totalSlides = slides.length;
+            if (galleryTrack && galleryPrev && galleryNext) {
+                let galleryIndex = 0;
+                const gallerySlides = Array.from(galleryTrack.children);
+                const totalGallerySlides = gallerySlides.length;
 
-            function updateGallery() {
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
-                counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+                function updateMainGallery() {
+                    galleryTrack.style.transform = `translateX(-${galleryIndex * 100}%)`;
+                    if (galleryCounter) galleryCounter.textContent = `${galleryIndex + 1} / ${totalGallerySlides}`;
+                }
+
+                galleryNext.addEventListener('click', () => {
+                    galleryIndex = (galleryIndex + 1) % totalGallerySlides;
+                    updateMainGallery();
+                });
+
+                galleryPrev.addEventListener('click', () => {
+                    galleryIndex = (galleryIndex - 1 + totalGallerySlides) % totalGallerySlides;
+                    updateMainGallery();
+                });
             }
 
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateGallery();
-            });
+            // Meeting Room Carousel
+            const meetingTrack = document.getElementById('meetingTrack');
+            const meetingPrev = document.getElementById('meetingPrev');
+            const meetingNext = document.getElementById('meetingNext');
+            
+            if (meetingTrack && meetingPrev && meetingNext) {
+                let meetingIndex = 0;
+                const meetingSlides = Array.from(meetingTrack.children);
+                const totalMeetingSlides = meetingSlides.length;
 
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateGallery();
-            });
+                function updateMeetingGallery() {
+                    meetingTrack.style.transform = `translateX(-${meetingIndex * 100}%)`;
+                }
 
-            let autoPlay = setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateGallery();
-            }, 6000);
-
-            [prevBtn, nextBtn].forEach(btn => {
-                btn.addEventListener('mouseenter', () => clearInterval(autoPlay));
-                btn.addEventListener('mouseleave', () => {
-                    autoPlay = setInterval(() => {
-                        currentIndex = (currentIndex + 1) % totalSlides;
-                        updateGallery();
-                    }, 6000);
+                meetingNext.addEventListener('click', () => {
+                    meetingIndex = (meetingIndex + 1) % totalMeetingSlides;
+                    updateMeetingGallery();
                 });
-            });
+
+                meetingPrev.addEventListener('click', () => {
+                    meetingIndex = (meetingIndex - 1 + totalMeetingSlides) % totalMeetingSlides;
+                    updateMeetingGallery();
+                });
+
+                // Auto-play for meeting rooms
+                setInterval(() => {
+                    meetingIndex = (meetingIndex + 1) % totalMeetingSlides;
+                    updateMeetingGallery();
+                }, 5000);
+            }
         })();
     </script>
 </body>
