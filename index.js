@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Elements to reveal
     const revealElements = [
         '.section-title', 
-        '.hero-content', 
         '.location-card', 
         '.service-item', 
         '.trust-item'
