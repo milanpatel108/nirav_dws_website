@@ -140,7 +140,7 @@
                     <span class="section-tag text-uppercase">Amenities</span>
                     <h2 class="section-title" style="margin: 0 auto;">What's Included</h2>
                 </div>
-                <div class="amenities-grid">
+                <div class="amenities-grid" style="grid-template-columns: repeat(5, 1fr);">
                     <div class="amenity-item">
                         <i class="fas fa-user-shield"></i>
                         <span class="amenity-label">24-hour security</span>
@@ -213,7 +213,7 @@
 
 
                     </div>
-                    <div class="split-layout-image" style="background-image: url('assets/kelvinfeatures/breakaway.jpg'); background-size: cover; background-position: center; border-radius: 40px;"></div>
+                    <div class="split-layout-image" style="background-image: url('assets/breakwaymorningside.jpg'); background-size: cover; background-position: center; border-radius: 40px;"></div>
                 </div>
 
                 <!-- Coffee Stations -->
@@ -251,8 +251,21 @@
                     <p style="font-size: 0.85rem; color: var(--dark-grey); margin-top: 0.5rem;">*Excluding VAT</p>
                 </div>
                 
-                <div style="height: 500px; width: 100%; border-radius: 16px; overflow: hidden; margin-bottom: 4rem; box-shadow: var(--shadow);">
-                     <img src="assets/kelvincover.jpg" alt="Morningside Boardroom" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="gallery-wrapper" style="margin-bottom: 4rem;">
+                    <div class="gallery-container" style="height: 600px;">
+                        <div class="gallery-track" id="meetingTrack">
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/026e7d50-a022-4509-a61f-cefc33c12c17_primary.jpg" alt="Morningside Meeting Room 1"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/12e62641-cd07-4f00-a4e0-9283344c6237_primary.jpg" alt="Morningside Meeting Room 2"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/_D3J1540.jpg" alt="Morningside Meeting Room 3"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/a2df511a-1650-4289-a3e8-7ba0670f3c26_primary.jpg" alt="Morningside Meeting Room 4"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/c4a34862-5520-43fd-aa0f-571bbd234c3c_primary.jpg" alt="Morningside Meeting Room 5"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/df54f805-1c10-45da-8d37-f3b7008f2fea_primary.jpg" alt="Morningside Meeting Room 6"></div>
+                            <div class="gallery-slide"><img src="assets/morningside meetingroom/Gemini_Generated_Image_w2fvj7w2fvj7w2fv.png" alt="Morningside Meeting Room 7"></div>
+                        </div>
+                        <button class="gallery-btn prev" id="meetingPrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-btn next" id="meetingNext"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-counter" id="meetingCounter">1 / 7</div>
+                    </div>
                 </div>
 
                 <div style="text-align: center;">
@@ -415,6 +428,48 @@
                         currentIndex = (currentIndex + 1) % totalSlides;
                         updateGallery();
                     }, 6000);
+                });
+            });
+        })();
+
+        // Meeting Room Gallery
+        (function() {
+            const track = document.getElementById('meetingTrack');
+            const prevBtn = document.getElementById('meetingPrev');
+            const nextBtn = document.getElementById('meetingNext');
+            const counter = document.getElementById('meetingCounter');
+            const slides = Array.from(track.children);
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            function updateGallery() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateGallery();
+            });
+
+            let autoPlay = setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            }, 5500);
+
+            [prevBtn, nextBtn].forEach(btn => {
+                btn.addEventListener('mouseenter', () => clearInterval(autoPlay));
+                btn.addEventListener('mouseleave', () => {
+                    autoPlay = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % totalSlides;
+                        updateGallery();
+                    }, 5500);
                 });
             });
         })();
