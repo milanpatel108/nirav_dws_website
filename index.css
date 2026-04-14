@@ -446,53 +446,6 @@ button, input, select, textarea {
         mix-blend-mode: multiply;
         filter: contrast(1.2) brightness(1.1);
     }
-    .hero {
-        flex-direction: column;
-        height: auto;
-        min-height: auto;
-        padding: 120px 0 60px;
-        background-color: #ffffff;
-    }
-    .hero-left {
-        padding: 4rem 10% 3rem;
-        justify-content: center;
-    }
-    .hero-right {
-        padding: 1.5rem;
-        height: 450px;
-        flex: none;
-        width: 100%;
-    }
-    .hero-carousel {
-        border-radius: 20px;
-    }
-    .hero-content {
-        text-align: center;
-    }
-    .hero-title {
-        font-size: 3.2rem;
-        margin-bottom: 2rem;
-    }
-    .hero-description {
-        font-size: 1.2rem;
-        margin-bottom: 3.5rem;
-    }
-    .hero-actions {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-    .hero-arrows {
-        opacity: 1;
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        top: auto;
-        transform: none;
-        padding: 0 20px;
-    }
 }
 
 /* Stats/Features Row */
