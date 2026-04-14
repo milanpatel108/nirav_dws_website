@@ -1005,18 +1005,36 @@ button, input, select, textarea {
 
 .pricing-card {
     background: var(--white);
-    padding: 4rem;
+    padding: 3rem 2rem;
     border: 1px solid var(--light-grey);
     text-align: center;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: center;
+}
+
+.pricing-card .service-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    min-height: 3.6rem; /* Ensure 2-line titles don't break alignment */
+    display: flex;
+    align-items: center;
+}
+
+.pricing-card p {
+    color: var(--dark-grey);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    min-height: 3rem; /* Height for ~2 lines of description */
 }
 
 .pricing-card .btn {
-    margin-top: auto;
-    align-self: center;
+    margin-top: auto; /* Push button and price block to bottom */
+    width: 100%;
+    max-width: 180px;
 }
 
 .pricing-card:hover {
@@ -1025,10 +1043,11 @@ button, input, select, textarea {
 }
 
 .pricing-price {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: var(--font-heading);
     color: var(--primary-blue);
-    margin: 1.5rem 0;
+    margin: 0.5rem 0; /* Tighter vertical spacing */
+    font-weight: 700;
     white-space: nowrap;
 }
 
@@ -1040,23 +1059,24 @@ button, input, select, textarea {
 
 .pricing-label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--dark-grey);
     text-transform: lowercase;
-    margin-bottom: -0.5rem;
+    margin-top: auto; /* Force everything from here down to the bottom */
+    margin-bottom: 0;
     font-weight: 500;
     opacity: 0.7;
 }
 
 .pricing-vat {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--dark-grey);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-top: 0;
+    margin-bottom: 1.5rem; /* Space above button */
+    font-weight: 600;
     opacity: 0.8;
 }
 
