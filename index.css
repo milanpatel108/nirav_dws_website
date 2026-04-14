@@ -461,12 +461,18 @@ button, input, select, textarea {
         order: 1;
         width: 100%;
         padding: 1.5rem !important;
+        height: 450px !important; /* Enforce height on mobile to prevent collapse */
     }
     
     .hero.split-hero .hero-left {
         order: 2;
         width: 100%;
         background-color: var(--white) !important;
+    }
+
+    /* Enforce height for feature carousel on mobile */
+    .feature-carousel-container {
+        height: 400px !important;
     }
 
     /* Fix grey background issue on homepage mobile only */
@@ -1455,7 +1461,7 @@ button, input, select, textarea {
 @media (max-width: 768px) {
     .gallery-container {
         aspect-ratio: 1 / 1; /* Square on mobile for better visibility of detail */
-        height: auto !important;
+        height: 400px !important; /* Fallback height for older mobile browsers */
         max-height: 450px;
     }
 }
