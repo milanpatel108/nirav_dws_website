@@ -33,14 +33,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Homepage specific background color applied to body and hero */
-body:not(.other-page) {
-    background-color: #E3F4FF;
-}
-body:not(.other-page) .split-hero,
-body:not(.other-page) .hero-left {
-    background-color: #E3F4FF !important;
-}
+
 
 h1, h2 {
     font-family: var(--font-heading);
@@ -864,9 +857,9 @@ button, input, select, textarea {
 
 /* Footer White Redesign */
 .footer {
-    background-color: var(--white);
+    background-color: #F0F8FF; /* Alice Blue */
     color: var(--black);
-    padding: 80px 0 40px;
+    padding: 60px 0 30px; /* Reduced padding to make footer smaller */
     border-top: 1px solid var(--light-grey);
 }
 
@@ -987,9 +980,9 @@ button, input, select, textarea {
 
 .dropdown-grid {
     display: grid;
-    grid-template-columns: 60% 35%; /* Gives locations more space, logo centered mechanically in remaining */
+    grid-template-columns: 55% 42%; /* Tuned for side-by-side consistency */
     justify-content: space-between;
-    align-items: center; /* Vertically centers the logo relative to the locations */
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -1015,8 +1008,9 @@ button, input, select, textarea {
     align-items: center;
     justify-content: center;
     border-left: 1px solid var(--light-grey);
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     margin-top: 0;
+    height: 100%;
 }
 
 .dropdown-logo-col img {
