@@ -864,21 +864,21 @@ button, input, select, textarea {
 }
 
 .footer-logo img {
-    height: 100px;
+    height: 140px; /* Increased from 100px */
     width: auto;
     object-fit: contain;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem; /* Space from social icons above */
     /* Match header logo exactly */
     mix-blend-mode: multiply;
     filter: contrast(1.2) brightness(1.1);
 }
 
 .footer-desc {
-    font-size: 0.95rem;
+    font-size: 1rem; /* Slightly larger text */
     line-height: 1.7;
     margin-bottom: 2rem;
     color: var(--dark-grey);
-    max-width: 340px;
+    max-width: 500px; /* Increased from 340px to occupy more space on the left */
 }
 
 .footer-contact {
