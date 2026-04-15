@@ -165,7 +165,7 @@ const pricingData = {
             "MORNINGSIDE, SANDTON": [
                 { title: "Half Day", price: "R380.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
                 { title: "Full Day", price: "R520.00", vat: "Excluding VAT", desc: "Total access for a full day of productivity.", highlight: true },
-                { title: "5-Day Week", price: "R1 725.00", vat: "Excluding VAT", desc: "Reduced rate for weekly bookings.", highlight: false }
+                { title: "Monthly Suite", price: "R3 800.00", vat: "Excluding VAT", desc: "Starting monthly rate for tailored suites.", highlight: false }
             ],
             "CHADWICK, WYNBERG": [
                 { title: "Half Day", price: "R330.00", vat: "Excluding VAT", desc: "Perfect for quick meetings or focused sessions.", highlight: false },
