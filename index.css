@@ -140,17 +140,24 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
-    background: rgba(255, 255, 255, 0.82); /* Glassmorphism base */
-    backdrop-filter: blur(20px); /* Frosted glass effect */
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Pure white shine border */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
+    padding: 1.5rem 5%; /* More generous padding when transparent */
+    background: transparent; /* Completely transparent initially */
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Subtle gloss reflection at the very top */
-.navbar::before {
+.navbar.scrolled {
+    padding: 0.5rem 5%; /* Shrink on scroll */
+    background: rgba(255, 255, 255, 0.98); /* Solid white or near-solid on scroll */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sophisticated drop shadow */
+}
+
+/* Subtle gloss reflection only when scrolled */
+.navbar.scrolled::before {
     content: '';
     position: absolute;
     top: 0;
@@ -176,6 +183,12 @@ button, input, select, textarea {
     text-transform: uppercase;
     letter-spacing: 0.1em; /* More spacing for boldness */
     position: relative;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); /* Visibility on transparent backgrounds */
+    transition: var(--transition);
+}
+
+.navbar.scrolled .nav-link {
+    text-shadow: none;
 }
 
 .nav-link::after {
