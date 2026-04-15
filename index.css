@@ -857,14 +857,14 @@ button, input, select, textarea {
 
 /* Footer White Redesign */
 .footer {
-    background-color: #F0F8FF; /* Alice Blue */
+    background-color: #E8F4FF; /* Slightly darker than Alice Blue */
     color: var(--black);
     padding: 60px 0 30px; /* Reduced padding to make footer smaller */
     border-top: 1px solid var(--light-grey);
 }
 
 .footer-logo img {
-    height: 140px; /* Increased from 100px */
+    height: 220px; /* Much larger as requested */
     width: auto;
     object-fit: contain;
     margin-top: 1.5rem; /* Space from social icons above */
