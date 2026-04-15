@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Workspaces</title>
     <meta name="description" content="Premium private office suites in Johannesburg. Start working immediately without heavy investment in furniture.">
-    <link rel="stylesheet" href="index.css?v=11.0">
+    <link rel="stylesheet" href="index.css?v=12.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="other-page">
-    <nav class="navbar navbar-blue" id="navbar">
+    <nav class="navbar navbar-blue" id="navbar navbar-blue">
         <a href="index.html" class="nav-logo">
-            <img src="assets/Dynamic%20Workspaces%20Logo.png" alt="Dynamic Workspaces Logo">
+            <img src="assets/Dynamic%20Workspaces%20Logo.png" alt="Dynamic Workspaces Logo" fetchpriority="high">
         </a>
+        <div class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </div>
         <div class="nav-links">
             <div class="nav-item">
                 <a href="locations.html" class="nav-link">LOCATION</a>
                 <div class="dropdown-menu">
                     <div class="mobile-menu-header">
-                        
                         </div>
                     <div class="dropdown-grid">
-                        <div class="dropdown-column" style="width: 100%; text-align: center;">
+                        <div class="dropdown-column">
                             <h4>Locations</h4>
                             <ul class="dropdown-links">
                                 <li style="display: flex; align-items: center; justify-content: space-between;">
@@ -41,6 +43,9 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="dropdown-logo-col">
+                            <img src="assets/Dynamic%20Workspaces%20Logo.png" alt="Dynamic Workspaces Logo">
+                        </div>
                     </div>
                     <div class="dropdown-footer" style="text-align: center;">
                         <h3 style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</h3>
@@ -52,16 +57,18 @@
                 <a href="offerings.html" class="nav-link">Offerings</a>
                 <div class="dropdown-menu">
                     <div class="mobile-menu-header">
-                        
                         </div>
                     <div class="dropdown-grid">
-                        <div class="dropdown-column" style="width: 100%; text-align: center;">
+                        <div class="dropdown-column">
                             <h4>Offerings</h4>
                             <ul class="dropdown-links">
                                 <li><a href="private-offices.html">PRIVATE OFFICES</a></li>
                                 <li><a href="coworking.html">CO-WORKING</a></li>
                                 <li><a href="virtual-office.html">VIRTUAL OFFICE</a></li>
                             </ul>
+                        </div>
+                        <div class="dropdown-logo-col">
+                            <img src="assets/Dynamic%20Workspaces%20Logo.png" alt="Dynamic Workspaces Logo">
                         </div>
                     </div>
                     <div class="dropdown-footer" style="text-align: center;">
@@ -284,6 +291,7 @@
 <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
+
 
 
 
