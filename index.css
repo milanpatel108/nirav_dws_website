@@ -1797,6 +1797,18 @@ button, input, select, textarea {
         flex-wrap: wrap; /* Allow buttons to stack instead of squeezing text */
         gap: 1rem !important;
     }
+
+    /* Refined Headings for Tablets */
+    .hero-title, .angled-hero-heading {
+        font-size: 3.2rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .section-title {
+        font-size: 2.8rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 2rem !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2073,10 +2085,25 @@ button, input, select, textarea {
         padding-top: 100px !important;
     }
 
-    /* Neat headings */
+    /* Neat, responsive headings for Small Phones */
     h1, h2 {
         word-break: normal !important;
         overflow-wrap: break-word !important;
+    }
+
+    .hero-title, .angled-hero-heading {
+        font-size: 2.4rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle, .section-tag {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.15em !important;
     }
 
     /* Ensure carousel arrows are visible on mobile */
