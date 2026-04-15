@@ -216,8 +216,8 @@ button, input, select, textarea {
 /* Combined Split Hero Styling (Homepage & Locations) */
 .split-hero, .angled-split-hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 60vh; /* Reduced further to prevent images stretching vertically too much */
+    grid-template-columns: 40% 60%; /* Give image side more width to zoom it out further */
+    min-height: 55vh; /* Drop slightly more to improve aspect ratio for panoramic images */
     width: 100% !important;
     background-color: #ffffff;
     align-items: stretch;
@@ -231,7 +231,7 @@ button, input, select, textarea {
     flex-direction: column;
     align-items: flex-start; 
     justify-content: center;
-    padding: 140px 10% 80px; 
+    padding: 120px 8% 60px; 
     background-color: #ffffff;
     position: relative;
     z-index: 10;
