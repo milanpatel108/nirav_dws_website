@@ -256,19 +256,27 @@ button, input, select, textarea {
     height: 100%;
 }
 
-.hero-arrows {
+/* Hero Slide & Carousel Refinement */
+.hero-carousel {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* Ensure arrows are inside the carousel and relative to it */
+.hero-right .hero-arrows {
     opacity: 0;
     transition: var(--transition);
     position: absolute;
     top: 50%;
-    left: 40px;
-    right: 40px;
+    left: 4.5rem; /* Consistently 2rem inside the image start (padding is 2.5rem) */
+    right: 4.5rem; /* Consistently 2rem inside the image end */
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
     z-index: 100;
     pointer-events: none;
-    width: calc(100% - 80px); /* Adjust for padding on hero-right if needed */
+    width: auto; /* Width determined by left/right */
 }
 
 .hero-right:hover .hero-arrows {
@@ -278,68 +286,50 @@ button, input, select, textarea {
 .hero-arrow {
     width: 50px;
     height: 50px;
-    background: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-blue);
+    color: var(--white);
     cursor: pointer;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     pointer-events: auto;
     transition: var(--transition);
 }
 
 .hero-arrow:hover {
-    background: var(--primary-blue);
-    color: white;
+    background: var(--white);
+    color: var(--primary-blue);
     transform: scale(1.1);
-}
-
-.hero-content, .angled-hero-content {
-    max-width: 100% !important;
-    width: 100% !important;
-    z-index: 10;
-    text-align: left !important;
-    margin: 0 !important;
-}
-
-.hero-title, .angled-hero-heading {
-    font-size: 4rem; /* Reduced from 5rem to prevent overflow on long words like Morningside */
-    line-height: 1;
-    margin-bottom: 2rem;
-    color: var(--black);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    width: 100%;
-    word-break: break-word; /* Safety for long words */
-}
-
-.hero-description, .angled-hero-subtext {
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
-    width: 100%;
-    color: var(--dark-grey);
-    line-height: 1.6;
 }
 
 .hero-slide {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     background-size: cover;
     background-position: center;
-    display: none;
+    opacity: 0;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
 
 .hero-slide.active {
-    display: block;
-    animation: fadeEffect 1s forwards;
+    opacity: 1;
+    z-index: 2;
 }
+
+.hero-carousel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
 
 .hero-right img, .angled-hero-right img {
     width: 100%;
@@ -2163,137 +2153,5 @@ button, input, select, textarea {
 }
 
 
-/* Hero Carousel */
-.hero-carousel {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
 
-.hero-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.5s ease;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-.hero-carousel::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
-}
-
-.hero-arrows {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2rem;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.hero-carousel:hover .hero-arrows {
-    opacity: 1;
-}
-
-.hero-arrow {
-    background: rgba(255,255,255,0.1);
-    color: var(--white);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
-    transition: var(--transition);
-}
-
-.hero-arrow:hover {
-    background: var(--white);
-    color: var(--primary-blue);
-}
-
-/* Feature Carousel for Zero Compromise Section */
-.feature-carousel-container {
-    position: relative;
-    height: 600px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.feature-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: var(--white);
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
-    transition: var(--transition);
-}
-
-.feature-nav-btn:hover {
-    background: var(--primary-blue);
-}
-
-.feature-nav-btn.prev {
-    left: 15px; /* Moved to the left */
-}
-
-.feature-nav-btn.next {
-    right: 15px;
-}
-
-
-.feature-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.feature-slide {
-    flex: 0 0 100%;
-    height: 100%;
-}
-
-.feature-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-.footer-logo img {
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 2rem;
-    mix-blend-mode: multiply;
-    filter: contrast(1.2) brightness(1.1);
-}
 
