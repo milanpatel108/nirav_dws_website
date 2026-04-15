@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Workspaces</title>
     <meta name="description" content="Get in touch with us to schedule a tour or enquire about our premium office solutions in South Africa.">
-    <link rel="stylesheet" href="index.css?v=18.0">
+    <link rel="stylesheet" href="index.css?v=19.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -208,7 +208,7 @@
                     <!-- Branch Details Section -->
                     <div id="branch-details" style="margin-top: 3rem; border-top: 1px solid var(--light-grey); padding-top: 2rem; display: none;">
                         <h4 style="font-size: 0.9rem; text-transform: uppercase; color: var(--dark-grey); margin-bottom: 1.5rem; text-align: center;">Branch Contact Details</h4>
-                        <div class="branch-details-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                        <div class="branch-details-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center;">
                             <div>
                                 <i class="fas fa-map-marker-alt" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
                                 <p id="branch-address" style="font-size: 0.85rem; color: var(--dark-grey);"></p>
@@ -216,6 +216,10 @@
                             <div>
                                 <i class="fas fa-phone" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
                                 <p style="font-size: 0.85rem;"><a id="branch-phone-link" href="tel:" style="color: var(--dark-grey); text-decoration: none;"></a></p>
+                            </div>
+                            <div>
+                                <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                                <p style="font-size: 0.85rem;"><a id="branch-whatsapp-link" href="https://wa.me/" target="_blank" style="color: var(--dark-grey); text-decoration: none;"></a></p>
                             </div>
                             <div>
                                 <i class="fas fa-envelope" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
@@ -240,6 +244,8 @@
                 address: "Morningside View, Sandton, 2054",
                 phone: "011 064 1600",
                 phoneHref: "tel:0110641600",
+                whatsapp: "072 072 5928",
+                whatsappHref: "https://wa.me/27720725928",
                 email: "Morningsidedrive@dynamicworkspaces.co.za",
                 formEmail: "Morningsidedrive@dynamicworkspaces.co.za",
                 mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.9453409518133!2d28.06972397431996!3d-26.06804267716073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573093ce09031%3A0xa2ed708c8d5efb2b!2sDynamic%20Workspaces%20-%20Morningside!5e0!3m2!1sen!2sza!4v1775806126297!5m2!1sen!2sza"
@@ -248,6 +254,8 @@
                 address: "Chadwick Ave, Wynberg, 2090",
                 phone: "079 210 5562",
                 phoneHref: "tel:0792105562",
+                whatsapp: "079 210 5562",
+                whatsappHref: "https://wa.me/27792105562",
                 email: "info@dynamicworkspaces.co.za",
                 formEmail: "info@dynamicworkspaces.co.za",
                 mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6025.61044361286!2d28.074970039742798!3d-26.103834131405904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573b3595dca3b%3A0xd21f3829b70bf0d6!2sDynamic%20Workspaces%20Wynberg%20Sandton!5e0!3m2!1sen!2sza!4v1775741908985!5m2!1sen!2sza"
@@ -256,6 +264,8 @@
                 address: "The Village, Johannesburg South",
                 phone: "011 044 9400",
                 phoneHref: "tel:0110449400",
+                whatsapp: "079 360 0468",
+                whatsappHref: "https://wa.me/27793600468",
                 email: "villageroad@dynamicworkspaces.co.za",
                 formEmail: "villageroad@dynamicworkspaces.co.za",
                 mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.5402779096453!2d28.037447174326132!3d-26.211629077072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950f0184d64105%3A0x882841796d5dd597!2sDynamic%20Workspaces%20Selby%20JHB!5e0!3m2!1sen!2sza!4v1775806524263!5m2!1sen!2sza"
@@ -269,6 +279,7 @@
         const branchDetails = document.getElementById('branch-details');
         const branchAddress = document.getElementById('branch-address');
         const branchPhoneLink = document.getElementById('branch-phone-link');
+        const branchWhatsappLink = document.getElementById('branch-whatsapp-link');
         const branchEmailLink = document.getElementById('branch-email-link');
         const contactForm = document.getElementById('main-contact-form');
         const successMsg = document.getElementById('form-success-msg');
@@ -305,6 +316,8 @@
             branchAddress.textContent = branch.address;
             branchPhoneLink.textContent = branch.phone;
             branchPhoneLink.href = branch.phoneHref;
+            branchWhatsappLink.textContent = branch.whatsapp;
+            branchWhatsappLink.href = branch.whatsappHref;
             branchEmailLink.textContent = branch.email;
             branchEmailLink.href = `mailto:${branch.email}`;
 
