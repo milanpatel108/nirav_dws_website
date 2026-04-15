@@ -1239,8 +1239,8 @@ button, input, select, textarea {
 }
 
 .pricing-price {
-    font-size: 2.8rem;
-    font-family: var(--font-body);
+    font-size: 3.2rem; /* Slighlty larger for the fancy font */
+    font-family: var(--font-heading); /* Fancy font as requested */
     color: var(--primary-blue);
     margin: 0.5rem 0; /* Tighter vertical spacing */
     font-weight: 700;
@@ -1258,6 +1258,15 @@ button, input, select, textarea {
     font-size: 0.8rem;
     color: var(--dark-grey);
     text-transform: lowercase;
+    font-family: var(--font-body);
+}
+
+.pricing-vat, .vat-text {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    font-weight: 500;
+}
     margin-top: auto; /* Force everything from here down to the bottom */
     margin-bottom: 0;
     font-weight: 500;
