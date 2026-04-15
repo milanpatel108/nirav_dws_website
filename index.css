@@ -217,7 +217,7 @@ button, input, select, textarea {
 .split-hero, .angled-split-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 85vh; /* Reduced from 100vh to fix excessive space at bottom */
+    min-height: 60vh; /* Reduced further to prevent images stretching vertically too much */
     width: 100% !important;
     background-color: #ffffff;
     align-items: stretch;
@@ -276,12 +276,12 @@ button, input, select, textarea {
 }
 
 .hero-title, .angled-hero-heading {
-    font-size: 5.5rem; 
-    line-height: 1.15; /* Slightly increased */
+    font-size: 3.8rem; /* Corrected from 5.5rem which was way too large */
+    line-height: 1.15;
     margin-bottom: 2rem;
     color: var(--black);
     font-weight: 800;
-    letter-spacing: -0.01em; /* Reduced negative spacing to fix "shrunk/squashed" feel */
+    letter-spacing: -0.01em;
     width: 100%;
     word-break: break-word;
 }
@@ -491,7 +491,7 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
     .hero-title, .angled-hero-heading {
-        font-size: 3.2rem; /* Increased from 2.2rem to fix "shrunk" look on tablet */
+        font-size: 2.2rem; /* Reverted from 3.2rem */
     }
     .hero-description, .angled-hero-subtext {
         font-size: 1.1rem;
@@ -504,7 +504,7 @@ button, input, select, textarea {
 
 @media (max-width: 480px) {
     .hero-title, .angled-hero-heading {
-        font-size: 2.5rem; /* Increased from 1.8rem to fix "shrunk" look on mobile */
+        font-size: 1.8rem; /* Reverted from 2.5rem */
     }
     .section-title {
         font-size: 2rem !important;
