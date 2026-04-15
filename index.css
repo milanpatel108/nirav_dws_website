@@ -240,7 +240,7 @@ button, input, select, textarea {
 .hero-right, .angled-hero-right {
     position: relative;
     background-color: #ffffff;
-    padding: 2.5rem !important; /* Aesthetic padding for floating card look */
+    padding: 0 !important; /* Removed padding to avoid borders */
     display: flex;
     align-items: stretch;
     height: 100%;
@@ -249,7 +249,7 @@ button, input, select, textarea {
 }
 
 .hero-right img, .angled-hero-right img, .hero-carousel {
-    border-radius: 40px !important; /* Premium curved corners */
+    border-radius: 0 !important; /* Removed border radii */
     box-shadow: 0 25px 60px rgba(0,0,0,0.12);
     overflow: hidden;
     position: relative;
