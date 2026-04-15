@@ -33,6 +33,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Homepage specific background color applied to body and hero */
+body:not(.other-page) {
+    background-color: #E3F4FF;
+}
+body:not(.other-page) .split-hero,
+body:not(.other-page) .hero-left {
+    background-color: #E3F4FF !important;
+}
+
 h1, h2 {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -960,10 +969,10 @@ button, input, select, textarea {
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     background-color: var(--white);
-    width: 600px;
+    width: 700px; /* Increased from 600px to give more space horizontally */
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
     border-radius: 8px;
-    padding: 3rem;
+    padding: 2.5rem; /* Reduced padding slightly to save vertical space */
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -977,10 +986,11 @@ button, input, select, textarea {
 }
 
 .dropdown-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 60% 35%; /* Gives locations more space, logo centered mechanically in remaining */
+    justify-content: space-between;
+    align-items: center; /* Vertically centers the logo relative to the locations */
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
@@ -1004,9 +1014,9 @@ button, input, select, textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-left: none;
-    padding-left: 0;
-    margin-top: 1rem;
+    border-left: 1px solid var(--light-grey);
+    padding-left: 1.5rem;
+    margin-top: 0;
 }
 
 .dropdown-logo-col img {
