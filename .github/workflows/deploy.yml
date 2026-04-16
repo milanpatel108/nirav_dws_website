@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           source: "*.html,index.css,index.js,assets/**"
-          target: "/var/www/nirav_dws_website"
+          target: "/var/www/NPG_Website/public/dws"
           overwrite: true
