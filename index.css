@@ -1146,6 +1146,29 @@ button, input, select, textarea {
 @media (max-width: 600px) {
     .footer-grid {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem !important;
+    }
+
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links, .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 1.5rem !important;
+    }
+
+    .footer-logo {
+        margin-top: 2rem;
     }
 }
 
