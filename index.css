@@ -1068,6 +1068,10 @@ button, input, select, textarea {
     gap: 0.5rem;
 }
 
+.dropdown-links a i {
+    display: none;
+}
+
 .dropdown-links a::before {
     content: '\f105';
     font-family: 'Font Awesome 5 Free';
@@ -1869,6 +1873,8 @@ button, input, select, textarea {
         border-bottom: 1px solid #e0e0e0;
         display: block; /* Important for accordion height */
         height: auto;
+        background-color: var(--white); /* Ensure default background */
+        transition: background-color 0.3s ease;
     }
 
     .nav-links > a.nav-link {
@@ -1909,8 +1915,15 @@ button, input, select, textarea {
         display: block; /* re-add for dropdowns */
     }
 
+    .nav-item.panel-active > .nav-link {
+        background-color: #3b82f6 !important; /* Mid-tone blue */
+        color: var(--white) !important;
+    }
+
     .nav-item.panel-active > .nav-link::after {
         transform: rotate(-180deg);
+        color: var(--white) !important;
+        opacity: 1;
     }
 
     /* True Accordion logic */
@@ -1957,7 +1970,8 @@ button, input, select, textarea {
 
     .dropdown-links li {
         width: 100%;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #f0f0f0; /* Subtle light grey divider */
+        background-color: var(--white);
     }
 
     .dropdown-links li:last-child {
@@ -1968,23 +1982,36 @@ button, input, select, textarea {
         padding: 20px 20px 20px 40px !important; /* Indent submenus by extra 20px */
         font-size: 1.05rem;
         color: var(--dark-grey) !important;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         opacity: 1 !important;
         text-decoration: none;
         box-sizing: border-box;
         width: 100%;
         background-color: transparent !important;
         font-weight: 500 !important;
-        text-transform: capitalize !important;
+        text-transform: uppercase !important;
         text-align: left !important;
         white-space: nowrap;
     }
 
+    /* VIEW ALL LOCATIONS link styling */
+    .dropdown-links .view-all-link {
+        color: #3b82f6 !important; /* Blue text */
+        font-weight: 600 !important;
+    }
+
     .dropdown-column h4,
     .dropdown-footer,
-    .dropdown-links a::before,
-    .dropdown-links a i {
+    .dropdown-links a::before {
         display: none !important;
+    }
+
+    .dropdown-links a i {
+        display: block !important;
+        font-size: 0.9rem;
+        opacity: 0.7;
     }
 
     .nav-links .btn-outline {
