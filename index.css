@@ -140,20 +140,17 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 5%; /* More generous padding when transparent */
-    background: transparent; /* Completely transparent initially */
-    border-bottom: 1px solid transparent;
-    box-shadow: none;
+    padding: 0.8rem 5%; /* Consistent padding */
+    background: var(--white); /* Solid white by default */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar.scrolled {
-    padding: 0.5rem 5%; /* Shrink on scroll */
-    background: rgba(255, 255, 255, 0.98); /* Solid white or near-solid on scroll */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sophisticated drop shadow */
+    padding: 0.6rem 5%; /* Slight shrink on scroll for refined feel */
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Subtle gloss reflection only when scrolled */
@@ -183,7 +180,7 @@ button, input, select, textarea {
     text-transform: uppercase;
     letter-spacing: 0.1em; /* More spacing for boldness */
     position: relative;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5); /* Visibility on transparent backgrounds */
+    text-shadow: none; /* Removed shadow as it's no longer on transparent background */
     transition: var(--transition);
 }
 
@@ -707,8 +704,8 @@ button, input, select, textarea {
     left: 0;
     width: 100%;
     padding: 3rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: var(--white);
+    background: transparent; /* Removed dark overlay */
+    color: var(--black); /* Change text to black for readability on clear background */
     transition: var(--transition);
 }
 
@@ -730,7 +727,7 @@ button, input, select, textarea {
     font-size: 0.8rem;
     font-weight: 700;
     text-decoration: none;
-    color: var(--white);
+    color: var(--black);
     display: flex;
     align-items: center;
     gap: 1rem;
