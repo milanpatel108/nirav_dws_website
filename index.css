@@ -628,6 +628,8 @@ button, input, select, textarea {
 .section {
     padding: 10rem 0; /* Increased from 6rem to fix "squashed" section feel */
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
 }
 
 .section-tag {
@@ -880,6 +882,8 @@ button, input, select, textarea {
     color: var(--black);
     padding: 60px 0 30px; /* Reduced padding to make footer smaller */
     border-top: 1px solid var(--light-grey);
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 400px;
 }
 
 .footer-logo img {

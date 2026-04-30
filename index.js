@@ -261,4 +261,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Prefetch links on hover for "instant" navigation
+    const prefetchOnHover = () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                const href = link.getAttribute('href');
+                if (href && !href.startsWith('http') && !document.querySelector(`link[href="${href}"]`)) {
+                    const prefetch = document.createElement('link');
+                    prefetch.rel = 'prefetch';
+                    prefetch.href = href;
+                    document.head.appendChild(prefetch);
+                }
+            }, { once: true });
+        });
+    };
+    
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(prefetchOnHover);
+    } else {
+        setTimeout(prefetchOnHover, 2000);
+    }
 });
