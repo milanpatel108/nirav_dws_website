@@ -140,7 +140,7 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 5%; /* Consistent padding */
+    padding: 0.5rem 5%; /* Thinner padding */
     background: var(--white); /* Solid white by default */
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -148,7 +148,7 @@ button, input, select, textarea {
 }
 
 .navbar.scrolled {
-    padding: 0.6rem 5%; /* Slight shrink on scroll for refined feel */
+    padding: 0.4rem 5%; /* Even thinner on scroll */
     background: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
@@ -224,7 +224,7 @@ button, input, select, textarea {
 }
 
 .nav-logo img {
-    height: 100px;
+    height: 70px; /* Reduced from 100px to make header thinner */
     width: auto;
     object-fit: contain;
     display: block;
@@ -704,8 +704,8 @@ button, input, select, textarea {
     left: 0;
     width: 100%;
     padding: 3rem;
-    background: transparent; /* Removed dark overlay */
-    color: var(--black); /* Change text to black for readability on clear background */
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--white);
     transition: var(--transition);
 }
 
@@ -727,7 +727,7 @@ button, input, select, textarea {
     font-size: 0.8rem;
     font-weight: 700;
     text-decoration: none;
-    color: var(--black);
+    color: var(--white);
     display: flex;
     align-items: center;
     gap: 1rem;
