@@ -1911,7 +1911,7 @@ button, input, select, textarea {
         font-weight: 900;
         font-size: 1rem;
         opacity: 0.5;
-        transition: transform 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         display: block; /* re-add for dropdowns */
     }
 
@@ -1930,14 +1930,13 @@ button, input, select, textarea {
     .dropdown-menu {
         position: static !important;
         width: 100%;
-        height: auto;
         max-height: 0;
         overflow: hidden;
         background: var(--white) !important;
-        transition: max-height 0.5s ease-in-out;
+        transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
         padding: 0 !important;
         visibility: visible;
-        opacity: 1 !important;
+        opacity: 0 !important; /* Start transparent */
         box-shadow: none;
         transform: none !important;
         left: auto;
@@ -1949,7 +1948,8 @@ button, input, select, textarea {
     }
 
     .nav-item.panel-active .dropdown-menu {
-        max-height: 1500px;
+        max-height: 1000px; /* Sufficient height */
+        opacity: 1 !important;
     }
 
     .mobile-menu-header {
@@ -1960,6 +1960,12 @@ button, input, select, textarea {
         display: block;
         padding: 0;
         margin: 0;
+        transform: translateY(-10px); /* Subtle slide down effect */
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-item.panel-active .dropdown-grid {
+        transform: translateY(0);
     }
 
     .dropdown-links {
