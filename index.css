@@ -1553,6 +1553,7 @@ button, input, select, textarea {
     font-weight: 700;
     border-bottom: 2px solid var(--white);
     padding-bottom: 0.5rem;
+    text-align: center; /* Ensure centered text on wrap */
 }
 
 /* Review Styles */
