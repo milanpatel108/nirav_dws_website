@@ -1906,17 +1906,11 @@ button, input, select, textarea {
     }
 
     .nav-item > .nav-link::after {
-        content: '\f078'; /* fa-chevron-down */
-        font-family: 'Font Awesome 6 Free';
-        font-weight: 900;
-        font-size: 1rem;
-        opacity: 0.5;
-        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        display: block; /* re-add for dropdowns */
+        display: none !important; /* Remove chevrons as per SL style */
     }
 
     .nav-item.panel-active > .nav-link {
-        background-color: #3b82f6 !important; /* Mid-tone blue */
+        background-color: #0047ab !important; /* Deeper SL Blue */
         color: var(--white) !important;
     }
 
@@ -1985,18 +1979,18 @@ button, input, select, textarea {
     }
 
     .dropdown-links a {
-        padding: 22px 20px 22px 40px !important; /* Matched vertical padding of main links, keep 40px indent */
-        font-size: 1.15rem; /* Matched font size of main links */
-        color: var(--black) !important; /* Bold black to mirror Level 1 style */
+        padding: 22px 20px !important; /* Removed 40px indent to match SL style */
+        font-size: 1.15rem;
+        color: var(--black) !important;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start; /* Left align */
         align-items: center;
         opacity: 1 !important;
         text-decoration: none;
         box-sizing: border-box;
         width: 100%;
         background-color: transparent !important;
-        font-weight: 700 !important; /* Bolder to match Level 1 */
+        font-weight: 700 !important;
         text-transform: uppercase !important;
         text-align: left !important;
         white-space: nowrap;
@@ -2004,8 +1998,8 @@ button, input, select, textarea {
 
     /* VIEW ALL LOCATIONS link styling */
     .dropdown-links .view-all-link {
-        color: #3b82f6 !important; /* Blue text */
-        font-weight: 600 !important;
+        color: var(--black) !important; /* Black as per SL style */
+        font-weight: 700 !important;
     }
 
     .dropdown-column h4,
@@ -2015,9 +2009,7 @@ button, input, select, textarea {
     }
 
     .dropdown-links a i {
-        display: block !important;
-        font-size: 0.9rem;
-        opacity: 0.7;
+        display: none !important; /* Remove chevrons from sub-items */
     }
 
     .nav-links .btn-primary,
