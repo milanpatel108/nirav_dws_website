@@ -1888,9 +1888,9 @@ button, input, select, textarea {
 
     .nav-links .nav-link {
         font-size: 1.15rem;
-        font-weight: 500;
+        font-weight: 700; /* Bolder for premium feel */
         color: var(--black) !important;
-        padding: 20px 20px; /* Reduced from 30px */
+        padding: 22px 20px; /* Increased vertical padding for better tap targets and rhythm */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1979,9 +1979,9 @@ button, input, select, textarea {
     }
 
     .dropdown-links a {
-        padding: 20px 20px 20px 40px !important; /* Indent submenus by extra 20px */
-        font-size: 1.05rem;
-        color: var(--dark-grey) !important;
+        padding: 22px 20px 22px 40px !important; /* Matched vertical padding of main links, keep 40px indent */
+        font-size: 1.15rem; /* Matched font size of main links */
+        color: var(--black) !important; /* Bold black to mirror Level 1 style */
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1990,7 +1990,7 @@ button, input, select, textarea {
         box-sizing: border-box;
         width: 100%;
         background-color: transparent !important;
-        font-weight: 500 !important;
+        font-weight: 700 !important; /* Bolder to match Level 1 */
         text-transform: uppercase !important;
         text-align: left !important;
         white-space: nowrap;
@@ -2014,13 +2014,17 @@ button, input, select, textarea {
         opacity: 0.7;
     }
 
+    .nav-links .btn-primary,
     .nav-links .btn-outline {
         margin: 40px 20px 20px; /* 20px margin left/right */
         width: calc(100% - 40px);
         display: block;
         text-align: center;
-        padding: 15px;
+        padding: 16px;
         box-sizing: border-box;
+        border-radius: 8px; /* More rounded for premium look */
+        font-weight: 700;
+        letter-spacing: 0.05em;
     }
 }
 
