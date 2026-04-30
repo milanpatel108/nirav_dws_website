@@ -388,12 +388,7 @@ button, input, select, textarea {
 }
 
 .hero-carousel::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
-    z-index: 3;
-    pointer-events: none;
+    display: none; /* Removed dark overlay as requested */
 }
 
 
