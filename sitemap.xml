@@ -2,32 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.rentapilot.co.za/DWS/index.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.rentapilot.co.za/DWS/locations.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.rentapilot.co.za/DWS/sandton-morningside.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.rentapilot.co.za/DWS/chadwick-wynberg.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.rentapilot.co.za/DWS/village-jhb.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.rentapilot.co.za/DWS/offerings.html</loc>
-    <lastmod>2026-04-16</lastmod>
+    <loc>https://www.rentapilot.co.za/DWS/about.html</loc>
+    <lastmod>2026-05-07</lastmod>
     <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/contact.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/offerings.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/coworking.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/private-offices.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/virtual-office.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/privacy-policy.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://www.rentapilot.co.za/DWS/terms-and-conditions.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.40</priority>
   </url>
 </urlset>
