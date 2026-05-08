@@ -5,22 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroContent = document.querySelector('.hero-content');
     const heroImage = document.querySelector('.hero-image');
     
-    // Navbar Scroll Effect
+    // Optimized Scroll Handlers with requestAnimationFrame
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                // Navbar Scroll Effect
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
 
-    // Parallax Effect on Hero Image
-    window.addEventListener('scroll', () => {
-        const offset = window.pageYOffset;
-        if (heroImage) {
-            heroImage.style.backgroundPositionY = `${offset * 0.5}px`;
+                // Parallax Effect on Hero Image
+                if (heroImage) {
+                    const offset = window.pageYOffset;
+                    heroImage.style.transform = `translateY(${offset * 0.1}px)`; // Use transform for better performance than backgroundPositionY
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-    });
+    }, { passive: true }); // Mark as passive for better scroll performance
 
     // Reveal on Scroll using Intersection Observer
     const revealOptions = {
@@ -37,20 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, revealOptions);
 
-    // Elements to reveal
-    const revealElements = [
-        '.section-title', 
-        '.location-card', 
-        '.service-item', 
-        '.trust-item'
-    ];
+    // Elements to reveal - Yielding to main thread
+    const setupObservers = () => {
+        const revealElements = [
+            '.section-title', 
+            '.location-card', 
+            '.service-item', 
+            '.trust-item'
+        ];
 
-    revealElements.forEach(selector => {
-        document.querySelectorAll(selector).forEach(el => {
-            el.style.opacity = '0';
-            revealObserver.observe(el);
+        revealElements.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => {
+                el.style.opacity = '0';
+                revealObserver.observe(el);
+            });
         });
-    });
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(setupObservers);
+    } else {
+        setTimeout(setupObservers, 100);
+    }
 
     // Smooth Scrolling for links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
