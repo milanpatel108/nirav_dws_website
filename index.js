@@ -7,26 +7,37 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Optimized Scroll Handlers with requestAnimationFrame
     let scrollTicking = false;
+    let lastScrollY = window.scrollY;
+
+    const updateNavbar = () => {
+        const currentScrollY = window.scrollY;
+        
+        // Navbar Scroll Effect - 100px threshold
+        if (currentScrollY > 100) {
+            if (!navbar.classList.contains('scrolled')) {
+                navbar.classList.add('scrolled');
+            }
+        } else {
+            if (navbar.classList.contains('scrolled')) {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Parallax Effect on Hero Image - Disabled on Mobile for performance/stability
+        if (heroImage && window.innerWidth > 992) {
+            heroImage.style.transform = `translate3d(0, ${currentScrollY * 0.15}px, 0)`; 
+        }
+        
+        lastScrollY = currentScrollY;
+        scrollTicking = false;
+    };
+
     window.addEventListener('scroll', () => {
         if (!scrollTicking) {
-            window.requestAnimationFrame(() => {
-                // Navbar Scroll Effect
-                if (window.scrollY > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-
-                // Parallax Effect on Hero Image
-                if (heroImage) {
-                    const offset = window.pageYOffset;
-                    heroImage.style.transform = `translateY(${offset * 0.1}px)`; // Use transform for better performance than backgroundPositionY
-                }
-                scrollTicking = false;
-            });
+            window.requestAnimationFrame(updateNavbar);
             scrollTicking = true;
         }
-    }, { passive: true }); // Mark as passive for better scroll performance
+    }, { passive: true });
 
     // Reveal on Scroll using Intersection Observer
     const revealOptions = {
@@ -92,8 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const icon = navToggle.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.replace('fa-bars', 'fa-times');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
             } else {
                 icon.classList.replace('fa-times', 'fa-bars');
+                document.body.style.overflow = '';
                 document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
             }
         });
@@ -132,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.classList.remove('active');
                 const icon = navToggle.querySelector('i');
                 icon.classList.replace('fa-times', 'fa-bars');
+                document.body.style.overflow = '';
                 document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
             }
         });
@@ -148,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     navLinks.classList.remove('active');
                     const icon = navToggle.querySelector('i');
                     if (icon) icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = '';
                     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
                 }
             });
