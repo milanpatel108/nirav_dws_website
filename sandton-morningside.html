@@ -29,14 +29,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Critical Preloads -->
-    <link rel="preload" href="index.css?v=24.0" as="style">
-    <link rel="preload" href="assets/morning side cover/kelvinmorncover_optimized.jpg" as="image">
-    <link rel="preload" href="assets/logo_optimized.png" as="image">
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/morning side cover/kelvinmorncover_optimized.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/logo_optimized.png" as="image" fetchpriority="high">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="index.css?v=24.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0047AB; --accent-blue: #0076CE; --black: #121212; --dark-grey: #2D2D2D; --light-grey: #F8F9FA; --white: #FFFFFF;
+            --font-heading: 'Playfair Display', serif; --font-body: 'Inter', sans-serif; --nav-height: 110px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--white); color: var(--black); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 5%; background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navbar-blue { background: var(--white) !important; } /* Standardized to white to match index */
+        .nav-logo img { height: 70px; width: auto; object-fit: contain; display: block; mix-blend-mode: multiply; filter: contrast(1.2) brightness(1.1); }
+        .angled-split-hero { display: grid; grid-template-columns: 50% 50%; min-height: 480px; width: 100%; background-color: #ffffff; align-items: stretch; position: relative; overflow: hidden; }
+        .angled-hero-left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 130px 8% 60px; background-color: #ffffff; position: relative; z-index: 10; }
+        .angled-hero-heading { font-family: var(--font-heading); font-size: 3.5rem; line-height: 1.15; margin-bottom: 2rem; color: var(--black); font-weight: 800; }
+        .angled-hero-right { position: relative; background-color: #ffffff; display: flex; align-items: stretch; height: 100%; width: 100%; overflow: hidden; }
+        .angled-hero-right img { width: 100%; height: 100%; object-fit: cover; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.1rem 3rem; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer; transition: 0.4s; border: 1px solid transparent; }
+        .btn-primary { background-color: var(--primary-blue); color: var(--white); }
+        .text-uppercase { text-transform: uppercase; letter-spacing: 0.1em; }
+        .gradient-text { background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+
+    <link rel="stylesheet" href="index.css?v=24.1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="index.css?v=24.1"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body class="other-page">
     <header><nav class="navbar navbar-blue" id="navbar navbar-blue">
@@ -545,6 +570,7 @@
 <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
+
 
 
 

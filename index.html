@@ -44,8 +44,9 @@
         .hero-title { font-family: var(--font-heading); font-size: 3.8rem; line-height: 1.15; margin-bottom: 2rem; color: var(--black); font-weight: 800; }
         .hero-description { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 3rem; width: 100%; max-width: 700px; color: var(--dark-grey); line-height: 1.8; }
         .hero-right { position: relative; background-color: #ffffff; display: flex; align-items: stretch; height: 100%; width: 100%; overflow: hidden; }
-        .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.5s ease; z-index: 1; }
+        .hero-slide { position: absolute; inset: 0; opacity: 0; z-index: 1; }
         .hero-slide.active { opacity: 1; z-index: 2; }
+        .hero-carousel.initialized .hero-slide { transition: opacity 1.5s ease; }
         .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.1rem 3rem; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer; transition: 0.4s; border: 1px solid transparent; }
         .btn-primary { background-color: var(--primary-blue); color: var(--white); }
@@ -491,6 +492,11 @@
         // Hero Carousel Logic
         let heroIndex = 0;
         const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroCarousel = document.getElementById('heroCarousel');
+        
+        // Add initialized class after a short delay to enable transitions without affecting LCP
+        setTimeout(() => heroCarousel.classList.add('initialized'), 100);
+
         function moveHero(n) {
             heroSlides[heroIndex].classList.remove('active');
             heroIndex = (heroIndex + n + heroSlides.length) % heroSlides.length;
@@ -521,6 +527,7 @@
 <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
+
 
 
 
