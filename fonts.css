@@ -1,60 +1,33 @@
-/* 
-   Self-hosted Font Strategy for Dynamic Workspaces 
-   Place .woff2 files in the /fonts directory.
-*/
-
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('fonts/playfair-display-v37-latin-700.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('fonts/playfair-display-v37-latin-900.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
+/* Self-Hosted Fonts for Dynamic Workspaces */
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/inter-v13-latin-300.woff2') format('woff2');
-    font-weight: 300;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/inter-v13-latin-regular.woff2') format('woff2');
     font-weight: 400;
-    font-style: normal;
     font-display: swap;
+    src: url('fonts/inter-400.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/inter-v13-latin-500.woff2') format('woff2');
-    font-weight: 500;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/inter-v13-latin-600.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/inter-v13-latin-700.woff2') format('woff2');
     font-weight: 700;
-    font-style: normal;
     font-display: swap;
+    src: url('fonts/inter-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/playfair-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/playfair-700-italic.ttf') format('truetype');
 }

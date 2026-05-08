@@ -21,14 +21,16 @@
     }
     </script>
     <!-- Critical Preloads -->
+    <link rel="preload" href="fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/playfair-700.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="assets/morning side cover/kelvinmorncover_optimized.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="assets/logo_optimized.png" as="image" fetchpriority="high">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
     <style>
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.ttf') format('truetype'); }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-700.ttf') format('truetype'); }
+        @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/playfair-700.ttf') format('truetype'); }
+
         :root {
             --primary-blue: #0047AB; --accent-blue: #0076CE; --black: #121212; --dark-grey: #2D2D2D; --light-grey: #F8F9FA; --white: #FFFFFF;
             --font-heading: 'Playfair Display', serif; --font-body: 'Inter', sans-serif; --nav-height: 110px;
@@ -36,28 +38,29 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--white); color: var(--black); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         .container { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
-        .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 5%; background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .nav-logo img { height: 70px; width: auto; object-fit: contain; display: block; mix-blend-mode: multiply; filter: contrast(1.2) brightness(1.1); }
-        .hero { width: 100%; position: relative; overflow: hidden; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 5%; background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.05); transition: background-color 0.4s, padding 0.4s, box-shadow 0.4s; transform: translateZ(0); backface-visibility: hidden; }
+        .nav-logo img { height: 70px; width: 56px; object-fit: contain; display: block; mix-blend-mode: multiply; filter: contrast(1.2) brightness(1.1); }
+        .hero { width: 100%; position: relative; overflow: hidden; background: #fff; }
         .split-hero { display: grid; grid-template-columns: 50% 50%; min-height: 480px; width: 100%; background-color: #ffffff; align-items: stretch; position: relative; }
         .hero-left { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 130px 8% 60px; background-color: #ffffff; position: relative; z-index: 10; }
         .hero-title { font-family: var(--font-heading); font-size: 3.8rem; line-height: 1.15; margin-bottom: 2rem; color: var(--black); font-weight: 800; }
-        .hero-description { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 3rem; width: 100%; max-width: 700px; color: var(--dark-grey); line-height: 1.8; }
-        .hero-right { position: relative; background-color: #ffffff; display: flex; align-items: stretch; height: 100%; width: 100%; overflow: hidden; }
-        .hero-slide { position: absolute; inset: 0; opacity: 0; z-index: 1; }
+        .hero-right { position: relative; background-color: #ffffff; display: flex; align-items: stretch; height: 100%; width: 100%; overflow: hidden; aspect-ratio: 1184 / 864; }
+        .hero-carousel { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .hero-slide { position: absolute; inset: 0; opacity: 0; z-index: 1; height: 100%; width: 100%; }
         .hero-slide.active { opacity: 1; z-index: 2; }
         .hero-carousel.initialized .hero-slide { transition: opacity 1.5s ease; }
         .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
         .btn { display: inline-flex; align-items: center; justify-content: center; padding: 1.1rem 3rem; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer; transition: 0.4s; border: 1px solid transparent; }
         .btn-primary { background-color: var(--primary-blue); color: var(--white); }
-        .text-uppercase { text-transform: uppercase; letter-spacing: 0.1em; }
         .gradient-text { background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 
-    <link rel="stylesheet" href="index.css?v=24.1" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="index.css?v=24.1"></noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="fonts.css?v=1" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="index.css?v=24.3" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="fonts.css?v=1">
+        <link rel="stylesheet" href="index.css?v=24.3">
+    </noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <style>
         /* Video Modal */
@@ -120,7 +123,7 @@
     <header>
         <header><nav class="navbar" id="navbar">
             <a href="index.html" class="nav-logo">
-                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" fetchpriority="high">
+                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" fetchpriority="high" width="300" height="375">
             </a>
             <div class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
@@ -199,13 +202,13 @@
             <div class="hero-right">
                 <div class="hero-carousel" id="heroCarousel">
                     <div class="hero-slide active">
-                        <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton" fetchpriority="high" loading="eager">
+                        <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton" fetchpriority="high" loading="eager" width="1184" height="864">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg" loading="lazy" decoding="async">
+                        <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg" loading="lazy" decoding="async" width="1200" height="799">
                     </div>
                     <div class="hero-slide">
-                        <img src="assets/village cover/village_cover_optimized.jpg" alt="Village, JHB" loading="lazy" decoding="async">
+                        <img src="assets/village cover/village_cover_optimized.jpg" alt="Village, JHB" loading="lazy" decoding="async" width="1400" height="933">
                     </div>
                 </div>
                 <div class="hero-arrows">
@@ -523,6 +526,7 @@
 <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
+
 
 
 
