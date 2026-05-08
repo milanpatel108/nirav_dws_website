@@ -157,6 +157,7 @@ button, input, select, textarea {
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateZ(0); /* Hardware acceleration */
     backface-visibility: hidden;
+    min-height: var(--nav-height); /* Reserve space for header */
 }
 
 .navbar.scrolled {
@@ -666,6 +667,11 @@ button, input, select, textarea {
     font-size: 2.2rem;
     color: var(--accent-blue); /* Slightly lighter than premium blue for these icons */
     margin-bottom: 0.5rem;
+    min-width: 1em;
+    min-height: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .trust-label {
