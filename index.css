@@ -104,6 +104,16 @@ button, input, select, textarea {
     color: var(--white);
 }
 
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--primary-blue);
+}
+
 /* Pricing Section Refinement */
 .location-selector {
     padding: 1rem 0;
