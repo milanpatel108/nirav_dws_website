@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Workspaces | Office Enquiries & Tours Sandton</title>
-    <link rel="icon" type="image/png" href="assets/logo_optimized.png">
+    <link class="favicon" rel="icon" type="image/png" href="assets/logo_optimized.png">
     <meta name="description" content="Contact Dynamic Workspaces for premium office space in Sandton and Johannesburg. Book a tour of our private offices and coworking suites today.">
     <link rel="canonical" href="https://www.dynamicworkspaces.co.za/contact.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,9 +162,10 @@
                     
                     <h3 id="form-location-title" style="margin-bottom: 2rem; color: var(--primary-blue); font-size: 1.5rem; text-align: center;">Enquire for Location</h3>
                     
-                    <form id="main-contact-form" onsubmit="handleFormSubmit(event)">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="New Website Enquiry – Dynamic Workspaces">
+                    <form id="main-contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleFormSubmit(event)">
+                        <input type="hidden" name="access_key" value="d2d4b73e-72ac-405f-8dcf-d9bec906d400">
+                        <input type="hidden" name="subject" value="New Website Enquiry – Dynamic Workspaces">
+                        <input type="hidden" name="from_name" value="Dynamic Workspaces Website">
                         <input type="hidden" name="Location" id="hidden-location" value="">
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
@@ -365,8 +366,9 @@
             submitBtn.style.opacity = '0.7';
 
             const formData = new FormData(contactForm);
+            formData.append('Branch Email', currentFormEmail);
 
-            fetch(`https://formsubmit.co/ajax/${currentFormEmail}`, {
+            fetch('https://api.web3forms.com/submit', {
                 method: "POST",
                 body: formData
             })
@@ -457,27 +459,3 @@
 <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
