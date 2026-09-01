@@ -1,3 +1,21 @@
+# Enable URL Rewriting for Clean Extensionless Routes
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Explicit Landing Page Routes
+  RewriteRule ^serviced-offices-sandton/?$ serviced-offices-sandton.html [NC,L]
+  RewriteRule ^office-rental-sandton/?$ office-rental-sandton.html [NC,L]
+  RewriteRule ^coworking-sandton/?$ coworking-sandton.html [NC,L]
+  RewriteRule ^virtual-offices-sandton/?$ virtual-offices-sandton.html [NC,L]
+  RewriteRule ^meeting-rooms-sandton/?$ meeting-rooms-sandton.html [NC,L]
+
+  # Generic Extensionless HTML Handling
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [NC,L]
+</IfModule>
+
 # Enable Gzip Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
@@ -31,7 +49,7 @@
 
 # Caching Headers
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|woff2)$">
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|woff2|ttf)$">
     Header set Cache-Control "max-age=31536000, public"
   </FilesMatch>
 </IfModule>
@@ -43,3 +61,4 @@
   Header set X-XSS-Protection "1; mode=block"
   Header set Referrer-Policy "no-referrer-when-downgrade"
 </IfModule>
+

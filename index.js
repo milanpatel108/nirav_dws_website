@@ -312,3 +312,174 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(prefetchOnHover, 2000);
     }
 });
+
+/* ==========================================================================
+   CONVERSION TRACKING, UTM PERSISTENCE & AJAX FORM HANDLING
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. UTM & GCLID Persistence in Session Storage
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+    const capturedUtm = {};
+    let hasUtm = false;
+
+    utmKeys.forEach(k => {
+        if (urlParams.has(k)) {
+            capturedUtm[k] = urlParams.get(k);
+            hasUtm = true;
+        }
+    });
+
+    if (hasUtm) {
+        try {
+            sessionStorage.setItem('dws_utm_data', JSON.stringify(capturedUtm));
+        } catch (e) {
+            console.warn('SessionStorage not available:', e);
+        }
+    }
+
+    // Helper: Phone Number E.164 Normalizer
+    const normalizePhoneNumber = (phone) => {
+        if (!phone) return '';
+        let clean = phone.replace(/[^0-9+]/g, '');
+        if (clean.startsWith('0')) {
+            clean = '+27' + clean.substring(1);
+        } else if (clean.startsWith('27')) {
+            clean = '+' + clean;
+        } else if (!clean.startsWith('+')) {
+            clean = '+27' + clean;
+        }
+        return clean;
+    };
+
+    // 2. Universal Web3Forms AJAX Handler for Landing Pages
+    const lpForms = document.querySelectorAll('.lp-lead-form');
+    lpForms.forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = form.querySelector('.lp-form-btn');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit Enquiry';
+
+            // Honeypot spam check
+            const botcheck = form.querySelector('input[name="botcheck"]');
+            if (botcheck && botcheck.checked) return;
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Securing Your Rate...';
+            }
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Merge stored UTMs
+            try {
+                const storedUtms = JSON.parse(sessionStorage.getItem('dws_utm_data') || '{}');
+                Object.assign(data, storedUtms);
+            } catch (err) {}
+
+            data.page_route = window.location.pathname;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    // Dispatch GTM Enhanced Conversion Event
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'lead_form_submit',
+                        form_id: form.id || 'hero_lead_form',
+                        page_route: window.location.pathname,
+                        service_type: data.service || data.team_size || 'Landing Page Lead',
+                        team_size: data.team_size || '',
+                        lead_name: data.name || '',
+                        lead_email: data.email || '',
+                        lead_phone: normalizePhoneNumber(data.phone || ''),
+                        utm_source: data.utm_source || '',
+                        utm_medium: data.utm_medium || '',
+                        utm_campaign: data.utm_campaign || '',
+                        gclid: data.gclid || ''
+                    });
+
+                    // Inline UI confirmation swap
+                    const card = form.closest('.lp-lead-card');
+                    if (card) {
+                        form.style.display = 'none';
+                        const header = card.querySelector('.lp-lead-card-header');
+                        if (header) header.style.display = 'none';
+                        const successEl = card.querySelector('.lp-form-success');
+                        if (successEl) {
+                            successEl.style.display = 'block';
+                        }
+                    }
+                } else {
+                    alert(result.message || 'Submission failed. Please contact our team directly via WhatsApp.');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                }
+            } catch (error) {
+                console.error('Lead form submission error:', error);
+                alert('Network error. Please call or WhatsApp us for immediate assistance.');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            }
+        });
+    });
+
+    // 3. Universal WhatsApp Conversion Click Tracking
+    document.querySelectorAll('.btn-whatsapp, .floating-whatsapp-widget, [data-whatsapp-cta]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'whatsapp_click',
+                cta_placement: btn.classList.contains('floating-whatsapp-widget') ? 'floating_widget' : 'hero_button',
+                page_route: window.location.pathname,
+                target_phone: '+27720725928',
+                intent_message: btn.getAttribute('data-intent') || 'Sandton Workspace Inquiry'
+            });
+        });
+    });
+
+    // 4. Universal Click-to-Call Tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'phone_click',
+                phone_number: link.getAttribute('href').replace('tel:', ''),
+                page_route: window.location.pathname,
+                location_tag: link.getAttribute('data-location-tag') || 'Morningside_Sandton'
+            });
+        });
+    });
+
+    // 5. High-Performance FAQ Accordion
+    document.querySelectorAll('.lp-faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.closest('.lp-faq-item');
+            if (item) {
+                const isOpen = item.classList.contains('active');
+                const container = item.closest('.lp-faq-container');
+                if (container) {
+                    container.querySelectorAll('.lp-faq-item').forEach(i => i.classList.remove('active'));
+                }
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            }
+        });
+    });
+});
