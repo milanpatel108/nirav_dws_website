@@ -1,0 +1,15 @@
+# Logs
+debug.log
+*.log
+
+# Executables / installers
+*.exe
+
+# OS junk files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
