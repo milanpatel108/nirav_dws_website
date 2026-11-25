@@ -99,17 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (navToggle && navLinks) {
-        navToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
+        const setNavExpanded = (isOpen) => {
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        };
+
+        const toggleMenu = (e) => {
+            if (e) e.stopPropagation();
             navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.contains('active');
+            setNavExpanded(isOpen);
             const icon = navToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
+            if (isOpen) {
+                if (icon) icon.classList.replace('fa-bars', 'fa-times');
                 document.body.style.overflow = 'hidden'; // Prevent background scroll
             } else {
-                icon.classList.replace('fa-times', 'fa-bars');
+                if (icon) icon.classList.replace('fa-times', 'fa-bars');
                 document.body.style.overflow = '';
                 document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
+            }
+        };
+
+        navToggle.addEventListener('click', toggleMenu);
+        navToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu(e);
             }
         });
 
@@ -145,8 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', (e) => {
             if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
                 navLinks.classList.remove('active');
+                setNavExpanded(false);
                 const icon = navToggle.querySelector('i');
-                icon.classList.replace('fa-times', 'fa-bars');
+                if (icon) icon.classList.replace('fa-times', 'fa-bars');
                 document.body.style.overflow = '';
                 document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('panel-active'));
             }
@@ -162,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (window.innerWidth <= 992) {
                     navLinks.classList.remove('active');
+                    setNavExpanded(false);
                     const icon = navToggle.querySelector('i');
                     if (icon) icon.classList.replace('fa-times', 'fa-bars');
                     document.body.style.overflow = '';
@@ -473,17 +489,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. High-Performance FAQ Accordion
     document.querySelectorAll('.lp-faq-question').forEach(q => {
-        q.addEventListener('click', () => {
+        const toggleFaq = () => {
             const item = q.closest('.lp-faq-item');
             if (item) {
                 const isOpen = item.classList.contains('active');
                 const container = item.closest('.lp-faq-container');
                 if (container) {
-                    container.querySelectorAll('.lp-faq-item').forEach(i => i.classList.remove('active'));
+                    container.querySelectorAll('.lp-faq-item').forEach(i => {
+                        i.classList.remove('active');
+                        const btn = i.querySelector('.lp-faq-question');
+                        if (btn) btn.setAttribute('aria-expanded', 'false');
+                    });
                 }
                 if (!isOpen) {
                     item.classList.add('active');
+                    q.setAttribute('aria-expanded', 'true');
                 }
+            }
+        };
+
+        q.addEventListener('click', toggleFaq);
+        q.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFaq();
             }
         });
     });

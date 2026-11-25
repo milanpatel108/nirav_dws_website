@@ -84,14 +84,14 @@
 </head>
 <body class="other-page">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT9SJFRG"
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-NT9SJFRG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager -->
     <header><nav class="navbar navbar-blue" id="navbar">
         <a href="/" class="nav-logo">
             <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" fetchpriority="high" width="300" height="375">
         </a>
-        <div class="nav-toggle" id="navToggle">
+        <div class="nav-toggle" id="navToggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
@@ -251,7 +251,7 @@
         
         <!-- Map Section -->
         <section class="section" id="map" style="padding: 0;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6025.61044361286!2d28.074970039742798!3d-26.103834131405904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573b3595dca3b%3A0xd21f3829b70bf0d6!2sDynamic%20Workspaces%20Wynberg%20Sandton!5e0!3m2!1sen!2sza!4v1775741908985!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Map of Dynamic Workspaces Wynberg, 1 Chadwick Avenue" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6025.61044361286!2d28.074970039742798!3d-26.103834131405904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573b3595dca3b%3A0xd21f3829b70bf0d6!2sDynamic%20Workspaces%20Wynberg%20Sandton!5e0!3m2!1sen!2sza!4v1775741908985!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
 
         <!-- Meetings Section -->
@@ -281,8 +281,8 @@
                                 <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">Thora</div>
                             </div>
                         </div>
-                        <button class="gallery-btn prev" id="meetingPrev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="gallery-btn next" id="meetingNext"><i class="fas fa-chevron-right"></i></button>
+                        <button type="button" class="gallery-btn prev" id="meetingPrev" aria-label="Previous meeting room photo"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="gallery-btn next" id="meetingNext" aria-label="Next meeting room photo"><i class="fas fa-chevron-right"></i></button>
                         <div class="gallery-counter" id="meetingCounter">1 / 3</div>
                     </div>
                 </div>
@@ -339,8 +339,8 @@
                             <div class="gallery-slide"><img src="assets/chadwick storage/366f2353-4848-4932-a8ac-050d62b6eb5a_primary.jpg" alt="Chadwick Storage 1" loading="lazy" loading="lazy" width="1058" height="863"></div>
                             <div class="gallery-slide"><img src="assets/chadwick storage/7fcd7911-2ae9-458c-aaf3-fc54888e2783_primary.jpg" alt="Chadwick Storage 2" loading="lazy" loading="lazy" width="1162" height="874"></div>
                         </div>
-                        <button class="gallery-btn prev" id="storagePrev" style="width: 40px; height: 40px;"><i class="fas fa-chevron-left"></i></button>
-                        <button class="gallery-btn next" id="storageNext" style="width: 40px; height: 40px;"><i class="fas fa-chevron-right"></i></button>
+                        <button type="button" class="gallery-btn prev" id="storagePrev" aria-label="Previous storage photo" style="width: 40px; height: 40px;"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="gallery-btn next" id="storageNext" aria-label="Next storage photo" style="width: 40px; height: 40px;"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -377,8 +377,8 @@
                             <div class="gallery-slide"><img src="assets/chadwick gallery/e6bcc3c6-7f2f-4849-956b-a6c021f334be_primary.jpg" alt="Wynberg Office 19" loading="lazy" loading="lazy" width="1400" height="933"></div>
                             <div class="gallery-slide"><img src="assets/chadwick gallery/fdbf99d0-c128-4b29-99a7-5d96f414419c_primary.jpg" alt="Wynberg Office 20" loading="lazy" loading="lazy" width="1400" height="1050"></div>
                         </div>
-                        <button class="gallery-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                        <button class="gallery-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                        <button type="button" class="gallery-btn prev" id="prevBtn" aria-label="Previous gallery photo"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="gallery-btn next" id="nextBtn" aria-label="Next gallery photo"><i class="fas fa-chevron-right"></i></button>
                         <div class="gallery-counter" id="galleryCounter">1 / 20</div>
                     </div>
                 </div>
@@ -487,8 +487,8 @@
                             </div>
                         </div>
                     </div>
-                    <button class="review-nav prev" id="reviewPrev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="review-nav next" id="reviewNext"><i class="fas fa-chevron-right"></i></button>
+                    <button type="button" class="review-nav prev" id="reviewPrev" aria-label="Previous client review"><i class="fas fa-chevron-left"></i></button>
+                    <button type="button" class="review-nav next" id="reviewNext" aria-label="Next client review"><i class="fas fa-chevron-right"></i></button>
                     <div class="review-dots" id="reviewDots"></div>
                 </div>
             </div>
@@ -542,9 +542,9 @@
                 <div class="footer-column">
                     <p class="footer-heading">Social</p>
                     <div class="social-links" style="display: flex; gap: 1rem;">
-                        <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Dynamic Workspaces on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Dynamic Workspaces on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Dynamic Workspaces on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                     <div class="footer-logo">
                         <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo" style="filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;" loading="lazy" width="300" height="375">
@@ -733,7 +733,7 @@
             }, 6500);
         })();
     </script>
-    <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" title="Chat with us" aria-label="Chat with Dynamic Workspaces on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 </body>
 
 

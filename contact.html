@@ -83,14 +83,14 @@
 </head>
 <body class="other-page">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT9SJFRG"
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-NT9SJFRG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager -->
         <header><nav class="navbar" id="navbar">
         <a href="/" class="nav-logo">
             <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" fetchpriority="high" width="300" height="375">
         </a>
-        <div class="nav-toggle" id="navToggle">
+        <div class="nav-toggle" id="navToggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links">
@@ -206,23 +206,23 @@
                         <input type="hidden" name="Location" id="hidden-location" value="">
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Full Name *</label>
-                            <input type="text" name="name" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                            <label for="contact-name" class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Full Name *</label>
+                            <input id="contact-name" type="text" name="name" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Email Address *</label>
-                            <input type="email" name="email" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                            <label for="contact-email" class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Email Address *</label>
+                            <input id="contact-email" type="email" name="email" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Phone Number *</label>
-                            <input type="tel" name="phone" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
+                            <label for="contact-phone" class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Phone Number *</label>
+                            <input id="contact-phone" type="tel" name="phone" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body);" required>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Select Service *</label>
-                            <select name="service" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); background: var(--white);" required>
+                            <label for="contact-service" class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Select Service *</label>
+                            <select id="contact-service" name="service" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); background: var(--white);" required>
                                 <option value="" disabled selected>Please select...</option>
                                 <option value="Co-working Space">Co-working Space</option>
                                 <option value="Private Office">Private Office</option>
@@ -231,15 +231,15 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 2rem;">
-                            <label class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Message *</label>
-                            <textarea name="message" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); height: 120px;" required></textarea>
+                            <label for="contact-message" class="form-label" style="display: block; font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.75rem;">Message *</label>
+                            <textarea id="contact-message" name="message" class="form-input" style="width: 100%; padding: 1rem; border: 1px solid #ddd; outline: none; font-family: var(--font-body); height: 120px;" required></textarea>
                         </div>
 
                         <button id="submit-btn" type="submit" class="btn btn-primary" style="width: 100%; padding: 1.25rem; font-size: 1.1rem;">Send Enquiry</button>
                     </form>
 
                     <!-- Success Message Alert -->
-                    <div id="form-success-msg" style="display: none; padding: 2rem; background: #e6f8f0; color: #0d8246; border: 1px solid #b3ebce; border-radius: 4px; text-align: center; margin-top: 2rem;">
+                    <div id="form-success-msg" style="display: none; padding: 2rem; background: #e6f8f0; color: #065F46; border: 1px solid #b3ebce; border-radius: 4px; text-align: center; margin-top: 2rem;">
                         <i class="fas fa-check-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         <h4>Enquiry Sent Successfully!</h4>
                         <p>Thank you for reaching out. Our team will contact you shortly.</p>
@@ -255,15 +255,15 @@
                             </div>
                             <div>
                                 <i class="fas fa-phone" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                <p style="font-size: 0.85rem;"><a id="branch-phone-link" href="tel:" class="contact-link"></a></p>
+                                <p style="font-size: 0.85rem;"><a id="branch-phone-link" href="tel:" class="contact-link" aria-label="Branch phone number"></a></p>
                             </div>
                             <div class="branch-detail-item">
-                                <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                <p style="font-size: 0.85rem;"><a id="branch-whatsapp-link" href="https://wa.me/" target="_blank" class="contact-link"></a></p>
+                                <i class="fab fa-whatsapp" style="color: #15803D; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                                <p style="font-size: 0.85rem;"><a id="branch-whatsapp-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Chat on WhatsApp"></a></p>
                             </div>
                             <div class="branch-detail-item">
                                 <i class="fas fa-envelope" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
-                                <p style="font-size: 0.85rem;"><a id="branch-email-link" href="mailto:" class="contact-link"></a></p>
+                                <p style="font-size: 0.85rem;"><a id="branch-email-link" href="mailto:" class="contact-link" aria-label="Branch email address"></a></p>
                             </div>
                         </div>
                     </div>
@@ -287,7 +287,7 @@
                         <p class="service-desc" style="margin-bottom: 1rem;"><strong>140A Kelvin Drive, Morningside, Sandton</strong><br>Suites from 3 m&sup2; to 25 m&sup2; with undercover parking.</p>
                         <p style="font-size: 0.92rem; line-height: 1.9; color: var(--dark-grey);">
                             <i class="fas fa-phone" style="color: var(--primary-blue); width: 20px;"></i> <a href="tel:+27110641600" class="contact-link">011 064 1600</a><br>
-                            <i class="fab fa-whatsapp" style="color: #25d366; width: 20px;"></i> <a href="https://wa.me/27720725928" target="_blank" class="contact-link">072 072 5928</a><br>
+                            <i class="fab fa-whatsapp" style="color: #15803D; width: 20px;"></i> <a href="https://wa.me/27720725928" target="_blank" class="contact-link">072 072 5928</a><br>
                             <i class="fas fa-envelope" style="color: var(--primary-blue); width: 20px;"></i> <a href="mailto:kelvindrive@dynamicworkspaces.co.za" class="contact-link">kelvindrive@dynamicworkspaces.co.za</a>
                         </p>
                     </div>
@@ -296,7 +296,7 @@
                         <p class="service-desc" style="margin-bottom: 1rem;"><strong>1 Chadwick Avenue, Wynberg, Sandton</strong><br>Suites from 3 m&sup2; to 300 m&sup2; plus on-site Storage Locker units.</p>
                         <p style="font-size: 0.92rem; line-height: 1.9; color: var(--dark-grey);">
                             <i class="fas fa-phone" style="color: var(--primary-blue); width: 20px;"></i> <a href="tel:+27792105562" class="contact-link">079 210 5562</a><br>
-                            <i class="fab fa-whatsapp" style="color: #25d366; width: 20px;"></i> <a href="https://wa.me/27792105562" target="_blank" class="contact-link">079 210 5562</a><br>
+                            <i class="fab fa-whatsapp" style="color: #15803D; width: 20px;"></i> <a href="https://wa.me/27792105562" target="_blank" class="contact-link">079 210 5562</a><br>
                             <i class="fas fa-envelope" style="color: var(--primary-blue); width: 20px;"></i> <a href="mailto:chadwick@dynamicworkspaces.co.za" class="contact-link">chadwick@dynamicworkspaces.co.za</a>
                         </p>
                     </div>
@@ -305,7 +305,7 @@
                         <p class="service-desc" style="margin-bottom: 1rem;"><strong>21 Village Road, Selby, Johannesburg</strong><br>Suites from 3 m&sup2; to 30 m&sup2; with direct M1 and M2 access.</p>
                         <p style="font-size: 0.92rem; line-height: 1.9; color: var(--dark-grey);">
                             <i class="fas fa-phone" style="color: var(--primary-blue); width: 20px;"></i> <a href="tel:+27110449400" class="contact-link">011 044 9400</a><br>
-                            <i class="fab fa-whatsapp" style="color: #25d366; width: 20px;"></i> <a href="https://wa.me/27793600468" target="_blank" class="contact-link">079 360 0468</a><br>
+                            <i class="fab fa-whatsapp" style="color: #15803D; width: 20px;"></i> <a href="https://wa.me/27793600468" target="_blank" class="contact-link">079 360 0468</a><br>
                             <i class="fas fa-envelope" style="color: var(--primary-blue); width: 20px;"></i> <a href="mailto:villageroad@dynamicworkspaces.co.za" class="contact-link">villageroad@dynamicworkspaces.co.za</a>
                         </p>
                     </div>
@@ -343,7 +343,7 @@
 
         <!-- Dynamic Branch Map -->
         <section id="branch-map-section" style="display: none; padding: 0;">
-            <iframe id="branch-map-iframe" src="" width="100%" height="450" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe id="branch-map-iframe" title="Branch Location Map for Dynamic Workspaces Johannesburg" src="" width="100%" height="450" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
 
@@ -436,6 +436,7 @@
             // Update map
             if (branchMapIframe) {
                 branchMapIframe.src = branch.mapSrc;
+                branchMapIframe.title = `Map of Dynamic Workspaces ${loc} Branch`;
                 branchMapSection.style.display = 'block';
             }
 
@@ -546,9 +547,9 @@
                 <div class="footer-column">
                     <p class="footer-heading">Social</p>
                     <div class="social-links" style="display: flex; gap: 1rem;">
-                        <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Dynamic Workspaces on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Dynamic Workspaces on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Dynamic Workspaces on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                     </div>
                     <div class="footer-logo">
                         <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo" style="filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;" loading="lazy" width="300" height="375">
@@ -562,6 +563,6 @@
     </footer>
 
     <script src="index.js" defer></script>
-<a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" title="Chat with us"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/27792105562?text=Hi,%20I%20am%20interested%20in%20your%20workspaces." class="whatsapp-float-btn" target="_blank" rel="noopener noreferrer" title="Chat with us" aria-label="Chat with Dynamic Workspaces on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
 </body>
 </html>

@@ -51,6 +51,22 @@ button, input, select, textarea {
     font-family: var(--font-body);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+.cta-banner a:focus-visible,
+.btn-primary:focus-visible,
+.lp-form-btn:focus-visible {
+    outline-color: #FFFFFF;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -1250,7 +1266,7 @@ button, input, select, textarea {
     right: 30px;
     width: 65px;
     height: 65px;
-    background-color: #25d366;
+    background-color: #15803D;
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -1265,7 +1281,7 @@ button, input, select, textarea {
 
 .whatsapp-float:hover {
     transform: scale(1.1) rotate(5deg);
-    background-color: #128c7e;
+    background-color: #166534;
 }
 
 /* WhatsApp Floating Button Global */
@@ -1275,7 +1291,7 @@ button, input, select, textarea {
     right: 30px;
     width: 65px;
     height: 65px;
-    background-color: #25d366;
+    background-color: #15803D;
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -1290,7 +1306,7 @@ button, input, select, textarea {
 
 .whatsapp-float-btn:hover {
     transform: scale(1.1) rotate(5deg);
-    background-color: #128c7e;
+    background-color: #166534;
 }
 
 /* Pricing Cards */
@@ -1675,7 +1691,7 @@ button, input, select, textarea {
 }
 
 .review-stars {
-    color: #fbbc04;
+    color: #B45309;
     font-size: 1rem;
     display: flex;
     gap: 3px;
@@ -2309,7 +2325,7 @@ button, input, select, textarea {
 }
 
 .review-stars {
-    color: #FFB30E;
+    color: #B45309;
     font-size: 0.9rem;
     display: flex;
     gap: 2px;
@@ -2476,7 +2492,7 @@ button, input, select, textarea {
 }
 
 .lp-hero-bullet i {
-    color: #10B981;
+    color: #047857;
     font-size: 1.15rem;
     flex-shrink: 0;
 }
@@ -2527,7 +2543,7 @@ button, input, select, textarea {
 }
 
 .lp-trust-item i {
-    color: #F59E0B;
+    color: #B45309;
 }
 
 /* 4-Field Lead Capture Card */
@@ -2645,7 +2661,7 @@ button, input, select, textarea {
 }
 
 .lp-form-guarantee i {
-    color: #10B981;
+    color: #047857;
 }
 
 /* Form Success Card */
@@ -2659,7 +2675,7 @@ button, input, select, textarea {
     width: 64px;
     height: 64px;
     background: #ECFDF5;
-    color: #10B981;
+    color: #047857;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2699,22 +2715,22 @@ button, input, select, textarea {
     align-items: center;
     justify-content: center;
     gap: 0.6rem;
-    background-color: #25D366;
+    background-color: #15803D;
     color: #FFFFFF !important;
     font-weight: 700;
     padding: 1.1rem 2rem;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 14px rgba(21, 128, 61, 0.35);
     border: none;
     font-size: 1rem;
 }
 
 .btn-whatsapp:hover {
-    background-color: #1EBE5D;
+    background-color: #166534;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 6px 20px rgba(21, 128, 61, 0.45);
     color: #FFFFFF !important;
 }
 
@@ -2727,21 +2743,21 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: #25D366;
+    background: #15803D;
     color: #FFFFFF;
     text-decoration: none;
     padding: 0.75rem 1.25rem;
     border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(21, 128, 61, 0.45), 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     font-weight: 700;
     font-size: 0.92rem;
 }
 
 .floating-whatsapp-widget:hover {
-    background: #1EBE5D;
+    background: #166534;
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 12px 30px rgba(21, 128, 61, 0.6);
     color: #FFFFFF;
 }
 
@@ -2915,7 +2931,7 @@ button, input, select, textarea {
 }
 
 .feature-good {
-    color: #059669;
+    color: #047857;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -2997,7 +3013,7 @@ button, input, select, textarea {
 
 .lp-pricing-vat {
     font-size: 0.8rem;
-    color: #94A3B8;
+    color: #64748B;
     margin-bottom: 1.75rem;
 }
 
@@ -3020,7 +3036,7 @@ button, input, select, textarea {
 }
 
 .lp-pricing-features li i {
-    color: #10B981;
+    color: #047857;
     margin-top: 0.2rem;
     flex-shrink: 0;
 }
