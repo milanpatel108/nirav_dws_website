@@ -974,9 +974,13 @@ button, input, select, textarea {
     color: var(--dark-grey);
 }
 
-.footer-column h4 {
+.footer-column h4,
+.footer-column .footer-heading {
     color: var(--black);
+    font-family: var(--font-body);
+    font-weight: 700;
     font-size: 1.1rem;
+    line-height: 1.2;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1070,8 +1074,11 @@ button, input, select, textarea {
     width: 100%;
 }
 
-.dropdown-column h4 {
+.dropdown-column h4,
+.dropdown-column .dropdown-heading {
+    font-family: var(--font-body);
     font-size: 1.2rem;
+    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--primary-blue);
@@ -1151,7 +1158,11 @@ button, input, select, textarea {
     text-align: center;
 }
 
-.dropdown-footer h3 {
+.dropdown-footer h3,
+.dropdown-footer .dropdown-brand-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    line-height: 1.2;
     font-size: 1.5rem;
     letter-spacing: 0.2em;
     color: var(--black);
@@ -1654,7 +1665,10 @@ button, input, select, textarea {
     color: var(--white);
 }
 
+.review-info h3,
 .review-info h4 {
+    font-family: var(--font-body);
+    font-weight: 700;
     margin-bottom: 0.3rem;
     font-size: 1.25rem;
     color: var(--black);
@@ -2079,6 +2093,7 @@ button, input, select, textarea {
     }
 
     .dropdown-column h4,
+    .dropdown-column .dropdown-heading,
     .dropdown-footer,
     .dropdown-links a::before {
         display: none !important;
@@ -2284,7 +2299,10 @@ button, input, select, textarea {
     font-weight: 700;
 }
 
+.review-info h3,
 .review-info h4 {
+    font-family: var(--font-body);
+    font-weight: 700;
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
     color: var(--black);
@@ -2528,10 +2546,18 @@ button, input, select, textarea {
 }
 
 .lp-lead-card-title {
+    font-family: var(--font-body);
     font-size: 1.35rem;
     font-weight: 700;
     color: var(--black);
     margin-bottom: 0.35rem;
+}
+
+.legal-subheading {
+    font-family: var(--font-body);
+    font-size: 1.17rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .lp-lead-card-subtitle {
@@ -3096,7 +3122,10 @@ button, input, select, textarea {
     margin-bottom: 0.5rem;
 }
 
+.lp-proximity-card h2,
+.lp-proximity-card h3,
 .lp-proximity-card h4 {
+    font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--black);

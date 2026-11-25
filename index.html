@@ -14,6 +14,14 @@
     <link rel="icon" type="image/png" href="assets/logo_optimized.png">
     <meta name="description" content="Dynamic Workspaces: Premium office space in Johannesburg with backup power, fibre & elite security. Serving Selby, Morningside & Wynberg.">
     <link rel="canonical" href="https://www.dynamicworkspaces.co.za/">
+
+    <!-- OpenGraph Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dynamic Workspaces">
+    <meta property="og:title" content="Dynamic Workspaces | Secure Offices Johannesburg">
+    <meta property="og:description" content="Dynamic Workspaces: Premium office space in Johannesburg with backup power, fibre & elite security. Serving Selby, Morningside & Wynberg.">
+    <meta property="og:url" content="https://www.dynamicworkspaces.co.za/">
+    <meta property="og:image" content="https://www.dynamicworkspaces.co.za/assets/morning%20side%20cover/kelvinmorncover_optimized.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,15 +38,15 @@
     }
     </script>
     <!-- Critical Preloads -->
-    <link rel="preload" href="fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="fonts/playfair-700.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/playfair-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/morning side cover/kelvinmorncover_optimized.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="assets/logo_optimized.png" as="image" fetchpriority="high">
     
     <style>
-        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.ttf') format('truetype'); }
-        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-700.ttf') format('truetype'); }
-        @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/playfair-700.ttf') format('truetype'); }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.woff2') format('woff2'), url('fonts/inter-400.ttf') format('truetype'); }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-700.woff2') format('woff2'), url('fonts/inter-700.ttf') format('truetype'); }
+        @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/playfair-700.woff2') format('woff2'), url('fonts/playfair-700.ttf') format('truetype'); }
 
         :root {
             --primary-blue: #0047AB; --accent-blue: #0076CE; --black: #121212; --dark-grey: #2D2D2D; --light-grey: #F8F9FA; --white: #FFFFFF;
@@ -149,7 +157,7 @@
                             </div>
                         <div class="dropdown-grid">
                             <div class="dropdown-column">
-                                <h4>Locations</h4>
+                                <p class="dropdown-heading">Locations</p>
                                 <ul class="dropdown-links">
                                     <li><a href="sandton-morningside.html">MORNINGSIDE, SANDTON <i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="chadwick-wynberg.html">CHADWICK, WYNBERG <i class="fas fa-chevron-down"></i></a></li>
@@ -158,11 +166,11 @@
                                 </ul>
                             </div>
                             <div class="dropdown-logo-col">
-                                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy">
+                                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy" width="300" height="375">
                             </div>
                         </div>
                         <div class="dropdown-footer" style="text-align: center;">
-                            <h3 style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</h3>
+                            <p class="dropdown-brand-title" style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</p>
                             <p>Premium environments for serious professionals.</p>
                         </div>
                     </div>
@@ -174,7 +182,7 @@
                             </div>
                         <div class="dropdown-grid">
                             <div class="dropdown-column">
-                                <h4>Offerings</h4>
+                                <p class="dropdown-heading">Offerings</p>
                                 <ul class="dropdown-links">
                                     <li><a href="private-offices.html">PRIVATE OFFICES</a></li>
                                     <li><a href="coworking.html">CO-WORKING</a></li>
@@ -182,11 +190,11 @@
                                 </ul>
                             </div>
                             <div class="dropdown-logo-col">
-                                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy">
+                                <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy" width="300" height="375">
                             </div>
                         </div>
                         <div class="dropdown-footer" style="text-align: center;">
-                            <h3 style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</h3>
+                            <p class="dropdown-brand-title" style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</p>
                             <p>Premium solutions for your business.</p>
                         </div>
                     </div>
@@ -276,7 +284,7 @@
                 <div class="card-grid">
                     <div class="location-card">
                         <div class="location-img">
-                            <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton Office" loading="lazy" decoding="async">
+                            <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton Office" loading="lazy" decoding="async" width="1184" height="864">
                         </div>
                         <div class="location-content">
                             <span class="location-type">Premium Suites</span>
@@ -286,7 +294,7 @@
                     </div>
                     <div class="location-card">
                         <div class="location-img">
-                            <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg Office" loading="lazy" decoding="async">
+                            <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg Office" loading="lazy" decoding="async" width="1200" height="799">
                         </div>
                         <div class="location-content">
                             <span class="location-type">Lifestyle Workspaces</span>
@@ -296,7 +304,7 @@
                     </div>
                     <div class="location-card">
                         <div class="location-img">
-                            <img src="assets/village cover/village_cover_optimized.jpg" alt="Village, JHB Office" loading="lazy" decoding="async">
+                            <img src="assets/village cover/village_cover_optimized.jpg" alt="Village, JHB Office" loading="lazy" decoding="async" width="1400" height="933">
                         </div>
                         <div class="location-content">
                             <span class="location-type">Elite Hubs</span>
@@ -389,22 +397,22 @@
                 <div class="lp-proximity-grid" style="margin-bottom: 3rem;">
                     <div class="lp-proximity-card">
                         <i class="fas fa-calendar-check"></i>
-                        <h4>10 Years Operating</h4>
+                        <h3>10 Years Operating</h3>
                         <p>Established in Johannesburg</p>
                     </div>
                     <div class="lp-proximity-card">
                         <i class="fas fa-building"></i>
-                        <h4>50+ Businesses Hosted</h4>
+                        <h3>50+ Businesses Hosted</h3>
                         <p>Across 3 commercial centres</p>
                     </div>
                     <div class="lp-proximity-card">
                         <i class="fas fa-star"></i>
-                        <h4>4.9&#9733; Google Rating</h4>
+                        <h3>4.9&#9733; Google Rating</h3>
                         <p>Across all 3 branches</p>
                     </div>
                     <div class="lp-proximity-card">
                         <i class="fas fa-file-contract"></i>
-                        <h4>1-Day to Multi-Year Leases</h4>
+                        <h3>1-Day to Multi-Year Leases</h3>
                         <p>Spaces from 3 m&sup2; to 300 m&sup2;</p>
                     </div>
                 </div>
@@ -466,13 +474,13 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Workspace</h4>
+                    <p class="footer-heading">Workspace</p>
                     <ul class="footer-links">
                         <li><a href="sandton-morningside.html">Morningside, Sandton</a></li>
                         <li><a href="chadwick-wynberg.html">Chadwick, Wynberg</a></li>
                         <li><a href="village-jhb.html">Village, JHB</a></li>
                     </ul>
-                    <h4 style="margin-top: 2rem;">Storage</h4>
+                    <p class="footer-heading" style="margin-top: 2rem;">Storage</p>
                     <ul class="footer-links">
                         <li><a href="https://www.storagelocker.co.za/chadwick-wynberg.html" target="_blank">Sandton</a></li>
                         <li><a href="https://www.storagelocker.co.za/johannesburg-cbd.html" target="_blank">Johannesburg CBD</a></li>
@@ -482,7 +490,7 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Company</h4>
+                    <p class="footer-heading">Company</p>
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
@@ -492,7 +500,7 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Social</h4>
+                    <p class="footer-heading">Social</p>
                     <div class="social-links" style="display: flex; gap: 1rem;">
                         <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>

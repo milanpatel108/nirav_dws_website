@@ -13,13 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.scrollY;
         
         // Navbar Scroll Effect - 100px threshold
-        if (currentScrollY > 100) {
-            if (!navbar.classList.contains('scrolled')) {
-                navbar.classList.add('scrolled');
-            }
-        } else {
-            if (navbar.classList.contains('scrolled')) {
-                navbar.classList.remove('scrolled');
+        if (navbar) {
+            if (currentScrollY > 100) {
+                if (!navbar.classList.contains('scrolled')) {
+                    navbar.classList.add('scrolled');
+                }
+            } else {
+                if (navbar.classList.contains('scrolled')) {
+                    navbar.classList.remove('scrolled');
+                }
             }
         }
 
@@ -212,16 +214,19 @@ const pricingData = {
 
 document.addEventListener('DOMContentLoaded', () => {
     const locationBtns = document.querySelectorAll('.location-btn');
-    if(locationBtns.length > 0) {
-        const container = document.getElementById('dynamic-pricing-container');
-        const grid = document.getElementById('dynamic-pricing-grid');
-        const defaultState = document.querySelector('.pricing-default-state');
-        const service = document.querySelector('.location-buttons').getAttribute('data-service');
-        const pricingTitle = document.getElementById('pricing-title');
+    const locationGroup = document.querySelector('.location-buttons');
+    const container = document.getElementById('dynamic-pricing-container');
+    const grid = document.getElementById('dynamic-pricing-grid');
+    const defaultState = document.querySelector('.pricing-default-state');
+    const pricingTitle = document.getElementById('pricing-title');
+
+    if (locationBtns.length > 0 && locationGroup && container && grid && defaultState && pricingTitle) {
+        const service = locationGroup.getAttribute('data-service');
 
         locationBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const loc = e.target.getAttribute('data-location');
+                if (!service || !pricingData[service] || !pricingData[service].locations[loc]) return;
                 
                 // Active state
                 locationBtns.forEach(b => {

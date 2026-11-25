@@ -14,6 +14,14 @@
     <link rel="icon" type="image/png" href="assets/logo_optimized.png">
     <meta name="description" content="Elite office spaces in the heart of Johannesburg. Professional environment with robust backup infrastructure and enterprise-level security.">
     <link rel="canonical" href="https://www.dynamicworkspaces.co.za/village-jhb.html">
+
+    <!-- OpenGraph Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dynamic Workspaces">
+    <meta property="og:title" content="Dynamic Workspaces | Elite Office Hub Village JHB">
+    <meta property="og:description" content="Elite office spaces in the heart of Johannesburg. Professional environment with robust backup infrastructure and enterprise-level security.">
+    <meta property="og:url" content="https://www.dynamicworkspaces.co.za/village-jhb.html">
+    <meta property="og:image" content="https://www.dynamicworkspaces.co.za/assets/village%20cover/village_cover_optimized.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,15 +44,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Critical Preloads -->
-    <link rel="preload" href="fonts/inter-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="fonts/playfair-700.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/playfair-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/village cover/village_cover_optimized.jpg" as="image" fetchpriority="high">
     <link rel="preload" href="assets/logo_optimized.png" as="image" fetchpriority="high">
     
     <style>
-        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.ttf') format('truetype'); }
-        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-700.ttf') format('truetype'); }
-        @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/playfair-700.ttf') format('truetype'); }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('fonts/inter-400.woff2') format('woff2'), url('fonts/inter-400.ttf') format('truetype'); }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/inter-700.woff2') format('woff2'), url('fonts/inter-700.ttf') format('truetype'); }
+        @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url('fonts/playfair-700.woff2') format('woff2'), url('fonts/playfair-700.ttf') format('truetype'); }
 
         :root {
             --primary-blue: #0047AB; --accent-blue: #0076CE; --black: #121212; --dark-grey: #2D2D2D; --light-grey: #F8F9FA; --white: #FFFFFF;
@@ -94,7 +102,7 @@
                         </div>
                     <div class="dropdown-grid">
                         <div class="dropdown-column">
-                            <h4>Locations</h4>
+                            <p class="dropdown-heading">Locations</p>
                             <ul class="dropdown-links">
                                 <li><a href="sandton-morningside.html">MORNINGSIDE, SANDTON <i class="fas fa-chevron-down"></i></a></li>
                                 <li><a href="chadwick-wynberg.html">CHADWICK, WYNBERG <i class="fas fa-chevron-down"></i></a></li>
@@ -103,11 +111,11 @@
                             </ul>
                         </div>
                         <div class="dropdown-logo-col">
-                            <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy">
+                            <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy" width="300" height="375">
                         </div>
                     </div>
                     <div class="dropdown-footer" style="text-align: center;">
-                        <h3 style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</h3>
+                        <p class="dropdown-brand-title" style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</p>
                         <p>Premium environments for serious professionals.</p>
                     </div>
                 </div>
@@ -119,7 +127,7 @@
                         </div>
                     <div class="dropdown-grid">
                         <div class="dropdown-column">
-                            <h4>Offerings</h4>
+                            <p class="dropdown-heading">Offerings</p>
                             <ul class="dropdown-links">
                                 <li><a href="private-offices.html">PRIVATE OFFICES</a></li>
                                 <li><a href="coworking.html">CO-WORKING</a></li>
@@ -127,11 +135,11 @@
                             </ul>
                         </div>
                         <div class="dropdown-logo-col">
-                            <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy">
+                            <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo - Premium Office Solutions Johannesburg" loading="lazy" width="300" height="375">
                         </div>
                     </div>
                     <div class="dropdown-footer" style="text-align: center;">
-                        <h3 style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</h3>
+                        <p class="dropdown-brand-title" style="letter-spacing: 0.5rem;">DYNAMIC WORKSPACES</p>
                         <p>Premium solutions for your business.</p>
                     </div>
                 </div>
@@ -260,8 +268,8 @@
                 <div class="gallery-wrapper" style="margin-bottom: 4rem;">
                     <div class="gallery-container" style="height: 500px;">
                         <div class="gallery-track" id="meetingTrack">
-                            <div class="gallery-slide"><img src="assets/Village Meetingroom/0506e6ec-7baf-42e0-aa85-ccf6d84e1c3c_primary.jpg" alt="Village Meeting Room 1" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Meetingroom/d523bcc4-8d47-48ec-a4d7-445f2fd9ee9c_primary.jpg" alt="Village Meeting Room 2" loading="lazy" loading="lazy"></div>
+                            <div class="gallery-slide"><img src="assets/Village Meetingroom/0506e6ec-7baf-42e0-aa85-ccf6d84e1c3c_primary.jpg" alt="Village Meeting Room 1" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Meetingroom/d523bcc4-8d47-48ec-a4d7-445f2fd9ee9c_primary.jpg" alt="Village Meeting Room 2" loading="lazy" loading="lazy" width="1400" height="1050"></div>
                         </div>
                         <button class="gallery-btn prev" id="meetingPrev"><i class="fas fa-chevron-left"></i></button>
                         <button class="gallery-btn next" id="meetingNext"><i class="fas fa-chevron-right"></i></button>
@@ -284,20 +292,20 @@
                 <div class="gallery-wrapper">
                     <div class="gallery-container">
                         <div class="gallery-track" id="galleryTrack">
-                            <div class="gallery-slide"><img src="assets/Village Gallery/011d523a-3c22-430d-914a-c6bf175d6983_primary.jpg" alt="Village Office 1" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/0bf2b1f7-408c-409a-af17-7f8e1e5f9b68_primary.jpg" alt="Village Office 2" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/269ed448-2666-4f0d-9c16-5399ffa5fc42_primary.jpg" alt="Village Office 3" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/3113bd7a-9429-4396-925b-eff0a8555d7d_primary.jpg" alt="Village Office 4" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/3666beee-264a-49d5-9008-999c4fbe391d_primary.jpg" alt="Village Office 5" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/38166daa-4636-4fef-aa8c-af02d4ed9340_primary.jpg" alt="Village Office 6" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/4b529897-8876-449b-afbc-e738dcc4da1e_primary.jpg" alt="Village Office 7" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/4bf8794b-efd4-4366-8695-bb4bf56ade99_primary.jpg" alt="Village Office 8" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/4ff359c2-afe5-4253-901e-9fb79c7dc7ab_primary.jpg" alt="Village Office 9" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/603a39b6-3de4-4ee5-b059-6e8f3a0c63c2_primary.jpg" alt="Village Office 10" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/697137b8-1638-4dcd-aad3-bf3a09cd596c_primary.jpg" alt="Village Office 11" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/73d9792e-44d3-4bfe-89e6-217dc718a7d7_primary.jpg" alt="Village Office 12" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/8be7e69e-5842-4002-9903-654b33ba1eba_primary.jpg" alt="Village Office 13" loading="lazy" loading="lazy"></div>
-                            <div class="gallery-slide"><img src="assets/Village Gallery/9e38977b-95f4-4e76-8e66-0becc19ad991_primary.jpg" alt="Village Office 14" loading="lazy" loading="lazy"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/011d523a-3c22-430d-914a-c6bf175d6983_primary.jpg" alt="Village Office 1" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/0bf2b1f7-408c-409a-af17-7f8e1e5f9b68_primary.jpg" alt="Village Office 2" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/269ed448-2666-4f0d-9c16-5399ffa5fc42_primary.jpg" alt="Village Office 3" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/3113bd7a-9429-4396-925b-eff0a8555d7d_primary.jpg" alt="Village Office 4" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/3666beee-264a-49d5-9008-999c4fbe391d_primary.jpg" alt="Village Office 5" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/38166daa-4636-4fef-aa8c-af02d4ed9340_primary.jpg" alt="Village Office 6" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4b529897-8876-449b-afbc-e738dcc4da1e_primary.jpg" alt="Village Office 7" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4bf8794b-efd4-4366-8695-bb4bf56ade99_primary.jpg" alt="Village Office 8" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/4ff359c2-afe5-4253-901e-9fb79c7dc7ab_primary.jpg" alt="Village Office 9" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/603a39b6-3de4-4ee5-b059-6e8f3a0c63c2_primary.jpg" alt="Village Office 10" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/697137b8-1638-4dcd-aad3-bf3a09cd596c_primary.jpg" alt="Village Office 11" loading="lazy" loading="lazy" width="1168" height="876"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/73d9792e-44d3-4bfe-89e6-217dc718a7d7_primary.jpg" alt="Village Office 12" loading="lazy" loading="lazy" width="1400" height="1050"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/8be7e69e-5842-4002-9903-654b33ba1eba_primary.jpg" alt="Village Office 13" loading="lazy" loading="lazy" width="1400" height="933"></div>
+                            <div class="gallery-slide"><img src="assets/Village Gallery/9e38977b-95f4-4e76-8e66-0becc19ad991_primary.jpg" alt="Village Office 14" loading="lazy" loading="lazy" width="1400" height="1050"></div>
                         </div>
                         <button class="gallery-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                         <button class="gallery-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -323,7 +331,7 @@
                                     <div class="review-header">
                                         <div class="review-avatar">KK</div>
                                         <div class="review-info">
-                                            <h4>Klaus Klassen</h4>
+                                            <h3>Klaus Klassen</h3>
                                             <div class="review-stars">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
@@ -348,11 +356,11 @@
                 </div>
                 <div class="next-locations">
                     <a href="sandton-morningside.html" class="location-shortcut">
-                        <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                        <img src="assets/morning side cover/kelvinmorncover_optimized.jpg" alt="Morningside, Sandton" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="1184" height="864">
                         <span style="position: relative; z-index: 5;">MORNINGSIDE, SANDTON</span>
                     </a>
                     <a href="chadwick-wynberg.html" class="location-shortcut">
-                        <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                        <img src="assets/chadwick coverpage/chadwick_cover_optimized.jpg" alt="Chadwick, Wynberg" loading="lazy" decoding="async" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;" width="1200" height="799">
                         <span style="position: relative; z-index: 5;">CHADWICK, WYNBERG</span>
                     </a>
                 </div>
@@ -380,13 +388,13 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Workspace</h4>
+                    <p class="footer-heading">Workspace</p>
                     <ul class="footer-links">
                         <li><a href="sandton-morningside.html">Morningside, Sandton</a></li>
                         <li><a href="chadwick-wynberg.html">Chadwick, Wynberg</a></li>
                         <li><a href="village-jhb.html">Village, JHB</a></li>
                     </ul>
-                    <h4 style="margin-top: 2rem;">Storage</h4>
+                    <p class="footer-heading" style="margin-top: 2rem;">Storage</p>
                     <ul class="footer-links">
                         <li><a href="https://www.storagelocker.co.za/chadwick-wynberg.html" target="_blank">Sandton</a></li>
                         <li><a href="https://www.storagelocker.co.za/johannesburg-cbd.html" target="_blank">Johannesburg CBD</a></li>
@@ -396,7 +404,7 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h4>Company</h4>
+                    <p class="footer-heading">Company</p>
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
@@ -406,14 +414,14 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Social</h4>
+                    <p class="footer-heading">Social</p>
                     <div class="social-links" style="display: flex; gap: 1rem;">
                         <a href="https://www.facebook.com/people/DynamicWorkspaces/100090036759381/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/dynamicworkspaces/" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://za.linkedin.com/company/dynamicworkspaces" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="footer-logo">
-                        <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo" style="filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;" loading="lazy">
+                        <img src="assets/logo_optimized.png" alt="Dynamic Workspaces Logo" style="filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;" loading="lazy" width="300" height="375">
                     </div>
                 </div>
             </div>
